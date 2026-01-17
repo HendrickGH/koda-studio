@@ -171,13 +171,13 @@
 
 			.nav-links {
 				display: flex;
-				gap: 30px;
+				gap: 20px; /* Reducido un poco para que quepan mas links */
 				align-items: center; /* Alineación vertical corregida */
 			}
 
 			.nav-links a {
 				font-weight: 600; /* Un poco más grueso para leerse mejor en blanco */
-				font-size: 0.95rem;
+				font-size: 0.9rem;
 				transition: color 0.3s;
 				color: var(--color-navy); /* Color oscuro para contraste */
 			}
@@ -545,6 +545,135 @@
 			.dot.active {
 				background: var(--color-sky);
 				transform: scale(1.2);
+			}
+
+			/* =========================================
+           PORTFOLIO SECTION
+           ========================================= */
+			.portfolio-section {
+				background-color: var(--color-navy); /* Fondo Azul */
+				color: var(--color-white);
+			}
+
+			.portfolio-section .section-title h2 {
+				color: var(--color-white);
+			}
+
+			.portfolio-section .section-title p {
+				color: #b0bec5;
+			}
+
+			.portfolio-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+				gap: 30px;
+			}
+
+			.project-card {
+				background: var(--color-white);
+				border-radius: 15px;
+				overflow: hidden;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+				transition: var(--transition);
+				border: none;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.project-card:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+			}
+
+			.project-image {
+				height: 220px;
+				background-color: #e0e0e0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				overflow: hidden;
+				color: #757575;
+				font-size: 0.9rem;
+			}
+
+			.project-image::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+				opacity: 0.6;
+			}
+
+			/* Placeholder styles simulation */
+			.project-image.lawyer {
+				background: linear-gradient(120deg, #2c3e50, #4ca1af);
+			}
+			.project-image.restaurant {
+				background: linear-gradient(120deg, #d35400, #e67e22);
+			}
+			.project-image.realestate {
+				background: linear-gradient(120deg, #16a085, #2ecc71);
+			}
+			.project-image.beauty {
+				background: linear-gradient(120deg, #8e44ad, #9b59b6);
+			}
+			.project-image.barber {
+				background: linear-gradient(120deg, #212121, #424242);
+			}
+			.project-image.consultant {
+				background: linear-gradient(120deg, #304ffe, #536dfe);
+			}
+
+			.project-image-text {
+				position: relative;
+				z-index: 2;
+				color: white;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				background: rgba(0, 0, 0, 0.3);
+				padding: 5px 15px;
+				border-radius: 20px;
+				backdrop-filter: blur(4px);
+			}
+
+			.project-content {
+				padding: 25px;
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.project-content h3 {
+				font-size: 1.25rem;
+				color: var(--color-navy);
+				margin-bottom: 10px;
+			}
+
+			.project-content p {
+				color: var(--color-slate);
+				font-size: 0.95rem;
+				margin-bottom: 20px;
+				flex-grow: 1;
+			}
+
+			.project-link {
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				color: var(--color-sky);
+				font-weight: 600;
+				font-size: 0.95rem;
+				transition: var(--transition);
+			}
+
+			.project-link:hover {
+				color: var(--color-navy);
+				gap: 12px;
 			}
 
 			/* =========================================
@@ -970,7 +1099,10 @@
 
 					<ul class="nav-links" id="navLinks">
 						<li><a href="#inicio">Inicio</a></li>
+						<li><a href="#proceso">Proceso</a></li>
 						<li><a href="#servicios">Servicios</a></li>
+						<li><a href="#proyectos">Portafolio</a></li>
+						<li><a href="#testimonios">Testimonios</a></li>
 						<li><a href="#paquetes">Paquetes</a></li>
 						<li>
 							<a
@@ -1045,7 +1177,7 @@
 		</section>
 
 		<!-- Proceso Section (MOVIDO AQUÍ) -->
-		<section class="section-padding process-section">
+		<section class="section-padding process-section" id="proceso">
 			<div class="container">
 				<div class="section-title">
 					<h2>Tu Nuevo Sitio en 3 Pasos</h2>
@@ -1064,8 +1196,8 @@
 							</div>
 							<h3>Briefing</h3>
 							<p>
-								Nos cuentas sobre tu negocio y nos compartes tu logo e
-								información básica.
+								Nos cuentas sobre tu negocio, tus objetivos y la información
+								básica para comenzar.
 							</p>
 						</div>
 					</div>
@@ -1227,7 +1359,7 @@
 		</section>
 
 		<!-- Testimonios (Slider Nuevo - MOVIDO AQUÍ) -->
-		<section class="section-padding testimonials-section">
+		<section class="section-padding testimonials-section" id="testimonios">
 			<div class="container">
 				<div class="section-title">
 					<h2>Historias de Éxito</h2>
@@ -1600,7 +1732,243 @@
 			</div>
 		</section>
 
-		<!-- Pricing (3 Paquetes) -->
+		<!-- Portfolio Section (NUEVO - Reemplazando posición original de Precios) -->
+		<section class="section-padding portfolio-section" id="proyectos">
+			<div class="container">
+				<div class="section-title">
+					<h2>Nuestro Trabajo</h2>
+					<p>
+						Explora cómo hemos ayudado a negocios como el tuyo a destacar en el
+						mundo digital.
+					</p>
+				</div>
+
+				<div class="portfolio-grid">
+					<!-- Proyecto 1: Abogados -->
+					<div class="project-card">
+						<div class="project-image lawyer">
+							<div class="project-image-text">Sitio Web Corporativo</div>
+							<!-- Placeholder visual con gradiente CSS -->
+						</div>
+						<div class="project-content">
+							<h3>Méndez & Asociados</h3>
+							<p>
+								Plataforma legal sobria y elegante enfocada en la captación de
+								clientes corporativos, con blog de noticias y sistema de citas.
+							</p>
+							<a href="#" class="project-link"
+								>Ver sitio web
+								<i data-lucide="external-link" style="width: 16px"></i
+							></a>
+						</div>
+					</div>
+
+					<!-- Proyecto 2: Bienes Raíces -->
+					<div class="project-card">
+						<div class="project-image realestate">
+							<div class="project-image-text">Catálogo Inmobiliario</div>
+						</div>
+						<div class="project-content">
+							<h3>Casa Verde Real Estate</h3>
+							<p>
+								Portal inmobiliario con filtros de búsqueda avanzados, fichas de
+								propiedades detalladas y conexión directa a WhatsApp.
+							</p>
+							<a href="#" class="project-link"
+								>Ver sitio web
+								<i data-lucide="external-link" style="width: 16px"></i
+							></a>
+						</div>
+					</div>
+
+					<!-- Proyecto 3: Restaurante -->
+					<div class="project-card">
+						<div class="project-image restaurant">
+							<div class="project-image-text">Menú Digital & Reservas</div>
+						</div>
+						<div class="project-content">
+							<h3>Bistro 52</h3>
+							<p>
+								Sitio web experiencial con menú digital integrado, galería de
+								platillos de alta resolución y sistema de reservas en línea.
+							</p>
+							<a href="#" class="project-link"
+								>Ver sitio web
+								<i data-lucide="external-link" style="width: 16px"></i
+							></a>
+						</div>
+					</div>
+
+					<!-- Proyecto 4: Spa/Salud -->
+					<div class="project-card">
+						<div class="project-image beauty">
+							<div class="project-image-text">Agenda & Servicios</div>
+						</div>
+						<div class="project-content">
+							<h3>Dra. Ana Salud & Estética</h3>
+							<p>
+								Landing page limpia y moderna para consultorio médico estético,
+								optimizada para conversión y agenda de pacientes.
+							</p>
+							<a href="#" class="project-link"
+								>Ver sitio web
+								<i data-lucide="external-link" style="width: 16px"></i
+							></a>
+						</div>
+					</div>
+
+					<!-- Proyecto 5: Barbería -->
+					<div class="project-card">
+						<div class="project-image barber">
+							<div class="project-image-text">Gestión de Citas</div>
+						</div>
+						<div class="project-content">
+							<h3>Barber Shop Elite</h3>
+							<p>
+								Web oscura y moderna para barbería urbana, enfocada en la
+								experiencia visual y sistema de reservas rápido para móviles.
+							</p>
+							<a href="#" class="project-link"
+								>Ver sitio web
+								<i data-lucide="external-link" style="width: 16px"></i
+							></a>
+						</div>
+					</div>
+
+					<!-- Proyecto 6: Consultoría -->
+					<div class="project-card">
+						<div class="project-image consultant">
+							<div class="project-image-text">Marca Personal</div>
+						</div>
+						<div class="project-content">
+							<h3>Consultoría Apex</h3>
+							<p>
+								Sitio minimalista para despacho contable, diseñado para generar
+								confianza y automatizar la captación de leads cualificados.
+							</p>
+							<a href="#" class="project-link"
+								>Ver sitio web
+								<i data-lucide="external-link" style="width: 16px"></i
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ Section -->
+		<section class="section-padding faq-section" id="faq">
+			<div class="container">
+				<div class="section-title">
+					<h2>Preguntas Frecuentes</h2>
+					<p>
+						Resolvemos tus dudas antes de comenzar tu transformación digital.
+					</p>
+				</div>
+
+				<div class="faq-container">
+					<!-- Pregunta 1 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿En cuánto tiempo queda lista mi página web?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								Tu sitio estará listo en <strong>14 días naturales</strong>.
+								Preferimos tomarnos el tiempo necesario para garantizar que cada
+								detalle sea perfecto y entregarte una herramienta de calidad que
+								realmente impulse tu negocio, en lugar de apresurarnos.
+							</p>
+						</div>
+					</div>
+
+					<!-- Pregunta 2 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿Tengo que seguir pagando algo mensualmente?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								<strong>No, no hay mensualidades.</strong> El desarrollo es un
+								pago único. Lo único que se renueva es la infraestructura
+								(Dominio y Hosting) de manera anual por solo
+								<strong>$699 MXN + IVA</strong>, para mantener tu sitio en línea
+								y tus correos funcionando.
+							</p>
+						</div>
+					</div>
+
+					<!-- Pregunta 3 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿El dominio y el hosting son de mi propiedad?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								<strong>Absolutamente.</strong> A diferencia de otras agencias,
+								aquí tú eres el dueño legal de tu dominio y hosting desde el
+								primer día. Sin plazos forzosos, sin letras chiquitas y con
+								total libertad.
+							</p>
+						</div>
+					</div>
+
+					<!-- Pregunta 4 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿Qué pasa si quiero cambiar fotos o textos en el futuro?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								Tenemos un modelo flexible de
+								<strong>"Mantenimiento por Evento"</strong>. Si necesitas
+								actualizaciones puntuales, no pagas una renta mensual fija; solo
+								pagas una tarifa pequeña por el cambio que necesites, comenzando
+								desde <strong>$199 MXN + IVA</strong>.
+							</p>
+						</div>
+					</div>
+
+					<!-- Pregunta 5 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿Necesito tener mi logo y textos listos para empezar?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								<strong>No es obligatorio.</strong> Incluimos redacción
+								profesional (copywriting) básica en todos los paquetes. Además,
+								podemos diseñar un logotipo sencillo para ti sin costo extra. Si
+								eliges el <strong>Plan PRO</strong>, incluimos un diseño de
+								marca completo (Logo principal, isotipo y versión horizontal).
+							</p>
+						</div>
+					</div>
+
+					<!-- Pregunta 6 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿El sitio incluye facturación?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								<strong>Sí, facturamos todos nuestros servicios.</strong> Los
+								precios mostrados son netos antes de impuestos, por lo que al
+								solicitar tu factura se añadirá el 16% de IVA correspondiente.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Pricing (MOVIDO AL FINAL) -->
 		<section class="section-padding pricing-section" id="paquetes">
 			<div class="container">
 				<div class="section-title">
@@ -1768,118 +2136,6 @@
 			</div>
 		</section>
 
-		<!-- FAQ Section (NUEVO) -->
-		<section class="section-padding faq-section">
-			<div class="container">
-				<div class="section-title">
-					<h2>Preguntas Frecuentes</h2>
-					<p>
-						Resolvemos tus dudas antes de comenzar tu transformación digital.
-					</p>
-				</div>
-
-				<div class="faq-container">
-					<!-- Pregunta 1 -->
-					<div class="accordion-item">
-						<button class="accordion-header">
-							¿En cuánto tiempo queda lista mi página web?
-							<i data-lucide="chevron-down"></i>
-						</button>
-						<div class="accordion-content">
-							<p>
-								Tu sitio estará listo en <strong>14 días naturales</strong>.
-								Preferimos tomarnos el tiempo necesario para garantizar que cada
-								detalle sea perfecto y entregarte una herramienta de calidad que
-								realmente impulse tu negocio, en lugar de apresurarnos.
-							</p>
-						</div>
-					</div>
-
-					<!-- Pregunta 2 -->
-					<div class="accordion-item">
-						<button class="accordion-header">
-							¿Tengo que seguir pagando algo mensualmente?
-							<i data-lucide="chevron-down"></i>
-						</button>
-						<div class="accordion-content">
-							<p>
-								<strong>No, no hay mensualidades.</strong> El desarrollo es un
-								pago único. Lo único que se renueva es la infraestructura
-								(Dominio y Hosting) de manera anual por solo
-								<strong>$699 MXN + IVA</strong>, para mantener tu sitio en línea
-								y tus correos funcionando.
-							</p>
-						</div>
-					</div>
-
-					<!-- Pregunta 3 -->
-					<div class="accordion-item">
-						<button class="accordion-header">
-							¿El dominio y el hosting son de mi propiedad?
-							<i data-lucide="chevron-down"></i>
-						</button>
-						<div class="accordion-content">
-							<p>
-								<strong>Absolutamente.</strong> A diferencia de otras agencias,
-								aquí tú eres el dueño legal de tu dominio y hosting desde el
-								primer día. Sin plazos forzosos, sin letras chiquitas y con
-								total libertad.
-							</p>
-						</div>
-					</div>
-
-					<!-- Pregunta 4 -->
-					<div class="accordion-item">
-						<button class="accordion-header">
-							¿Qué pasa si quiero cambiar fotos o textos en el futuro?
-							<i data-lucide="chevron-down"></i>
-						</button>
-						<div class="accordion-content">
-							<p>
-								Tenemos un modelo flexible de
-								<strong>"Mantenimiento por Evento"</strong>. Si necesitas
-								actualizaciones puntuales, no pagas una renta mensual fija; solo
-								pagas una tarifa pequeña por el cambio que necesites, comenzando
-								desde <strong>$199 MXN + IVA</strong>.
-							</p>
-						</div>
-					</div>
-
-					<!-- Pregunta 5 -->
-					<div class="accordion-item">
-						<button class="accordion-header">
-							¿Necesito tener mi logo y textos listos para empezar?
-							<i data-lucide="chevron-down"></i>
-						</button>
-						<div class="accordion-content">
-							<p>
-								<strong>No es obligatorio.</strong> Incluimos redacción
-								profesional (copywriting) básica en todos los paquetes. Además,
-								podemos diseñar un logotipo sencillo para ti sin costo extra. Si
-								eliges el <strong>Plan PRO</strong>, incluimos un diseño de
-								marca completo (Logo principal, isotipo y versión horizontal).
-							</p>
-						</div>
-					</div>
-
-					<!-- Pregunta 6 -->
-					<div class="accordion-item">
-						<button class="accordion-header">
-							¿El sitio incluye facturación?
-							<i data-lucide="chevron-down"></i>
-						</button>
-						<div class="accordion-content">
-							<p>
-								<strong>Sí, facturamos todos nuestros servicios.</strong> Los
-								precios mostrados son netos antes de impuestos, por lo que al
-								solicitar tu factura se añadirá el 16% de IVA correspondiente.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
 		<!-- Footer -->
 		<footer id="contacto">
 			<div class="container">
@@ -1903,7 +2159,9 @@
 						<ul class="footer-links">
 							<li><a href="#inicio">Inicio</a></li>
 							<li><a href="#servicios">Servicios</a></li>
+							<li><a href="#proyectos">Portafolio</a></li>
 							<li><a href="#paquetes">Paquetes</a></li>
+							<li><a href="#faq">Preguntas Frecuentes</a></li>
 							<li><a href="#">Aviso de Privacidad</a></li>
 						</ul>
 					</div>
