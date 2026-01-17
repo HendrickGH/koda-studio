@@ -1046,6 +1046,13 @@
 				max-width: 300px;
 			}
 
+			/* Regla específica para el logo del footer */
+			.footer-logo img {
+				width: 180px;
+				height: auto;
+				margin-bottom: 20px;
+			}
+
 			.footer-col h4 {
 				color: var(--color-sky);
 				margin-bottom: 20px;
@@ -1108,6 +1115,39 @@
 			/* =========================================
            RESPONSIVE
            ========================================= */
+			@media (max-width: 1024px) {
+				.process-grid,
+				.pricing-grid {
+					grid-template-columns: 1fr;
+				}
+				/* Hide decorative line in process grid on smaller screens since it's stacked */
+				.process-grid::before {
+					display: none;
+				}
+
+				/* Ajuste de tarjetas de precio en móviles/tablets */
+				.pricing-card {
+					max-width: 400px;
+					margin: 0 auto;
+					width: 100%;
+				}
+
+				/* NEW: Limit process text width when in single column */
+				.step-card p {
+					max-width: 500px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+
+			@media (min-width: 768px) {
+				.project-card {
+					max-width: 500px;
+					margin: 0 auto;
+					width: 100%;
+				}
+			}
+
 			@media (max-width: 768px) {
 				.hamburger {
 					display: block;
@@ -1152,7 +1192,7 @@
 				/* Ajuste pricing en movil: quitar escala */
 				.pricing-card.best-seller {
 					transform: none;
-					margin: 20px 0;
+					margin: 20px auto;
 				}
 
 				/* Ajuste form en movil */
@@ -1180,7 +1220,6 @@
 					</div>
 
 					<ul class="nav-links" id="navLinks">
-						<li><a href="#inicio">Inicio</a></li>
 						<li><a href="#proceso">Proceso</a></li>
 						<li><a href="#servicios">Servicios</a></li>
 						<li><a href="#proyectos">Portafolio</a></li>
@@ -2451,6 +2490,79 @@
 				dots[index].classList.add("active");
 			}
 
+			// Calcula la posición exacta en píxeles, sumando ancho + gap
+			function updateSlidePosition() {
+				const slideWidth = slides[0].getBoundingClientRect().width;
+				const gap = 20; // Debe coincidir con CSS .testimonial-track gap
+				const offset = (slideWidth + gap) * currentIndex;
+				track.style.transform = `translateX(-${offset}px)`;
+			}
+
+			function goToSlide(index) {
+				currentIndex = index;
+				updateSlidePosition();
+				updateDots(index);
+			}
+
+			nextBtn.addEventListener("click", () => {
+				if (currentIndex === slides.length - 1) {
+					goToSlide(0); // Loop al inicio
+				} else {
+					goToSlide(currentIndex + 1);
+				}
+			});
+
+			prevBtn.addEventListener("click", () => {
+				if (currentIndex === 0) {
+					goToSlide(slides.length - 1); // Loop al final
+				} else {
+					goToSlide(currentIndex - 1);
+				}
+			});
+
+			// Listener para ajustar si cambia el tamaño de la ventana
+			window.addEventListener("resize", () => {
+				// Recalculate based on current index
+				goToSlide(currentIndex);
+			});
+
+			// Auto-play opcional
+			setInterval(() => {
+				// if (currentIndex === slides.length - 1) goToSlide(0);
+				// else goToSlide(currentIndex + 1);
+			}, 5000);
+
+			// ============================
+			// FAQ ACCORDION LOGIC
+			// ============================
+			const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+			accordionHeaders.forEach(header => {
+				header.addEventListener("click", () => {
+					// Toggle active class
+					header.classList.toggle("active");
+
+					// Toggle content max-height
+					const content = header.nextElementSibling;
+					if (header.classList.contains("active")) {
+						content.style.maxHeight = content.scrollHeight + "px";
+					} else {
+						content.style.maxHeight = 0;
+					}
+
+					// Optional: Close other items
+					accordionHeaders.forEach(otherHeader => {
+						if (
+							otherHeader !== header &&
+							otherHeader.classList.contains("active")
+						) {
+							otherHeader.classList.remove("active");
+							otherHeader.nextElementSibling.style.maxHeight = 0;
+						}
+					});
+				});
+			});
+
 			// Variables para Drag/Swipe
 			let isDragging = false;
 			let startPos = 0;
@@ -2518,6 +2630,7 @@
 			}
 
 			// Modificar goToSlide para actualizar las variables de drag
+			// Sobreescribe la función anterior para incluir lógica de drag
 			function goToSlide(index) {
 				currentIndex = index;
 				track.style.transition = "transform 0.5s ease-in-out"; // Reactivar transición
@@ -2536,65 +2649,6 @@
 
 			// Inicializar prevTranslate
 			goToSlide(0);
-
-			nextBtn.addEventListener("click", () => {
-				if (currentIndex === slides.length - 1) {
-					goToSlide(0); // Loop al inicio
-				} else {
-					goToSlide(currentIndex + 1);
-				}
-			});
-
-			prevBtn.addEventListener("click", () => {
-				if (currentIndex === 0) {
-					goToSlide(slides.length - 1); // Loop al final
-				} else {
-					goToSlide(currentIndex - 1);
-				}
-			});
-
-			// Listener para ajustar si cambia el tamaño de la ventana
-			window.addEventListener("resize", () => {
-				// Recalculate based on current index
-				goToSlide(currentIndex);
-			});
-
-			// Auto-play opcional
-			setInterval(() => {
-				// if (currentIndex === slides.length - 1) goToSlide(0);
-				// else goToSlide(currentIndex + 1);
-			}, 5000);
-
-			// ============================
-			// FAQ ACCORDION LOGIC
-			// ============================
-			const accordionHeaders = document.querySelectorAll(".accordion-header");
-
-			accordionHeaders.forEach(header => {
-				header.addEventListener("click", () => {
-					// Toggle active class
-					header.classList.toggle("active");
-
-					// Toggle content max-height
-					const content = header.nextElementSibling;
-					if (header.classList.contains("active")) {
-						content.style.maxHeight = content.scrollHeight + "px";
-					} else {
-						content.style.maxHeight = 0;
-					}
-
-					// Optional: Close other items
-					accordionHeaders.forEach(otherHeader => {
-						if (
-							otherHeader !== header &&
-							otherHeader.classList.contains("active")
-						) {
-							otherHeader.classList.remove("active");
-							otherHeader.nextElementSibling.style.maxHeight = 0;
-						}
-					});
-				});
-			});
 		</script>
 	</body>
 </html>
