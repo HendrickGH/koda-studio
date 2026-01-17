@@ -945,6 +945,66 @@
 			}
 
 			/* =========================================
+           CONTACT FORM SECTION
+           ========================================= */
+			.contact-section {
+				background-color: var(--color-offwhite);
+			}
+
+			.contact-container {
+				max-width: 700px;
+				margin: 0 auto;
+				background-color: var(--color-white);
+				padding: 40px;
+				border-radius: 20px;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+			}
+
+			.form-group {
+				margin-bottom: 20px;
+			}
+
+			.form-group label {
+				display: block;
+				margin-bottom: 8px;
+				color: var(--color-navy);
+				font-weight: 600;
+				font-size: 0.95rem;
+			}
+
+			.form-group input,
+			.form-group select,
+			.form-group textarea {
+				width: 100%;
+				padding: 12px 15px;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				font-family: var(--font-body);
+				font-size: 1rem;
+				color: #333;
+				transition: var(--transition);
+				background-color: #f9f9f9;
+			}
+
+			.form-group input:focus,
+			.form-group select:focus,
+			.form-group textarea:focus {
+				outline: none;
+				border-color: var(--color-sky);
+				background-color: var(--color-white);
+				box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.1);
+			}
+
+			.form-group textarea {
+				resize: vertical;
+				min-height: 120px;
+			}
+
+			.required-mark {
+				color: red;
+			}
+
+			/* =========================================
            FOOTER
            ========================================= */
 			footer {
@@ -1077,6 +1137,12 @@
 				.pricing-card.best-seller {
 					transform: none;
 					margin: 20px 0;
+				}
+
+				/* Ajuste form en movil */
+				.contact-container {
+					padding: 25px;
+					width: 95%;
 				}
 			}
 		</style>
@@ -2136,8 +2202,103 @@
 			</div>
 		</section>
 
+		<!-- Contact Form Section (NUEVO) -->
+		<section class="section-padding contact-section" id="contacto">
+			<div class="container">
+				<div class="section-title">
+					<h2>¿Listo para empezar?</h2>
+					<p>
+						Cuéntanos un poco sobre tu proyecto y nos pondremos en contacto
+						contigo.
+					</p>
+				</div>
+
+				<div class="contact-container">
+					<form action="#" method="POST">
+						<div class="form-group">
+							<label for="name"
+								>Nombre <span class="required-mark">*</span></label
+							>
+							<input
+								type="text"
+								id="name"
+								name="name"
+								placeholder="Tu nombre completo"
+								required
+							/>
+						</div>
+
+						<div class="form-group">
+							<label for="company">Nombre de tu Empresa</label>
+							<input
+								type="text"
+								id="company"
+								name="company"
+								placeholder="Ej. Barbería El Rey"
+							/>
+						</div>
+
+						<div class="form-group">
+							<label for="email"
+								>Correo Electrónico <span class="required-mark">*</span></label
+							>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								placeholder="tucorreo@ejemplo.com"
+								required
+							/>
+						</div>
+
+						<div class="form-group">
+							<label for="phone">Número de Teléfono (Opcional)</label>
+							<input
+								type="tel"
+								id="phone"
+								name="phone"
+								placeholder="+52 55 1234 5678"
+							/>
+						</div>
+
+						<div class="form-group">
+							<label for="package">Paquete de Interés</label>
+							<select id="package" name="package">
+								<option value="start">Koda Start ($4,000 MXN)</option>
+								<option value="pro">Koda Pro ($5,000 MXN)</option>
+								<option value="business">Koda Empresarial (Cotización)</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="message"
+								>Descripción de lo que necesitas
+								<span class="required-mark">*</span></label
+							>
+							<textarea
+								id="message"
+								name="message"
+								placeholder="Cuéntanos brevemente sobre tu negocio y qué te gustaría lograr con tu sitio web..."
+								required
+							></textarea>
+						</div>
+
+						<div style="text-align: center">
+							<button
+								type="submit"
+								class="btn btn-primary"
+								style="min-width: 200px"
+							>
+								Enviar Solicitud
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
 		<!-- Footer -->
-		<footer id="contacto">
+		<footer>
 			<div class="container">
 				<div class="footer-grid">
 					<!-- Columna 1: Logo Vertical -->
