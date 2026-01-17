@@ -1631,17 +1631,17 @@
 				dots[index].classList.add("active");
 			}
 
+			// Calcula la posición exacta en píxeles, sumando ancho + gap
+			function updateSlidePosition() {
+				const slideWidth = slides[0].getBoundingClientRect().width;
+				const gap = 20; // Debe coincidir con CSS .testimonial-track gap
+				const offset = (slideWidth + gap) * currentIndex;
+				track.style.transform = `translateX(-${offset}px)`;
+			}
+
 			function goToSlide(index) {
 				currentIndex = index;
-				// 20px es el gap, 100% es el ancho
-				// Calculo aproximado para mover el track
-				const slideWidth = slides[0].getBoundingClientRect().width;
-				const gap = 20;
-				// En pantallas grandes a veces mostramos solo 1. Simplifiquemos con transform porcentual
-				track.style.transform = `translateX(-${index * 100}%)`;
-				// Nota: En un slider real responsive a veces se requiere calcular px exactos o usar librerias como Swiper
-				// Ajuste simplificado: asumimos 1 slide visible por vez en esta estructura CSS
-
+				updateSlidePosition();
 				updateDots(index);
 			}
 
@@ -1659,6 +1659,11 @@
 				} else {
 					goToSlide(currentIndex - 1);
 				}
+			});
+
+			// Listener para ajustar si cambia el tamaño de la ventana
+			window.addEventListener("resize", () => {
+				updateSlidePosition();
 			});
 
 			// Auto-play opcional
