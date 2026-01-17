@@ -415,6 +415,139 @@
 			}
 
 			/* =========================================
+           TESTIMONIALS SECTION (SLIDER)
+           ========================================= */
+			.testimonials-section {
+				background-color: var(--color-navy);
+				color: var(--color-white);
+				overflow: hidden; /* Para que el slider no rompa el layout */
+			}
+
+			.testimonials-section .section-title h2 {
+				color: var(--color-white);
+			}
+
+			.testimonials-section .section-title p {
+				color: #b0bec5;
+			}
+
+			.testimonial-slider-container {
+				position: relative;
+				max-width: 900px;
+				margin: 0 auto;
+				padding: 20px 0;
+			}
+
+			.testimonial-track {
+				display: flex;
+				transition: transform 0.5s ease-in-out;
+				gap: 20px;
+			}
+
+			.testimonial-slide {
+				min-width: 100%;
+				background: var(--color-white);
+				color: var(--color-black);
+				padding: 40px;
+				border-radius: 15px;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				position: relative;
+			}
+
+			/* Comillas decorativas */
+			.testimonial-slide::before {
+				content: "“";
+				font-family: serif;
+				font-size: 6rem;
+				color: rgba(79, 195, 247, 0.2);
+				position: absolute;
+				top: 10px;
+				left: 20px;
+				line-height: 1;
+			}
+
+			.testimonial-text {
+				font-size: 1.1rem;
+				font-style: italic;
+				margin-bottom: 25px;
+				color: #444;
+				max-width: 90%;
+				z-index: 1;
+			}
+
+			.testimonial-author h4 {
+				color: var(--color-navy);
+				margin-bottom: 5px;
+				font-size: 1.1rem;
+			}
+
+			.testimonial-meta {
+				font-size: 0.9rem;
+				color: var(--color-slate);
+				display: flex;
+				align-items: center;
+				gap: 5px;
+				justify-content: center;
+			}
+
+			.testimonial-meta i {
+				width: 14px;
+				height: 14px;
+			}
+
+			/* Controles del Slider */
+			.slider-controls {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-top: 30px;
+				gap: 20px;
+			}
+
+			.slider-btn {
+				background: rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				color: var(--color-white);
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: var(--transition);
+			}
+
+			.slider-btn:hover {
+				background: var(--color-sky);
+				color: var(--color-navy);
+				border-color: var(--color-sky);
+			}
+
+			.slider-dots {
+				display: flex;
+				gap: 8px;
+			}
+
+			.dot {
+				width: 10px;
+				height: 10px;
+				background: rgba(255, 255, 255, 0.3);
+				border-radius: 50%;
+				cursor: pointer;
+				transition: var(--transition);
+			}
+
+			.dot.active {
+				background: var(--color-sky);
+				transform: scale(1.2);
+			}
+
+			/* =========================================
            PRICING (3 PACKS)
            ========================================= */
 			.pricing-section {
@@ -885,7 +1018,246 @@
 			</div>
 		</section>
 
-		<!-- Industrias (Mejorado) -->
+		<!-- Testimonios (Slider Nuevo - MOVIDO AQUÍ) -->
+		<section class="section-padding testimonials-section">
+			<div class="container">
+				<div class="section-title">
+					<h2>Historias de Éxito</h2>
+					<p>
+						Empresarios de todo México que transformaron su negocio con Koda
+						Studio.
+					</p>
+				</div>
+
+				<div class="testimonial-slider-container">
+					<div class="testimonial-track" id="testimonialTrack">
+						<!-- Testimonio 1: Abogado -->
+						<div class="testimonial-slide">
+							<div class="testimonial-text">
+								"La seriedad que proyecta mi firma ahora es incomparable. Koda
+								Studio entendió perfecto que necesitábamos sobriedad y
+								confianza. Los clientes ahora llegan mucho más filtrados y
+								decididos."
+							</div>
+							<div class="testimonial-author">
+								<h4>Lic. Roberto Méndez</h4>
+								<div class="testimonial-meta">
+									<i
+										data-lucide="scale"
+										style="width: 14px; color: var(--color-slate)"
+									></i>
+									Abogado &middot; Ciudad de México
+								</div>
+							</div>
+						</div>
+
+						<!-- Testimonio 2: Arquitectura -->
+						<div class="testimonial-slide">
+							<div class="testimonial-text">
+								"Necesitaba que mis renders se vieran perfectos en cualquier
+								pantalla. El sitio carga rapidísimo y la galería inmersiva ha
+								sido clave para cerrar dos proyectos grandes este mes."
+							</div>
+							<div class="testimonial-author">
+								<h4>Arq. Sofía Ramírez</h4>
+								<div class="testimonial-meta">
+									<i
+										data-lucide="compass"
+										style="width: 14px; color: var(--color-slate)"
+									></i>
+									Arquitectura &middot; Monterrey, NL
+								</div>
+							</div>
+						</div>
+
+						<!-- Testimonio 3: Restaurante -->
+						<div class="testimonial-slide">
+							<div class="testimonial-text">
+								"El menú QR que diseñaron no solo es funcional, es bonito. A los
+								clientes les encanta y nosotros podemos actualizar precios al
+								instante sin reimprimir nada. Una maravilla."
+							</div>
+							<div class="testimonial-author">
+								<h4>Carlos Durán</h4>
+								<div class="testimonial-meta">
+									<i
+										data-lucide="utensils"
+										style="width: 14px; color: var(--color-slate)"
+									></i>
+									Restaurantero &middot; Guadalajara, Jal.
+								</div>
+							</div>
+						</div>
+
+						<!-- Testimonio 4: Hotel -->
+						<div class="testimonial-slide">
+							<div class="testimonial-text">
+								"Estábamos perdiendo mucho dinero en comisiones de OTAs. Con el
+								nuevo sitio, las reservas directas aumentaron un 40% en tres
+								meses. La inversión se pagó sola."
+							</div>
+							<div class="testimonial-author">
+								<h4>Elena Valenzuela</h4>
+								<div class="testimonial-meta">
+									<i
+										data-lucide="bed-double"
+										style="width: 14px; color: var(--color-slate)"
+									></i>
+									Hotelería &middot; Cancún, QR
+								</div>
+							</div>
+						</div>
+
+						<!-- Testimonio 5: Contador -->
+						<div class="testimonial-slide">
+							<div class="testimonial-text">
+								"Antes perdía horas en WhatsApp agendando citas. Ahora
+								simplemente les paso mi link y el sistema hace todo. Mis
+								clientes valoran mucho la facilidad para reservar."
+							</div>
+							<div class="testimonial-author">
+								<h4>C.P. Javier López</h4>
+								<div class="testimonial-meta">
+									<i
+										data-lucide="calculator"
+										style="width: 14px; color: var(--color-slate)"
+									></i>
+									Contador &middot; Querétaro, Qro.
+								</div>
+							</div>
+						</div>
+
+						<!-- Testimonio 6: Bienes Raíces -->
+						<div class="testimonial-slide">
+							<div class="testimonial-text">
+								"La ficha de propiedades es muy limpia y el botón de WhatsApp
+								flota justo donde debe. He notado que recibo mensajes de gente
+								realmente interesada, no solo curiosos."
+							</div>
+							<div class="testimonial-author">
+								<h4>Mariana Guerra</h4>
+								<div class="testimonial-meta">
+									<i
+										data-lucide="home"
+										style="width: 14px; color: var(--color-slate)"
+									></i>
+									Real Estate &middot; Mérida, Yuc.
+								</div>
+							</div>
+						</div>
+
+						<!-- Testimonio 7: Odontología (NUEVO) -->
+						<div class="testimonial-slide">
+							<div class="testimonial-text">
+								"Mis pacientes agradecen poder elegir su horario sin tener que
+								esperar a que mi secretaria les conteste. La página se ve
+								impecable en celulares."
+							</div>
+							<div class="testimonial-author">
+								<h4>Dra. Valentina Cruz</h4>
+								<div class="testimonial-meta">
+									<i
+										data-lucide="smile"
+										style="width: 14px; color: var(--color-slate)"
+									></i>
+									Odontología &middot; Puebla, Pue.
+								</div>
+							</div>
+						</div>
+
+						<!-- Testimonio 8: Boutique (NUEVO) -->
+						<div class="testimonial-slide">
+							<div class="testimonial-text">
+								"Subir mis colecciones nuevas es facilísimo. Koda Studio me
+								ayudó a que mi marca local se viera como una franquicia
+								internacional."
+							</div>
+							<div class="testimonial-author">
+								<h4>Andrea Meza</h4>
+								<div class="testimonial-meta">
+									<i
+										data-lucide="shopping-bag"
+										style="width: 14px; color: var(--color-slate)"
+									></i>
+									Boutique &middot; León, Gto.
+								</div>
+							</div>
+						</div>
+
+						<!-- Testimonio 9: Consultoría (NUEVO) -->
+						<div class="testimonial-slide">
+							<div class="testimonial-text">
+								"La inversión se recuperó con el primer cliente que llegó a
+								través del formulario de contacto. Excelente servicio y soporte
+								post-venta."
+							</div>
+							<div class="testimonial-author">
+								<h4>Lic. Eduardo Torres</h4>
+								<div class="testimonial-meta">
+									<i
+										data-lucide="briefcase"
+										style="width: 14px; color: var(--color-slate)"
+									></i>
+									Consultor &middot; Tijuana, BC.
+								</div>
+							</div>
+						</div>
+
+						<!-- Testimonio 10: Fitness (NUEVO) -->
+						<div class="testimonial-slide">
+							<div class="testimonial-text">
+								"Desde que aparecemos en Google Maps con el sitio web nuevo, las
+								inscripciones aumentaron notablemente. La gente confía más en
+								nosotros."
+							</div>
+							<div class="testimonial-author">
+								<h4>Coach Marco Polo</h4>
+								<div class="testimonial-meta">
+									<i
+										data-lucide="activity"
+										style="width: 14px; color: var(--color-slate)"
+									></i>
+									Fitness &middot; Veracruz, Ver.
+								</div>
+							</div>
+						</div>
+
+						<!-- Testimonio 11: Barbería (NUEVO) -->
+						<div class="testimonial-slide">
+							<div class="testimonial-text">
+								"El sistema de citas es una joya. Ya no interrumpo mis cortes
+								para contestar llamadas. Mis clientes llegan, se cortan y
+								listo."
+							</div>
+							<div class="testimonial-author">
+								<h4>Luis Hernández</h4>
+								<div class="testimonial-meta">
+									<i
+										data-lucide="scissors"
+										style="width: 14px; color: var(--color-slate)"
+									></i>
+									Barber Shop &middot; CDMX
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slider-controls">
+						<button class="slider-btn" id="prevBtn" aria-label="Anterior">
+							<i data-lucide="chevron-left"></i>
+						</button>
+						<div class="slider-dots" id="sliderDots">
+							<!-- Dots generados con JS -->
+						</div>
+						<button class="slider-btn" id="nextBtn" aria-label="Siguiente">
+							<i data-lucide="chevron-right"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Industrias (Movido después de Testimonios) -->
 		<section class="section-padding industries-section">
 			<div class="container">
 				<div class="section-title">
@@ -1229,6 +1601,71 @@
 					header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
 				}
 			});
+
+			// ============================
+			// TESTIMONIAL SLIDER LOGIC
+			// ============================
+			const track = document.getElementById("testimonialTrack");
+			const slides = Array.from(track.children);
+			const nextBtn = document.getElementById("nextBtn");
+			const prevBtn = document.getElementById("prevBtn");
+			const dotsContainer = document.getElementById("sliderDots");
+
+			let currentIndex = 0;
+
+			// Crear Dots
+			slides.forEach((_, index) => {
+				const dot = document.createElement("div");
+				dot.classList.add("dot");
+				if (index === 0) dot.classList.add("active");
+				dot.addEventListener("click", () => {
+					goToSlide(index);
+				});
+				dotsContainer.appendChild(dot);
+			});
+
+			const dots = Array.from(dotsContainer.children);
+
+			function updateDots(index) {
+				dots.forEach(dot => dot.classList.remove("active"));
+				dots[index].classList.add("active");
+			}
+
+			function goToSlide(index) {
+				currentIndex = index;
+				// 20px es el gap, 100% es el ancho
+				// Calculo aproximado para mover el track
+				const slideWidth = slides[0].getBoundingClientRect().width;
+				const gap = 20;
+				// En pantallas grandes a veces mostramos solo 1. Simplifiquemos con transform porcentual
+				track.style.transform = `translateX(-${index * 100}%)`;
+				// Nota: En un slider real responsive a veces se requiere calcular px exactos o usar librerias como Swiper
+				// Ajuste simplificado: asumimos 1 slide visible por vez en esta estructura CSS
+
+				updateDots(index);
+			}
+
+			nextBtn.addEventListener("click", () => {
+				if (currentIndex === slides.length - 1) {
+					goToSlide(0); // Loop al inicio
+				} else {
+					goToSlide(currentIndex + 1);
+				}
+			});
+
+			prevBtn.addEventListener("click", () => {
+				if (currentIndex === 0) {
+					goToSlide(slides.length - 1); // Loop al final
+				} else {
+					goToSlide(currentIndex - 1);
+				}
+			});
+
+			// Auto-play opcional
+			setInterval(() => {
+				// if (currentIndex === slides.length - 1) goToSlide(0);
+				// else goToSlide(currentIndex + 1);
+			}, 5000);
 		</script>
 	</body>
 </html>
