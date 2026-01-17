@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Generador Imagen Social - Koda Studio</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@400&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://unpkg.com/lucide@latest"></script>
+		<style>
+			body {
+				background-color: #333; /* Fondo oscuro para que resalte el canvas */
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+				font-family: "Montserrat", sans-serif;
+			}
+
+			/* =========================================
+           EL CONTENEDOR DE LA IMAGEN (1200x630)
+           ========================================= */
+			.social-card {
+				width: 1200px;
+				height: 630px;
+				/* Fondo base azul navy */
+				background: linear-gradient(135deg, #1a237e 0%, #0d1245 100%);
+				display: grid;
+				/* Dividimos: 55% texto, 45% imagen */
+				grid-template-columns: 1.2fr 1fr;
+				overflow: hidden;
+				/* Sombra solo para verlo mejor en el navegador */
+				box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+				position: relative;
+			}
+
+			/* --- Lado Izquierdo: Contenido --- */
+			.content-side {
+				padding: 80px 60px 80px 80px; /* Ajuste de padding */
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				position: relative;
+				z-index: 10; /* Asegura que el texto esté sobre los decorativos */
+			}
+
+			/* Nuevo contenedor para el logo de imagen */
+			.logo-container {
+				margin-bottom: 40px;
+			}
+
+			/* Ajuste del tamaño del logo para que se vea equilibrado */
+			.logo-container img {
+				height: auto;
+				width: 250px; /* Ancho controlado */
+				display: block;
+			}
+
+			h1 {
+				color: #ffffff;
+				font-size: 4.2rem; /* Un poco más grande */
+				line-height: 1.1;
+				margin-bottom: 20px;
+				margin-top: 0;
+			}
+
+			h1 span {
+				color: #4fc3f7; /* Sky Blue para destacar */
+			}
+
+			p {
+				font-family: "Roboto", sans-serif;
+				color: #b0bec5;
+				font-size: 1.8rem;
+				margin-top: 0;
+				font-weight: 400;
+			}
+
+			/* Botón visual (no es funcional, solo decorativo) */
+			.cta-fake {
+				margin-top: 50px;
+				display: inline-block;
+				align-items: center;
+				align-self: flex-start;
+				background: #4fc3f7;
+				color: #1a237e;
+				padding: 15px 40px;
+				border-radius: 50px;
+				font-size: 1.6rem;
+				font-weight: 800;
+				box-shadow: 0 10px 20px rgba(79, 195, 247, 0.3);
+			}
+
+			/* --- Lado Derecho: Imagen de Relleno --- */
+			.image-side {
+				position: relative;
+				height: 100%;
+				width: 100%;
+				/* IMPORTANTE: Asegúrate de que esta ruta sea correcta */
+				background-image: url("assets/person-in-computer-large.png");
+				/* 'cover' asegura que la imagen rellene todo el espacio sin deformarse */
+				background-size: cover;
+				/* Centra la imagen para que el foco (el hombre) se vea bien */
+				background-position: center center;
+			}
+
+			/* Capa de degradado para fusionar la imagen con el fondo azul */
+			.image-side::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				/* Degradado de Azul sólido (izquierda) a transparente (derecha) */
+				background: linear-gradient(to right, #1a237e 10%, transparent 80%);
+			}
+
+			/* --- Decoración de fondo --- */
+			.decoration-orb {
+				position: absolute;
+				width: 700px;
+				height: 700px;
+				background: #4fc3f7;
+				border-radius: 50%;
+				filter: blur(200px);
+				opacity: 0.15;
+				top: -300px;
+				left: -200px;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="social-card">
+			<div class="decoration-orb"></div>
+
+			<div class="content-side">
+				<div class="logo-container">
+					<img
+						src="assets/logos/secondary-version.png"
+						alt="Koda Studio Logo"
+					/>
+				</div>
+
+				<h1>Tu Socio <span>Digital</span> en México</h1>
+				<p>Diseño Web • QR • Citas</p>
+
+				<div class="cta-fake">kodastudio.com.mx</div>
+			</div>
+
+			<div class="image-side"></div>
+		</div>
+	</body>
+</html>
