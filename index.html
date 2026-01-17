@@ -172,6 +172,7 @@
 			.nav-links {
 				display: flex;
 				gap: 30px;
+				align-items: center; /* Alineación vertical corregida */
 			}
 
 			.nav-links a {
@@ -347,6 +348,73 @@
 			}
 
 			/* =========================================
+           INDUSTRIES SECTION
+           ========================================= */
+			.industries-section {
+				background-color: var(--color-offwhite);
+			}
+
+			.industries-grid {
+				display: grid;
+				grid-template-columns: repeat(
+					auto-fit,
+					minmax(280px, 1fr)
+				); /* Tarjetas más anchas */
+				gap: 30px;
+				justify-content: center;
+			}
+
+			.industry-item {
+				background: var(--color-white);
+				padding: 40px 30px;
+				border-radius: 15px;
+				text-align: left; /* Alineación a la izquierda para mejor lectura */
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+				transition: var(--transition);
+				border: 1px solid transparent;
+				border-bottom: 4px solid var(--color-slate); /* Borde sutil por defecto */
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			.industry-item:hover {
+				transform: translateY(-8px);
+				border-color: var(--color-sky); /* Highlight color */
+				border-bottom-color: var(--color-sky);
+				box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+			}
+
+			.industry-icon {
+				width: 48px;
+				height: 48px;
+				color: var(--color-navy);
+				margin-bottom: 20px;
+				transition: var(--transition);
+				background-color: rgba(26, 35, 126, 0.05);
+				padding: 10px;
+				border-radius: 10px;
+			}
+
+			.industry-item:hover .industry-icon {
+				color: var(--color-white);
+				background-color: var(--color-navy);
+				transform: scale(1.1);
+			}
+
+			.industry-item h4 {
+				font-size: 1.3rem;
+				color: var(--color-navy);
+				margin-bottom: 10px;
+			}
+
+			.industry-item p {
+				color: var(--color-slate);
+				font-size: 0.95rem;
+				line-height: 1.5;
+			}
+
+			/* =========================================
            PRICING (3 PACKS)
            ========================================= */
 			.pricing-section {
@@ -375,10 +443,10 @@
 				border: 1px solid transparent;
 			}
 
-			/* Estilos específicos para destacar el Best Seller */
+			/* Estilos específicos para destacar el Más Popular */
 			.pricing-card.best-seller {
 				border: 3px solid var(--color-sky);
-				transform: scale(1.05);
+				/* transform: scale(1.05); REMOVIDO para igualar altura */
 				z-index: 2;
 			}
 
@@ -817,6 +885,76 @@
 			</div>
 		</section>
 
+		<!-- Industrias (Mejorado) -->
+		<section class="section-padding industries-section">
+			<div class="container">
+				<div class="section-title">
+					<h2>Impulsando el Éxito en Sectores Clave</h2>
+					<p>
+						Nuestra tecnología está diseñada para resolver los retos específicos
+						de tu industria y aumentar tus ventas.
+					</p>
+				</div>
+
+				<div class="industries-grid">
+					<!-- Abogados -->
+					<div class="industry-item">
+						<i data-lucide="scale" class="industry-icon"></i>
+						<h4>Abogados & Firmas</h4>
+						<p>
+							Digitalizamos tu reputación. Genera confianza inmediata y capta
+							clientes calificados con un sitio sobrio y profesional.
+						</p>
+					</div>
+					<!-- Arquitectura -->
+					<div class="industry-item">
+						<i data-lucide="compass" class="industry-icon"></i>
+						<h4>Arquitectura & Diseño</h4>
+						<p>
+							Tu portafolio como herramienta de venta. Galerías inmersivas de
+							alta resolución que convencen a inversores y clientes.
+						</p>
+					</div>
+					<!-- Restaurantes -->
+					<div class="industry-item">
+						<i data-lucide="utensils" class="industry-icon"></i>
+						<h4>Restaurantes & Cafés</h4>
+						<p>
+							Llena más mesas. Menús digitales con QR que antojan y sistemas de
+							reserva directa sin depender de terceros.
+						</p>
+					</div>
+					<!-- Hoteles -->
+					<div class="industry-item">
+						<i data-lucide="bed-double" class="industry-icon"></i>
+						<h4>Hoteles & AirBnb</h4>
+						<p>
+							Aumenta tus reservas directas. Muestra la experiencia real de tu
+							hospedaje y evita las altas comisiones de agencias.
+						</p>
+					</div>
+					<!-- Contadores -->
+					<div class="industry-item">
+						<i data-lucide="calculator" class="industry-icon"></i>
+						<h4>Contadores & Consultores</h4>
+						<p>
+							Automatiza tu agenda. Permite que tus clientes reserven asesorías
+							pagadas o gratuitas sin interrumpir tu trabajo.
+						</p>
+					</div>
+					<!-- Bienes Raíces -->
+					<div class="industry-item">
+						<i data-lucide="home" class="industry-icon"></i>
+						<h4>Bienes Raíces</h4>
+						<p>
+							Vende más rápido. Filtra interesados reales con fichas de
+							propiedades detalladas y botones directos a WhatsApp.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- Pricing (3 Paquetes) -->
 		<section class="section-padding pricing-section" id="paquetes">
 			<div class="container">
@@ -832,7 +970,7 @@
 				<div class="pricing-grid">
 					<!-- PAQUETE 1: KODA START -->
 					<div class="pricing-card best-seller">
-						<div class="best-seller-label">Best Seller</div>
+						<div class="best-seller-label">Más Popular</div>
 						<div class="pricing-header">
 							<h3>KODA START</h3>
 							<div class="price">$4,000 <span>MXN</span></div>
