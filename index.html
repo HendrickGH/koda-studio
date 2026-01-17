@@ -9,10 +9,8 @@
 			content="Diseño web profesional, correos corporativos y sistemas de citas. Llevamos tu negocio al siguiente nivel digital en todo México."
 		/>
 
-		<!-- Favicon -->
 		<link rel="icon" type="image/svg+xml" href="assets/logos/favicon.png" />
 
-		<!-- Fuentes: Montserrat (Títulos) y Roboto (Cuerpo) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -20,7 +18,6 @@
 			rel="stylesheet"
 		/>
 
-		<!-- Iconos (Lucide Icons via CDN para ligereza) -->
 		<script src="https://unpkg.com/lucide@latest"></script>
 
 		<style>
@@ -61,6 +58,7 @@
 				background-color: var(--color-white);
 				color: var(--color-black);
 				line-height: 1.6;
+				overflow-x: hidden;
 			}
 
 			h1,
@@ -79,6 +77,25 @@
 
 			ul {
 				list-style: none;
+			}
+
+			/* =========================================
+           ANIMACIONES EN CASCADA (NUEVO)
+           ========================================= */
+			/* Clase para elementos individuales (NO secciones completas) */
+			.animate-item {
+				opacity: 0;
+				transform: translateY(30px); /* Desplazamiento inicial hacia abajo */
+				transition:
+					opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+					transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				will-change: opacity, transform;
+			}
+
+			/* Estado visible activado por JS */
+			.animate-item.is-visible {
+				opacity: 1;
+				transform: translateY(0);
 			}
 
 			/* Utility Classes */
@@ -141,8 +158,8 @@
            HEADER & NAV
            ========================================= */
 			header {
-				background-color: var(--color-white); /* Cambio a blanco */
-				color: var(--color-navy); /* Cambio de texto a navy para contraste */
+				background-color: var(--color-white);
+				color: var(--color-navy);
 				position: fixed;
 				width: 100%;
 				top: 0;
@@ -157,13 +174,11 @@
 				height: 80px;
 			}
 
-			/* Logo Placeholder Styles */
 			.logo-container img {
 				height: 40px;
 				display: block;
 			}
 
-			/* Simulación de logo para la demo */
 			.logo-mockup {
 				display: flex;
 				align-items: center;
@@ -171,15 +186,15 @@
 
 			.nav-links {
 				display: flex;
-				gap: 20px; /* Reducido un poco para que quepan mas links */
-				align-items: center; /* Alineación vertical corregida */
+				gap: 20px;
+				align-items: center;
 			}
 
 			.nav-links a {
-				font-weight: 600; /* Un poco más grueso para leerse mejor en blanco */
+				font-weight: 600;
 				font-size: 0.9rem;
 				transition: color 0.3s;
-				color: var(--color-navy); /* Color oscuro para contraste */
+				color: var(--color-navy);
 			}
 
 			.nav-links a:hover {
@@ -189,7 +204,7 @@
 			.hamburger {
 				display: none;
 				cursor: pointer;
-				color: var(--color-navy); /* Hamburguesa oscura */
+				color: var(--color-navy);
 			}
 
 			/* =========================================
@@ -268,6 +283,100 @@
 				font-weight: 600;
 			}
 
+			.intro-image img {
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+			}
+
+			/* =========================================
+           PROCESS SECTION
+           ========================================= */
+			.process-section {
+				background-color: var(--color-navy);
+				color: var(--color-white);
+			}
+
+			.process-section .section-title h2 {
+				color: var(--color-white);
+			}
+
+			.process-section .section-title p {
+				color: #e0e0e0;
+			}
+
+			.process-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 40px;
+				position: relative;
+				margin-top: 40px;
+			}
+
+			.step-card {
+				background: transparent;
+				padding: 20px;
+				text-align: center;
+				position: relative;
+			}
+
+			.step-number {
+				font-size: 5rem;
+				font-weight: 800;
+				color: rgba(255, 255, 255, 0.08);
+				position: absolute;
+				top: -60px;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 0;
+			}
+
+			.step-content {
+				position: relative;
+				z-index: 1;
+			}
+
+			.step-icon-wrapper {
+				width: 70px;
+				height: 70px;
+				background-color: var(--color-white);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 20px;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+				color: var(--color-sky);
+			}
+
+			.step-card h3 {
+				margin-bottom: 15px;
+				color: var(--color-white);
+			}
+
+			.step-card p {
+				color: #b0bec5;
+			}
+
+			/* Linea conectora para desktop */
+			@media (min-width: 992px) {
+				.process-grid::before {
+					content: "";
+					position: absolute;
+					top: 55px; /* Ajustar segun altura icono */
+					left: 15%;
+					right: 15%;
+					height: 2px;
+					background: repeating-linear-gradient(
+						to right,
+						rgba(255, 255, 255, 0.3) 0,
+						rgba(255, 255, 255, 0.3) 10px,
+						transparent 10px,
+						transparent 20px
+					);
+					opacity: 0.5;
+					z-index: 0;
+				}
+			}
+
 			/* =========================================
            SERVICES GRID
            ========================================= */
@@ -311,7 +420,6 @@
 				border-color: var(--color-sky);
 			}
 
-			/* Distintivo para servicios destacados */
 			.service-badge {
 				position: absolute;
 				top: 0;
@@ -325,6 +433,7 @@
 				text-transform: uppercase;
 			}
 
+			/* Efecto de relleno en icono */
 			.service-icon {
 				width: 60px;
 				height: 60px;
@@ -352,73 +461,6 @@
 			.service-card p {
 				color: var(--color-slate);
 				font-size: 0.95rem;
-			}
-
-			/* =========================================
-           INDUSTRIES SECTION
-           ========================================= */
-			.industries-section {
-				background-color: var(--color-offwhite);
-			}
-
-			.industries-grid {
-				display: grid;
-				grid-template-columns: repeat(
-					auto-fit,
-					minmax(280px, 1fr)
-				); /* Tarjetas más anchas */
-				gap: 30px;
-				justify-content: center;
-			}
-
-			.industry-item {
-				background: var(--color-white);
-				padding: 40px 30px;
-				border-radius: 15px;
-				text-align: left; /* Alineación a la izquierda para mejor lectura */
-				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-				transition: var(--transition);
-				border: 1px solid transparent;
-				border-bottom: 4px solid var(--color-slate); /* Borde sutil por defecto */
-				display: flex;
-				flex-direction: column;
-				align-items: flex-start;
-			}
-
-			.industry-item:hover {
-				transform: translateY(-8px);
-				border-color: var(--color-sky); /* Highlight color */
-				border-bottom-color: var(--color-sky);
-				box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-			}
-
-			.industry-icon {
-				width: 48px;
-				height: 48px;
-				color: var(--color-navy);
-				margin-bottom: 20px;
-				transition: var(--transition);
-				background-color: rgba(26, 35, 126, 0.05);
-				padding: 10px;
-				border-radius: 10px;
-			}
-
-			.industry-item:hover .industry-icon {
-				color: var(--color-white);
-				background-color: var(--color-navy);
-				transform: scale(1.1);
-			}
-
-			.industry-item h4 {
-				font-size: 1.3rem;
-				color: var(--color-navy);
-				margin-bottom: 10px;
-			}
-
-			.industry-item p {
-				color: var(--color-slate);
-				font-size: 0.95rem;
-				line-height: 1.5;
 			}
 
 			/* =========================================
@@ -564,6 +606,70 @@
 			}
 
 			/* =========================================
+           INDUSTRIES SECTION
+           ========================================= */
+			.industries-section {
+				background-color: var(--color-offwhite);
+			}
+
+			.industries-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 30px;
+				justify-content: center;
+			}
+
+			.industry-item {
+				background: var(--color-white);
+				padding: 40px 30px;
+				border-radius: 15px;
+				text-align: left;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+				transition: var(--transition);
+				border: 1px solid transparent;
+				border-bottom: 4px solid var(--color-slate);
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			.industry-item:hover {
+				transform: translateY(-8px);
+				border-color: var(--color-sky);
+				border-bottom-color: var(--color-sky);
+				box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+			}
+
+			.industry-icon {
+				width: 48px;
+				height: 48px;
+				color: var(--color-navy);
+				margin-bottom: 20px;
+				transition: var(--transition);
+				background-color: rgba(26, 35, 126, 0.05);
+				padding: 10px;
+				border-radius: 10px;
+			}
+
+			.industry-item:hover .industry-icon {
+				color: var(--color-white);
+				background-color: var(--color-navy);
+				transform: scale(1.1);
+			}
+
+			.industry-item h4 {
+				font-size: 1.3rem;
+				color: var(--color-navy);
+				margin-bottom: 10px;
+			}
+
+			.industry-item p {
+				color: var(--color-slate);
+				font-size: 0.95rem;
+				line-height: 1.5;
+			}
+
+			/* =========================================
            PORTFOLIO SECTION
            ========================================= */
 			.portfolio-section {
@@ -693,6 +799,65 @@
 			}
 
 			/* =========================================
+           FAQ SECTION
+           ========================================= */
+			.faq-section {
+				background-color: var(--color-white);
+			}
+
+			.faq-container {
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			.accordion-item {
+				border-bottom: 1px solid #eee;
+				margin-bottom: 10px;
+			}
+
+			.accordion-header {
+				width: 100%;
+				padding: 20px;
+				background: none;
+				border: none;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				text-align: left;
+				font-family: var(--font-heading);
+				font-weight: 600;
+				font-size: 1.1rem;
+				color: var(--color-navy);
+				cursor: pointer;
+				transition: var(--transition);
+			}
+
+			.accordion-header:hover {
+				color: var(--color-sky);
+			}
+
+			.accordion-header i {
+				transition: transform 0.3s ease;
+			}
+
+			.accordion-header.active i {
+				transform: rotate(180deg);
+			}
+
+			.accordion-content {
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.3s ease-out;
+				padding: 0 20px;
+			}
+
+			.accordion-content p {
+				padding-bottom: 20px;
+				color: var(--color-slate);
+				font-size: 1rem;
+			}
+
+			/* =========================================
            PRICING (3 PACKS)
            ========================================= */
 			.pricing-section {
@@ -809,155 +974,6 @@
 				font-size: 0.75rem;
 				font-weight: 700;
 				margin-left: auto;
-			}
-
-			/* =========================================
-           FAQ SECTION
-           ========================================= */
-			.faq-section {
-				background-color: var(--color-white);
-			}
-
-			.faq-container {
-				max-width: 800px;
-				margin: 0 auto;
-			}
-
-			.accordion-item {
-				border-bottom: 1px solid #eee;
-				margin-bottom: 10px;
-			}
-
-			.accordion-header {
-				width: 100%;
-				padding: 20px;
-				background: none;
-				border: none;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				text-align: left;
-				font-family: var(--font-heading);
-				font-weight: 600;
-				font-size: 1.1rem;
-				color: var(--color-navy);
-				cursor: pointer;
-				transition: var(--transition);
-			}
-
-			.accordion-header:hover {
-				color: var(--color-sky);
-			}
-
-			.accordion-header i {
-				transition: transform 0.3s ease;
-			}
-
-			.accordion-header.active i {
-				transform: rotate(180deg);
-			}
-
-			.accordion-content {
-				max-height: 0;
-				overflow: hidden;
-				transition: max-height 0.3s ease-out;
-				padding: 0 20px;
-			}
-
-			.accordion-content p {
-				padding-bottom: 20px;
-				color: var(--color-slate);
-				font-size: 1rem;
-			}
-
-			/* =========================================
-           PROCESS SECTION
-           ========================================= */
-			.process-section {
-				background-color: var(--color-navy);
-				color: var(--color-white);
-			}
-
-			.process-section .section-title h2 {
-				color: var(--color-white);
-			}
-
-			.process-section .section-title p {
-				color: #e0e0e0;
-			}
-
-			.process-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-				gap: 40px;
-				position: relative;
-				margin-top: 40px;
-			}
-
-			.step-card {
-				background: transparent;
-				padding: 20px;
-				text-align: center;
-				position: relative;
-			}
-
-			.step-number {
-				font-size: 5rem;
-				font-weight: 800;
-				color: rgba(255, 255, 255, 0.08);
-				position: absolute;
-				top: -60px; /* Movido más arriba */
-				left: 50%;
-				transform: translateX(-50%);
-				z-index: 0;
-			}
-
-			.step-content {
-				position: relative;
-				z-index: 1;
-			}
-
-			.step-icon-wrapper {
-				width: 70px;
-				height: 70px;
-				background-color: var(--color-white);
-				border-radius: 50%;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				margin: 0 auto 20px;
-				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-				color: var(--color-sky);
-			}
-
-			.step-card h3 {
-				margin-bottom: 15px;
-				color: var(--color-white);
-			}
-
-			.step-card p {
-				color: #b0bec5;
-			}
-
-			/* Linea conectora para desktop */
-			@media (min-width: 992px) {
-				.process-grid::before {
-					content: "";
-					position: absolute;
-					top: 55px; /* Ajustar segun altura icono */
-					left: 15%;
-					right: 15%;
-					height: 2px;
-					background: repeating-linear-gradient(
-						to right,
-						rgba(255, 255, 255, 0.3) 0,
-						rgba(255, 255, 255, 0.3) 10px,
-						transparent 10px,
-						transparent 20px
-					);
-					opacity: 0.5;
-					z-index: 0;
-				}
 			}
 
 			/* =========================================
@@ -1204,14 +1220,11 @@
 		</style>
 	</head>
 	<body>
-		<!-- Header -->
 		<header>
 			<div class="container">
 				<nav>
-					<!-- LOGO HORIZONTAL -->
 					<div class="logo-container">
 						<a href="#" class="logo-mockup">
-							<!-- Assets preservados -->
 							<img
 								src="assets/logos/secondary-version.png"
 								alt="Logo Koda Studio"
@@ -1242,17 +1255,21 @@
 			</div>
 		</header>
 
-		<!-- Hero Section -->
 		<section class="hero" id="inicio">
 			<div class="container">
 				<div class="hero-content">
-					<h1>Digitaliza tu negocio y expande tu alcance en todo el país</h1>
-					<p>
+					<h1 class="animate-item">
+						Digitaliza tu negocio y expande tu alcance en todo el país
+					</h1>
+					<p class="animate-item">
 						Diseño web profesional, infraestructura robusta y herramientas
 						automatizadas. Todo lo que necesitas para crecer en México, sin
 						complicaciones técnicas.
 					</p>
-					<div style="display: flex; gap: 15px; flex-wrap: wrap">
+					<div
+						class="animate-item"
+						style="display: flex; gap: 15px; flex-wrap: wrap"
+					>
 						<a href="#paquetes" class="btn btn-primary">Ver Paquetes</a>
 						<a href="#servicios" class="btn btn-outline">Explorar Servicios</a>
 					</div>
@@ -1260,56 +1277,40 @@
 			</div>
 		</section>
 
-		<!-- Problema / Solución -->
 		<section class="section-padding intro-section">
 			<div class="container">
 				<div class="intro-grid">
 					<div class="intro-text">
-						<h2>Tus clientes te están buscando ahora mismo</h2>
-						<p>
+						<h2 class="animate-item">
+							Tus clientes te están buscando ahora mismo
+						</h2>
+						<p class="animate-item">
 							Hoy en día, la primera impresión de cualquier negocio ocurre en
 							internet. Tus clientes potenciales buscan servicios cerca de su
 							ubicación, y si tu negocio no aparece de forma profesional, es
 							probable que no logren encontrarte.
 						</p>
-						<div class="intro-highlight">
+						<div class="intro-highlight animate-item">
 							"En Koda Studio construimos tu sede digital: abierta 24/7, con
 							identidad propia y diseñada para generar confianza desde el primer
 							clic."
 						</div>
 					</div>
-					<!-- Imagen ilustrativa (Placeholder) -->
-					<div
-						class="intro-image"
-						style="
-							background: #ddd;
-							height: 300px;
-							border-radius: 12px;
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							color: #777;
-						"
-					>
-						[Imagen: Persona gestionando su negocio digital]
-					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Proceso Section (MOVIDO AQUÍ) -->
 		<section class="section-padding process-section" id="proceso">
 			<div class="container">
 				<div class="section-title">
-					<h2>Tu Nuevo Sitio en 3 Pasos</h2>
-					<p>
+					<h2 class="animate-item">Tu Nuevo Sitio en 3 Pasos</h2>
+					<p class="animate-item">
 						Hemos simplificado todo para que no te preocupes por la tecnología.
 					</p>
 				</div>
 
 				<div class="process-grid">
-					<!-- Paso 1 -->
-					<div class="step-card">
+					<div class="step-card animate-item">
 						<div class="step-number">01</div>
 						<div class="step-content">
 							<div class="step-icon-wrapper">
@@ -1323,8 +1324,7 @@
 						</div>
 					</div>
 
-					<!-- Paso 2 -->
-					<div class="step-card">
+					<div class="step-card animate-item">
 						<div class="step-number">02</div>
 						<div class="step-content">
 							<div class="step-icon-wrapper">
@@ -1338,8 +1338,7 @@
 						</div>
 					</div>
 
-					<!-- Paso 3 -->
-					<div class="step-card">
+					<div class="step-card animate-item">
 						<div class="step-number">03</div>
 						<div class="step-content">
 							<div class="step-icon-wrapper">
@@ -1356,17 +1355,17 @@
 			</div>
 		</section>
 
-		<!-- Servicios -->
 		<section class="section-padding services-section" id="servicios">
 			<div class="container">
 				<div class="section-title">
-					<h2>Lo que hacemos por ti</h2>
-					<p>Soluciones integrales para digitalizar tu empresa</p>
+					<h2 class="animate-item">Lo que hacemos por ti</h2>
+					<p class="animate-item">
+						Soluciones integrales para digitalizar tu empresa
+					</p>
 				</div>
 
 				<div class="services-grid">
-					<!-- 1. Diseño -->
-					<div class="service-card">
+					<div class="service-card animate-item">
 						<div class="service-badge">Esencial</div>
 						<div class="service-icon">
 							<i data-lucide="monitor"></i>
@@ -1378,8 +1377,7 @@
 						</p>
 					</div>
 
-					<!-- 2. Infraestructura -->
-					<div class="service-card">
+					<div class="service-card animate-item">
 						<div class="service-badge">Incluido</div>
 						<div class="service-icon">
 							<i data-lucide="server"></i>
@@ -1391,8 +1389,7 @@
 						</p>
 					</div>
 
-					<!-- 3. Correos (Split) -->
-					<div class="service-card">
+					<div class="service-card animate-item">
 						<div class="service-icon">
 							<i data-lucide="mail"></i>
 						</div>
@@ -1403,8 +1400,7 @@
 						</p>
 					</div>
 
-					<!-- 4. Agenda -->
-					<div class="service-card">
+					<div class="service-card animate-item">
 						<div class="service-badge">Destacado</div>
 						<div class="service-icon">
 							<i data-lucide="calendar-check"></i>
@@ -1416,8 +1412,7 @@
 						</p>
 					</div>
 
-					<!-- 5. SEO -->
-					<div class="service-card">
+					<div class="service-card animate-item">
 						<div class="service-icon">
 							<i data-lucide="map-pin"></i>
 						</div>
@@ -1428,8 +1423,7 @@
 						</p>
 					</div>
 
-					<!-- 6. QR -->
-					<div class="service-card">
+					<div class="service-card animate-item">
 						<div class="service-icon">
 							<i data-lucide="qr-code"></i>
 						</div>
@@ -1440,8 +1434,7 @@
 						</p>
 					</div>
 
-					<!-- 7. Tarjetas (New Split) -->
-					<div class="service-card">
+					<div class="service-card animate-item">
 						<div class="service-icon">
 							<i data-lucide="contact"></i>
 						</div>
@@ -1452,8 +1445,7 @@
 						</p>
 					</div>
 
-					<!-- 8. Analytics -->
-					<div class="service-card">
+					<div class="service-card animate-item">
 						<div class="service-icon">
 							<i data-lucide="bar-chart-2"></i>
 						</div>
@@ -1464,8 +1456,7 @@
 						</p>
 					</div>
 
-					<!-- 9. Soporte (New) -->
-					<div class="service-card">
+					<div class="service-card animate-item">
 						<div class="service-icon">
 							<i data-lucide="shield-check"></i>
 						</div>
@@ -1479,20 +1470,18 @@
 			</div>
 		</section>
 
-		<!-- Testimonios (Slider Nuevo - MOVIDO AQUÍ) -->
 		<section class="section-padding testimonials-section" id="testimonios">
 			<div class="container">
 				<div class="section-title">
-					<h2>Historias de Éxito</h2>
-					<p>
+					<h2 class="animate-item">Historias de Éxito</h2>
+					<p class="animate-item">
 						Empresarios de todo México que transformaron su negocio con Koda
 						Studio.
 					</p>
 				</div>
 
-				<div class="testimonial-slider-container">
+				<div class="testimonial-slider-container animate-item">
 					<div class="testimonial-track" id="testimonialTrack">
-						<!-- Testimonio 1: Abogado -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"La seriedad que proyecta mi firma ahora es incomparable. Koda
@@ -1512,7 +1501,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 2: Arquitectura -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"Necesitaba que mis renders se vieran perfectos en cualquier
@@ -1531,7 +1519,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 3: Restaurante -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"El menú QR que diseñaron no solo es funcional, es bonito. A los
@@ -1550,7 +1537,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 4: Hotel -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"Estábamos perdiendo mucho dinero en comisiones de OTAs. Con el
@@ -1569,7 +1555,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 5: Contador -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"Antes perdía horas en WhatsApp agendando citas. Ahora
@@ -1588,7 +1573,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 6: Bienes Raíces -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"La ficha de propiedades es muy limpia y el botón de WhatsApp
@@ -1607,7 +1591,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 7: Odontología (NUEVO) -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"Mis pacientes agradecen poder elegir su horario sin tener que
@@ -1626,7 +1609,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 8: Boutique (NUEVO) -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"Subir mis colecciones nuevas es facilísimo. Koda Studio me
@@ -1645,7 +1627,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 9: Consultoría (NUEVO) -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"La inversión se recuperó con el primer cliente que llegó a
@@ -1664,7 +1645,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 10: Fitness (NUEVO) -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"Desde que aparecemos en Google Maps con el sitio web nuevo, las
@@ -1683,7 +1663,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 11: Barbería (NUEVO) -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"El sistema de citas es una joya. Ya no interrumpo mis cortes
@@ -1702,7 +1681,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 12: Uñas & Lashes (NUEVO) -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"Antes me pasaba el día contestando '¿tienes espacio?'. Ahora
@@ -1721,7 +1699,6 @@
 							</div>
 						</div>
 
-						<!-- Testimonio 13: Salón de Fiestas (NUEVO) -->
 						<div class="testimonial-slide">
 							<div class="testimonial-text">
 								"Las fotos de los eventos anteriores venden solas. Los clientes
@@ -1745,9 +1722,7 @@
 						<button class="slider-btn" id="prevBtn" aria-label="Anterior">
 							<i data-lucide="chevron-left"></i>
 						</button>
-						<div class="slider-dots" id="sliderDots">
-							<!-- Dots generados con JS -->
-						</div>
+						<div class="slider-dots" id="sliderDots"></div>
 						<button class="slider-btn" id="nextBtn" aria-label="Siguiente">
 							<i data-lucide="chevron-right"></i>
 						</button>
@@ -1756,20 +1731,18 @@
 			</div>
 		</section>
 
-		<!-- Industrias (Movido después de Testimonios) -->
 		<section class="section-padding industries-section">
 			<div class="container">
 				<div class="section-title">
-					<h2>Impulsando el Éxito en Sectores Clave</h2>
-					<p>
+					<h2 class="animate-item">Impulsando el Éxito en Sectores Clave</h2>
+					<p class="animate-item">
 						Nuestra tecnología está diseñada para resolver los retos específicos
 						de tu industria y aumentar tus ventas.
 					</p>
 				</div>
 
 				<div class="industries-grid">
-					<!-- Abogados -->
-					<div class="industry-item">
+					<div class="industry-item animate-item">
 						<i data-lucide="scale" class="industry-icon"></i>
 						<h4>Abogados & Firmas</h4>
 						<p>
@@ -1777,8 +1750,7 @@
 							clientes calificados con un sitio sobrio y profesional.
 						</p>
 					</div>
-					<!-- Arquitectura -->
-					<div class="industry-item">
+					<div class="industry-item animate-item">
 						<i data-lucide="compass" class="industry-icon"></i>
 						<h4>Arquitectura & Diseño</h4>
 						<p>
@@ -1786,8 +1758,7 @@
 							alta resolución que convencen a inversores y clientes.
 						</p>
 					</div>
-					<!-- Restaurantes -->
-					<div class="industry-item">
+					<div class="industry-item animate-item">
 						<i data-lucide="utensils" class="industry-icon"></i>
 						<h4>Restaurantes & Cafés</h4>
 						<p>
@@ -1795,8 +1766,7 @@
 							reserva directa sin depender de terceros.
 						</p>
 					</div>
-					<!-- Hoteles -->
-					<div class="industry-item">
+					<div class="industry-item animate-item">
 						<i data-lucide="bed-double" class="industry-icon"></i>
 						<h4>Hoteles & AirBnb</h4>
 						<p>
@@ -1804,8 +1774,7 @@
 							hospedaje y evita las altas comisiones de agencias.
 						</p>
 					</div>
-					<!-- Contadores -->
-					<div class="industry-item">
+					<div class="industry-item animate-item">
 						<i data-lucide="calculator" class="industry-icon"></i>
 						<h4>Contadores & Consultores</h4>
 						<p>
@@ -1813,8 +1782,7 @@
 							pagadas o gratuitas sin interrumpir tu trabajo.
 						</p>
 					</div>
-					<!-- Bienes Raíces -->
-					<div class="industry-item">
+					<div class="industry-item animate-item">
 						<i data-lucide="home" class="industry-icon"></i>
 						<h4>Bienes Raíces</h4>
 						<p>
@@ -1822,8 +1790,7 @@
 							propiedades detalladas y botones directos a WhatsApp.
 						</p>
 					</div>
-					<!-- Barberías (NUEVO) -->
-					<div class="industry-item">
+					<div class="industry-item animate-item">
 						<i data-lucide="scissors" class="industry-icon"></i>
 						<h4>Barberías & Estilistas</h4>
 						<p>
@@ -1831,8 +1798,7 @@
 							reduce las ausencias y organiza tu día automáticamente.
 						</p>
 					</div>
-					<!-- Uñas y Lashes (NUEVO) -->
-					<div class="industry-item">
+					<div class="industry-item animate-item">
 						<i data-lucide="sparkles" class="industry-icon"></i>
 						<h4>Uñas, Lashes & Spa</h4>
 						<p>
@@ -1840,8 +1806,7 @@
 							y reserven su hora ideal sin mensajes interminables.
 						</p>
 					</div>
-					<!-- Salones de Fiesta (NUEVO) -->
-					<div class="industry-item">
+					<div class="industry-item animate-item">
 						<i data-lucide="calendar-heart" class="industry-icon"></i>
 						<h4>Salones & Eventos</h4>
 						<p>
@@ -1853,23 +1818,20 @@
 			</div>
 		</section>
 
-		<!-- Portfolio Section (NUEVO - Reemplazando posición original de Precios) -->
 		<section class="section-padding portfolio-section" id="proyectos">
 			<div class="container">
 				<div class="section-title">
-					<h2>Nuestro Trabajo</h2>
-					<p>
+					<h2 class="animate-item">Nuestro Trabajo</h2>
+					<p class="animate-item">
 						Explora cómo hemos ayudado a negocios como el tuyo a destacar en el
 						mundo digital.
 					</p>
 				</div>
 
 				<div class="portfolio-grid">
-					<!-- Proyecto 1: Abogados -->
-					<div class="project-card">
+					<div class="project-card animate-item">
 						<div class="project-image lawyer">
 							<div class="project-image-text">Sitio Web Corporativo</div>
-							<!-- Placeholder visual con gradiente CSS -->
 						</div>
 						<div class="project-content">
 							<h3>Méndez & Asociados</h3>
@@ -1884,8 +1846,7 @@
 						</div>
 					</div>
 
-					<!-- Proyecto 2: Bienes Raíces -->
-					<div class="project-card">
+					<div class="project-card animate-item">
 						<div class="project-image realestate">
 							<div class="project-image-text">Catálogo Inmobiliario</div>
 						</div>
@@ -1902,8 +1863,7 @@
 						</div>
 					</div>
 
-					<!-- Proyecto 3: Restaurante -->
-					<div class="project-card">
+					<div class="project-card animate-item">
 						<div class="project-image restaurant">
 							<div class="project-image-text">Menú Digital & Reservas</div>
 						</div>
@@ -1920,8 +1880,7 @@
 						</div>
 					</div>
 
-					<!-- Proyecto 4: Spa/Salud -->
-					<div class="project-card">
+					<div class="project-card animate-item">
 						<div class="project-image beauty">
 							<div class="project-image-text">Agenda & Servicios</div>
 						</div>
@@ -1938,8 +1897,7 @@
 						</div>
 					</div>
 
-					<!-- Proyecto 5: Barbería -->
-					<div class="project-card">
+					<div class="project-card animate-item">
 						<div class="project-image barber">
 							<div class="project-image-text">Gestión de Citas</div>
 						</div>
@@ -1956,8 +1914,7 @@
 						</div>
 					</div>
 
-					<!-- Proyecto 6: Consultoría -->
-					<div class="project-card">
+					<div class="project-card animate-item">
 						<div class="project-image consultant">
 							<div class="project-image-text">Marca Personal</div>
 						</div>
@@ -1977,18 +1934,16 @@
 			</div>
 		</section>
 
-		<!-- FAQ Section -->
 		<section class="section-padding faq-section" id="faq">
 			<div class="container">
 				<div class="section-title">
-					<h2>Preguntas Frecuentes</h2>
-					<p>
+					<h2 class="animate-item">Preguntas Frecuentes</h2>
+					<p class="animate-item">
 						Resolvemos tus dudas antes de comenzar tu transformación digital.
 					</p>
 				</div>
 
-				<div class="faq-container">
-					<!-- Pregunta 1 -->
+				<div class="faq-container animate-item">
 					<div class="accordion-item">
 						<button class="accordion-header">
 							¿En cuánto tiempo queda lista mi página web?
@@ -2004,7 +1959,6 @@
 						</div>
 					</div>
 
-					<!-- Pregunta 2 -->
 					<div class="accordion-item">
 						<button class="accordion-header">
 							¿Tengo que seguir pagando algo mensualmente?
@@ -2021,7 +1975,6 @@
 						</div>
 					</div>
 
-					<!-- Pregunta 3 -->
 					<div class="accordion-item">
 						<button class="accordion-header">
 							¿El dominio y el hosting son de mi propiedad?
@@ -2037,7 +1990,6 @@
 						</div>
 					</div>
 
-					<!-- Pregunta 4 -->
 					<div class="accordion-item">
 						<button class="accordion-header">
 							¿Qué pasa si quiero cambiar fotos o textos en el futuro?
@@ -2054,7 +2006,6 @@
 						</div>
 					</div>
 
-					<!-- Pregunta 5 -->
 					<div class="accordion-item">
 						<button class="accordion-header">
 							¿Necesito tener mi logo y textos listos para empezar?
@@ -2071,7 +2022,6 @@
 						</div>
 					</div>
 
-					<!-- Pregunta 6 -->
 					<div class="accordion-item">
 						<button class="accordion-header">
 							¿El sitio incluye facturación?
@@ -2089,21 +2039,19 @@
 			</div>
 		</section>
 
-		<!-- Pricing (MOVIDO AL FINAL) -->
 		<section class="section-padding pricing-section" id="paquetes">
 			<div class="container">
 				<div class="section-title">
-					<h2 style="color: var(--color-white)">
+					<h2 class="animate-item" style="color: var(--color-white)">
 						Elige tu plan de crecimiento
 					</h2>
-					<p style="color: #b0bec5">
+					<p class="animate-item" style="color: #b0bec5">
 						Soluciones escalables para cada etapa de tu negocio.
 					</p>
 				</div>
 
 				<div class="pricing-grid">
-					<!-- PAQUETE 1: KODA START -->
-					<div class="pricing-card best-seller">
+					<div class="pricing-card best-seller animate-item">
 						<div class="best-seller-label">Más Popular</div>
 						<div class="pricing-header">
 							<h3>KODA START</h3>
@@ -2158,8 +2106,7 @@
 						</a>
 					</div>
 
-					<!-- PAQUETE 2: KODA PRO -->
-					<div class="pricing-card">
+					<div class="pricing-card animate-item">
 						<div class="pricing-header">
 							<h3>KODA PRO</h3>
 							<div class="price">$5,000 <span>MXN</span></div>
@@ -2209,8 +2156,7 @@
 						</a>
 					</div>
 
-					<!-- PAQUETE 3: CUSTOM -->
-					<div class="pricing-card custom-card">
+					<div class="pricing-card custom-card animate-item">
 						<div class="pricing-header">
 							<h3>KODA EMPRESARIAL</h3>
 							<div class="price custom-price">Cotización</div>
@@ -2257,18 +2203,17 @@
 			</div>
 		</section>
 
-		<!-- Contact Form Section (NUEVO) -->
 		<section class="section-padding contact-section" id="contacto">
 			<div class="container">
 				<div class="section-title">
-					<h2>¿Listo para empezar?</h2>
-					<p>
+					<h2 class="animate-item">¿Listo para empezar?</h2>
+					<p class="animate-item">
 						Cuéntanos un poco sobre tu proyecto y nos pondremos en contacto
 						contigo.
 					</p>
 				</div>
 
-				<div class="contact-container">
+				<div class="contact-container animate-item">
 					<form action="#" method="POST">
 						<div class="form-group">
 							<label for="name"
@@ -2352,13 +2297,10 @@
 			</div>
 		</section>
 
-		<!-- Footer -->
 		<footer>
 			<div class="container">
 				<div class="footer-grid">
-					<!-- Columna 1: Logo Vertical -->
-					<div class="footer-logo">
-						<!-- Assets preservados -->
+					<div class="footer-logo animate-item">
 						<img
 							src="assets/logos/main-version (1).png"
 							alt="Koda Studio Logo"
@@ -2369,8 +2311,7 @@
 						</p>
 					</div>
 
-					<!-- Columna 2: Enlaces -->
-					<div class="footer-col">
+					<div class="footer-col animate-item">
 						<h4>Enlaces Rápidos</h4>
 						<ul class="footer-links">
 							<li><a href="#inicio">Inicio</a></li>
@@ -2382,8 +2323,7 @@
 						</ul>
 					</div>
 
-					<!-- Columna 3: Contacto -->
-					<div class="footer-col">
+					<div class="footer-col animate-item">
 						<h4>Contacto</h4>
 						<ul class="contact-info">
 							<li>
@@ -2420,7 +2360,6 @@
 			</div>
 		</footer>
 
-		<!-- Botón Flotante WhatsApp -->
 		<a
 			href="https://wa.me/5217720000000?text=Hola%20Koda%20Studio,%20quiero%20información%20de%20sus%20servicios"
 			class="whatsapp-float"
@@ -2430,7 +2369,6 @@
 			<i data-lucide="message-circle" size="32"></i>
 		</a>
 
-		<!-- Scripts -->
 		<script>
 			// Inicializar Iconos Lucide
 			lucide.createIcons();
@@ -2649,6 +2587,40 @@
 
 			// Inicializar prevTranslate
 			goToSlide(0);
+
+			// ============================
+			// ANIMACIONES EN CASCADA (NUEVO)
+			// ============================
+			const sections = document.querySelectorAll("section, footer");
+
+			const observer = new IntersectionObserver(
+				(entries, observer) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							// Buscar elementos animados DENTRO de la sección visible
+							const items = entry.target.querySelectorAll(".animate-item");
+
+							items.forEach((item, index) => {
+								// Retraso progresivo (100ms entre cada elemento)
+								setTimeout(() => {
+									item.classList.add("is-visible");
+								}, index * 100);
+							});
+
+							// Dejar de observar esta sección una vez animada
+							observer.unobserve(entry.target);
+						}
+					});
+				},
+				{
+					rootMargin: "0px 0px -100px 0px", // Dispara un poco antes de que entre completo
+					threshold: 0.15, // Dispara cuando el 15% de la sección es visible
+				},
+			);
+
+			sections.forEach(section => {
+				observer.observe(section);
+			});
 		</script>
 	</body>
 </html>
