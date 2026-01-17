@@ -449,6 +449,12 @@
 				display: flex;
 				transition: transform 0.5s ease-in-out;
 				gap: 20px;
+				cursor: grab; /* Cursor de mano */
+				touch-action: pan-y; /* Permite scroll vertical pero captura horizontal */
+			}
+
+			.testimonial-track:active {
+				cursor: grabbing; /* Mano cerrada al arrastrar */
 			}
 
 			.testimonial-slide {
@@ -463,6 +469,9 @@
 				align-items: center;
 				text-align: center;
 				position: relative;
+				/* Evita que se seleccione texto al arrastrar */
+				user-select: none;
+				-webkit-user-select: none;
 			}
 
 			/* Comillas decorativas */
@@ -2442,19 +2451,91 @@
 				dots[index].classList.add("active");
 			}
 
-			// Calcula la posición exacta en píxeles, sumando ancho + gap
-			function updateSlidePosition() {
-				const slideWidth = slides[0].getBoundingClientRect().width;
-				const gap = 20; // Debe coincidir con CSS .testimonial-track gap
-				const offset = (slideWidth + gap) * currentIndex;
-				track.style.transform = `translateX(-${offset}px)`;
+			// Variables para Drag/Swipe
+			let isDragging = false;
+			let startPos = 0;
+			let currentTranslate = 0;
+			let prevTranslate = 0;
+			let animationID;
+
+			// Prevenir drag de imágenes por defecto para que no interfiera
+			slides.forEach(slide => {
+				const img = slide.querySelector("img");
+				if (img) img.addEventListener("dragstart", e => e.preventDefault());
+			});
+
+			// Event Listeners para Mouse y Touch
+			track.addEventListener("mousedown", dragStart);
+			track.addEventListener("touchstart", dragStart);
+
+			track.addEventListener("mouseup", dragEnd);
+			track.addEventListener("mouseleave", dragEnd);
+			track.addEventListener("touchend", dragEnd);
+
+			track.addEventListener("mousemove", dragMove);
+			track.addEventListener("touchmove", dragMove);
+
+			function getPositionX(event) {
+				return event.type.includes("mouse")
+					? event.pageX
+					: event.touches[0].clientX;
 			}
 
+			function dragStart(event) {
+				isDragging = true;
+				startPos = getPositionX(event);
+				animationID = requestAnimationFrame(animation);
+				track.style.cursor = "grabbing";
+				track.style.transition = "none"; // Quitar transición para movimiento directo
+			}
+
+			function dragMove(event) {
+				if (isDragging) {
+					const currentPosition = getPositionX(event);
+					currentTranslate = prevTranslate + currentPosition - startPos;
+				}
+			}
+
+			function dragEnd() {
+				isDragging = false;
+				cancelAnimationFrame(animationID);
+				track.style.cursor = "grab";
+
+				const movedBy = currentTranslate - prevTranslate;
+
+				// Umbral de sensibilidad (100px)
+				if (movedBy < -100 && currentIndex < slides.length - 1)
+					currentIndex += 1;
+
+				if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
+
+				goToSlide(currentIndex);
+			}
+
+			function animation() {
+				track.style.transform = `translateX(${currentTranslate}px)`;
+				if (isDragging) requestAnimationFrame(animation);
+			}
+
+			// Modificar goToSlide para actualizar las variables de drag
 			function goToSlide(index) {
 				currentIndex = index;
-				updateSlidePosition();
+				track.style.transition = "transform 0.5s ease-in-out"; // Reactivar transición
+
+				const slideWidth = slides[0].getBoundingClientRect().width;
+				const gap = 20;
+				const offset = (slideWidth + gap) * currentIndex;
+
+				// Actualizar estado del drag
+				currentTranslate = -offset;
+				prevTranslate = currentTranslate;
+
+				track.style.transform = `translateX(${currentTranslate}px)`;
 				updateDots(index);
 			}
+
+			// Inicializar prevTranslate
+			goToSlide(0);
 
 			nextBtn.addEventListener("click", () => {
 				if (currentIndex === slides.length - 1) {
@@ -2474,7 +2555,8 @@
 
 			// Listener para ajustar si cambia el tamaño de la ventana
 			window.addEventListener("resize", () => {
-				updateSlidePosition();
+				// Recalculate based on current index
+				goToSlide(currentIndex);
 			});
 
 			// Auto-play opcional
