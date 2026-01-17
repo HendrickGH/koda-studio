@@ -667,6 +667,155 @@
 			}
 
 			/* =========================================
+           FAQ SECTION
+           ========================================= */
+			.faq-section {
+				background-color: var(--color-white);
+			}
+
+			.faq-container {
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			.accordion-item {
+				border-bottom: 1px solid #eee;
+				margin-bottom: 10px;
+			}
+
+			.accordion-header {
+				width: 100%;
+				padding: 20px;
+				background: none;
+				border: none;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				text-align: left;
+				font-family: var(--font-heading);
+				font-weight: 600;
+				font-size: 1.1rem;
+				color: var(--color-navy);
+				cursor: pointer;
+				transition: var(--transition);
+			}
+
+			.accordion-header:hover {
+				color: var(--color-sky);
+			}
+
+			.accordion-header i {
+				transition: transform 0.3s ease;
+			}
+
+			.accordion-header.active i {
+				transform: rotate(180deg);
+			}
+
+			.accordion-content {
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.3s ease-out;
+				padding: 0 20px;
+			}
+
+			.accordion-content p {
+				padding-bottom: 20px;
+				color: var(--color-slate);
+				font-size: 1rem;
+			}
+
+			/* =========================================
+           PROCESS SECTION
+           ========================================= */
+			.process-section {
+				background-color: var(--color-navy);
+				color: var(--color-white);
+			}
+
+			.process-section .section-title h2 {
+				color: var(--color-white);
+			}
+
+			.process-section .section-title p {
+				color: #e0e0e0;
+			}
+
+			.process-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 40px;
+				position: relative;
+				margin-top: 40px;
+			}
+
+			.step-card {
+				background: transparent;
+				padding: 20px;
+				text-align: center;
+				position: relative;
+			}
+
+			.step-number {
+				font-size: 5rem;
+				font-weight: 800;
+				color: rgba(255, 255, 255, 0.08);
+				position: absolute;
+				top: -60px; /* Movido más arriba */
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 0;
+			}
+
+			.step-content {
+				position: relative;
+				z-index: 1;
+			}
+
+			.step-icon-wrapper {
+				width: 70px;
+				height: 70px;
+				background-color: var(--color-white);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 20px;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+				color: var(--color-sky);
+			}
+
+			.step-card h3 {
+				margin-bottom: 15px;
+				color: var(--color-white);
+			}
+
+			.step-card p {
+				color: #b0bec5;
+			}
+
+			/* Linea conectora para desktop */
+			@media (min-width: 992px) {
+				.process-grid::before {
+					content: "";
+					position: absolute;
+					top: 55px; /* Ajustar segun altura icono */
+					left: 15%;
+					right: 15%;
+					height: 2px;
+					background: repeating-linear-gradient(
+						to right,
+						rgba(255, 255, 255, 0.3) 0,
+						rgba(255, 255, 255, 0.3) 10px,
+						transparent 10px,
+						transparent 20px
+					);
+					opacity: 0.5;
+					z-index: 0;
+				}
+			}
+
+			/* =========================================
            FOOTER
            ========================================= */
 			footer {
@@ -890,6 +1039,65 @@
 						"
 					>
 						[Imagen: Persona gestionando su negocio digital]
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Proceso Section (MOVIDO AQUÍ) -->
+		<section class="section-padding process-section">
+			<div class="container">
+				<div class="section-title">
+					<h2>Tu Nuevo Sitio en 3 Pasos</h2>
+					<p>
+						Hemos simplificado todo para que no te preocupes por la tecnología.
+					</p>
+				</div>
+
+				<div class="process-grid">
+					<!-- Paso 1 -->
+					<div class="step-card">
+						<div class="step-number">01</div>
+						<div class="step-content">
+							<div class="step-icon-wrapper">
+								<i data-lucide="message-square" size="32"></i>
+							</div>
+							<h3>Briefing</h3>
+							<p>
+								Nos cuentas sobre tu negocio y nos compartes tu logo e
+								información básica.
+							</p>
+						</div>
+					</div>
+
+					<!-- Paso 2 -->
+					<div class="step-card">
+						<div class="step-number">02</div>
+						<div class="step-content">
+							<div class="step-icon-wrapper">
+								<i data-lucide="code-2" size="32"></i>
+							</div>
+							<h3>Construcción</h3>
+							<p>
+								Diseñamos tu sitio, configuramos tus correos y montamos tu
+								sistema de citas.
+							</p>
+						</div>
+					</div>
+
+					<!-- Paso 3 -->
+					<div class="step-card">
+						<div class="step-number">03</div>
+						<div class="step-content">
+							<div class="step-icon-wrapper">
+								<i data-lucide="rocket" size="32"></i>
+							</div>
+							<h3>Lanzamiento</h3>
+							<p>
+								Revisamos los detalles finales y publicamos tu negocio para que
+								el mundo lo vea.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -1560,6 +1768,118 @@
 			</div>
 		</section>
 
+		<!-- FAQ Section (NUEVO) -->
+		<section class="section-padding faq-section">
+			<div class="container">
+				<div class="section-title">
+					<h2>Preguntas Frecuentes</h2>
+					<p>
+						Resolvemos tus dudas antes de comenzar tu transformación digital.
+					</p>
+				</div>
+
+				<div class="faq-container">
+					<!-- Pregunta 1 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿En cuánto tiempo queda lista mi página web?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								Tu sitio estará listo en <strong>14 días naturales</strong>.
+								Preferimos tomarnos el tiempo necesario para garantizar que cada
+								detalle sea perfecto y entregarte una herramienta de calidad que
+								realmente impulse tu negocio, en lugar de apresurarnos.
+							</p>
+						</div>
+					</div>
+
+					<!-- Pregunta 2 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿Tengo que seguir pagando algo mensualmente?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								<strong>No, no hay mensualidades.</strong> El desarrollo es un
+								pago único. Lo único que se renueva es la infraestructura
+								(Dominio y Hosting) de manera anual por solo
+								<strong>$699 MXN + IVA</strong>, para mantener tu sitio en línea
+								y tus correos funcionando.
+							</p>
+						</div>
+					</div>
+
+					<!-- Pregunta 3 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿El dominio y el hosting son de mi propiedad?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								<strong>Absolutamente.</strong> A diferencia de otras agencias,
+								aquí tú eres el dueño legal de tu dominio y hosting desde el
+								primer día. Sin plazos forzosos, sin letras chiquitas y con
+								total libertad.
+							</p>
+						</div>
+					</div>
+
+					<!-- Pregunta 4 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿Qué pasa si quiero cambiar fotos o textos en el futuro?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								Tenemos un modelo flexible de
+								<strong>"Mantenimiento por Evento"</strong>. Si necesitas
+								actualizaciones puntuales, no pagas una renta mensual fija; solo
+								pagas una tarifa pequeña por el cambio que necesites, comenzando
+								desde <strong>$199 MXN + IVA</strong>.
+							</p>
+						</div>
+					</div>
+
+					<!-- Pregunta 5 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿Necesito tener mi logo y textos listos para empezar?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								<strong>No es obligatorio.</strong> Incluimos redacción
+								profesional (copywriting) básica en todos los paquetes. Además,
+								podemos diseñar un logotipo sencillo para ti sin costo extra. Si
+								eliges el <strong>Plan PRO</strong>, incluimos un diseño de
+								marca completo (Logo principal, isotipo y versión horizontal).
+							</p>
+						</div>
+					</div>
+
+					<!-- Pregunta 6 -->
+					<div class="accordion-item">
+						<button class="accordion-header">
+							¿El sitio incluye facturación?
+							<i data-lucide="chevron-down"></i>
+						</button>
+						<div class="accordion-content">
+							<p>
+								<strong>Sí, facturamos todos nuestros servicios.</strong> Los
+								precios mostrados son netos antes de impuestos, por lo que al
+								solicitar tu factura se añadirá el 16% de IVA correspondiente.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- Footer -->
 		<footer id="contacto">
 			<div class="container">
@@ -1736,6 +2056,37 @@
 				// if (currentIndex === slides.length - 1) goToSlide(0);
 				// else goToSlide(currentIndex + 1);
 			}, 5000);
+
+			// ============================
+			// FAQ ACCORDION LOGIC
+			// ============================
+			const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+			accordionHeaders.forEach(header => {
+				header.addEventListener("click", () => {
+					// Toggle active class
+					header.classList.toggle("active");
+
+					// Toggle content max-height
+					const content = header.nextElementSibling;
+					if (header.classList.contains("active")) {
+						content.style.maxHeight = content.scrollHeight + "px";
+					} else {
+						content.style.maxHeight = 0;
+					}
+
+					// Optional: Close other items
+					accordionHeaders.forEach(otherHeader => {
+						if (
+							otherHeader !== header &&
+							otherHeader.classList.contains("active")
+						) {
+							otherHeader.classList.remove("active");
+							otherHeader.nextElementSibling.style.maxHeight = 0;
+						}
+					});
+				});
+			});
 		</script>
 	</body>
 </html>
