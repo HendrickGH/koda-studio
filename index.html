@@ -1,6 +1,7 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 	<head>
+		<!-- Google Tag Manager -->
 		<script>
 			(function (w, d, s, l, i) {
 				w[l] = w[l] || [];
@@ -13,9 +14,13 @@
 				f.parentNode.insertBefore(j, f);
 			})(window, document, "script", "dataLayer", "GTM-WVPLXPDW");
 		</script>
+		<!-- End Google Tag Manager -->
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Koda Studio | Agencia de Desarrollo Web en México</title>
+
+		<!-- SEO Meta Tags -->
 		<meta
 			name="description"
 			content="Transformamos tu negocio con diseño web profesional, correos corporativos y sistemas de agenda automatizada. Desarrollo web a medida en México."
@@ -28,6 +33,7 @@
 		<meta name="robots" content="index, follow" />
 		<link rel="canonical" href="https://kodastudio.com.mx/" />
 
+		<!-- Open Graph / Social -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://kodastudio.com.mx/" />
 		<meta property="og:site_name" content="Koda Studio" />
@@ -40,110 +46,68 @@
 			content="¿Listo para digitalizar tu negocio? Creamos sitios web que venden y sistemas que organizan tu tiempo."
 		/>
 		<meta property="og:locale" content="es_MX" />
-
 		<meta
 			property="og:image"
 			content="https://kodastudio.com.mx/assets/social-share-koda.png"
 		/>
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
-		<meta
-			property="og:image:alt"
-			content="Koda Studio - Desarrollo Web Profesional"
-		/>
-
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content="https://kodastudio.com.mx/" />
-		<meta
-			name="twitter:title"
-			content="Koda Studio | Desarrollo Web Profesional"
-		/>
-		<meta
-			name="twitter:description"
-			content="Diseño web, hosting y sistemas de citas para negocios en crecimiento."
-		/>
-		<meta
-			name="twitter:image"
-			content="https://kodastudio.com.mx/assets/social-share-koda.png"
-		/>
 
 		<meta name="theme-color" content="#1A237E" />
-		<meta name="geo.region" content="MX-HID" />
-		<meta name="geo.placename" content="Mexico" />
 
-		<link rel="icon" type="image/svg+xml" href="assets/logos/favicon.png" />
-
+		<!-- Fonts & Icons -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto:wght@300;400;500&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto:wght@300;400;500;700&display=swap"
 			rel="stylesheet"
 		/>
-
 		<script src="https://unpkg.com/lucide@latest"></script>
 
+		<!-- Tailwind CSS via CDN -->
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						colors: {
+							navy: "#1a237e",
+							slate: "#78909c",
+							sky: "#4fc3f7",
+							offwhite: "#f5f5f5",
+							success: "#00e676",
+							whatsapp: "#25D366",
+						},
+						fontFamily: {
+							heading: ["Montserrat", "sans-serif"],
+							body: ["Roboto", "sans-serif"],
+						},
+						boxShadow: {
+							card: "0 4px 20px rgba(0, 0, 0, 0.08)",
+							hover: "0 15px 40px rgba(0, 0, 0, 0.4)",
+							soft: "0 10px 30px rgba(0, 0, 0, 0.05)",
+						},
+					},
+				},
+			};
+		</script>
+
+		<!-- Custom Styles (Animaciones y detalles no nativos de Tailwind) -->
 		<style>
-			/* =========================================
-           VARIABLES CSS (PALETA KODA - Opción 4)
-           ========================================= */
-			:root {
-				--color-navy: #1a237e;
-				--color-slate: #78909c;
-				--color-sky: #4fc3f7;
-				--color-offwhite: #f5f5f5;
-				--color-white: #ffffff;
-				--color-black: #121212;
-				--color-success: #00e676;
-
-				--font-heading: "Montserrat", sans-serif;
-				--font-body: "Roboto", sans-serif;
-
-				--shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
-				--transition: all 0.3s ease;
-			}
-
-			/* =========================================
-           RESET & BASE
-           ========================================= */
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-
-			html {
-				scroll-behavior: smooth;
-			}
-
 			body {
-				font-family: var(--font-body);
-				background-color: var(--color-white);
-				color: var(--color-black);
-				line-height: 1.6;
-				overflow-x: hidden;
+				font-family: "Roboto", sans-serif;
 			}
-
 			h1,
 			h2,
 			h3,
-			h4 {
-				font-family: var(--font-heading);
-				color: var(--color-navy);
-				font-weight: 700;
+			h4,
+			h5,
+			h6,
+			.font-heading {
+				font-family: "Montserrat", sans-serif;
 			}
 
-			a {
-				text-decoration: none;
-				color: inherit;
-			}
-
-			ul {
-				list-style: none;
-			}
-
-			/* =========================================
-           ANIMACIONES EN CASCADA
-           ========================================= */
+			/* Animación en Cascada */
 			.animate-item {
 				opacity: 0;
 				transform: translateY(30px);
@@ -152,294 +116,12 @@
 					transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 				will-change: opacity, transform;
 			}
-
 			.animate-item.is-visible {
 				opacity: 1;
 				transform: translateY(0);
 			}
 
-			/* Utility Classes */
-			.container {
-				width: 90%;
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 0 15px;
-			}
-
-			.btn {
-				display: inline-block;
-				padding: 12px 30px;
-				border-radius: 50px;
-				font-weight: 600;
-				font-family: var(--font-heading);
-				transition: var(--transition);
-				cursor: pointer;
-				border: none;
-				text-align: center;
-			}
-
-			.btn-primary {
-				background-color: var(--color-sky);
-				color: var(--color-navy);
-				box-shadow: 0 4px 15px rgba(79, 195, 247, 0.4);
-			}
-
-			.btn-primary:hover {
-				transform: translateY(-2px);
-				background-color: #29b6f6;
-			}
-
-			.btn-outline {
-				border: 2px solid var(--color-sky);
-				color: var(--color-sky);
-				background: transparent;
-			}
-
-			.btn-outline:hover {
-				background-color: var(--color-sky);
-				color: var(--color-navy);
-			}
-
-			.section-padding {
-				padding: 80px 0;
-			}
-
-			.text-center {
-				text-align: center;
-			}
-			.text-navy {
-				color: var(--color-navy);
-			}
-			.text-sky {
-				color: var(--color-sky);
-			}
-
-			/* =========================================
-           HEADER & NAV
-           ========================================= */
-			header {
-				background-color: var(--color-white);
-				color: var(--color-navy);
-				position: fixed;
-				width: 100%;
-				top: 0;
-				z-index: 1000;
-				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-			}
-
-			nav {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				height: 80px;
-			}
-
-			.logo-container img {
-				height: 40px;
-				display: block;
-			}
-
-			.logo-mockup {
-				display: flex;
-				align-items: center;
-			}
-
-			.nav-links {
-				display: flex;
-				gap: 20px;
-				align-items: center;
-			}
-
-			.nav-links a {
-				font-weight: 600;
-				font-size: 0.9rem;
-				transition: color 0.3s;
-				color: var(--color-navy);
-			}
-
-			.nav-links a:hover {
-				color: var(--color-sky);
-			}
-
-			/* Estilos para el botón de idioma */
-			.lang-switch {
-				font-weight: 800;
-				color: var(--color-navy);
-				cursor: pointer;
-				padding: 5px 10px;
-				border-radius: 5px;
-				transition: var(--transition);
-				border: none;
-				background: transparent;
-				font-family: var(--font-heading);
-				font-size: 0.9rem;
-			}
-
-			.lang-switch:hover {
-				background-color: rgba(26, 35, 126, 0.05);
-				color: var(--color-sky);
-			}
-
-			/* Control de visibilidad del botón de idioma */
-			.desktop-lang {
-				display: block;
-			}
-			.mobile-lang {
-				display: none;
-			}
-
-			.hamburger {
-				display: none;
-				cursor: pointer;
-				color: var(--color-navy);
-			}
-
-			/* =========================================
-           HERO SECTION
-           ========================================= */
-			.hero {
-				margin-top: 80px;
-				background: linear-gradient(135deg, var(--color-navy) 0%, #0d1245 100%);
-				color: var(--color-white);
-				padding: 100px 0;
-				position: relative;
-				overflow: hidden;
-			}
-
-			.hero-content {
-				max-width: 700px;
-			}
-
-			.hero h1 {
-				font-size: 3rem;
-				line-height: 1.2;
-				margin-bottom: 20px;
-				color: var(--color-white);
-			}
-
-			.hero p {
-				font-size: 1.2rem;
-				margin-bottom: 30px;
-				color: #e0e0e0;
-			}
-
-			.hero::after {
-				content: "";
-				position: absolute;
-				top: -50px;
-				right: -100px;
-				width: 400px;
-				height: 400px;
-				background: var(--color-sky);
-				opacity: 0.1;
-				border-radius: 50%;
-				filter: blur(80px);
-			}
-
-			/* =========================================
-           PROBLEM / SOLUTION
-           ========================================= */
-			.intro-section {
-				background-color: var(--color-offwhite);
-			}
-
-			.intro-grid {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 50px;
-				align-items: center;
-			}
-
-			.intro-text h2 {
-				font-size: 2.2rem;
-				margin-bottom: 20px;
-			}
-
-			.intro-text p {
-				color: var(--color-slate);
-				margin-bottom: 15px;
-				font-size: 1.05rem;
-			}
-
-			.intro-highlight {
-				border-left: 4px solid var(--color-sky);
-				padding-left: 20px;
-				margin-top: 20px;
-				font-style: italic;
-				color: var(--color-navy);
-				font-weight: 600;
-			}
-
-			/* =========================================
-           PROCESS SECTION
-           ========================================= */
-			.process-section {
-				background-color: var(--color-navy);
-				color: var(--color-white);
-			}
-
-			.process-section .section-title h2 {
-				color: var(--color-white);
-			}
-
-			.process-section .section-title p {
-				color: #e0e0e0;
-			}
-
-			.process-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-				gap: 40px;
-				position: relative;
-				margin-top: 40px;
-			}
-
-			.step-card {
-				background: transparent;
-				padding: 20px;
-				padding-top: 60px;
-				text-align: center;
-				position: relative;
-			}
-
-			.step-number {
-				font-size: 5rem;
-				font-weight: 800;
-				color: rgba(255, 255, 255, 0.08);
-				position: absolute;
-				top: -60px;
-				left: 50%;
-				transform: translateX(-50%);
-				z-index: 0;
-			}
-
-			.step-content {
-				position: relative;
-				z-index: 1;
-			}
-
-			.step-icon-wrapper {
-				width: 70px;
-				height: 70px;
-				background-color: var(--color-white);
-				border-radius: 50%;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				margin: 0 auto 20px;
-				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-				color: var(--color-sky);
-			}
-
-			.step-card h3 {
-				margin-bottom: 15px;
-				color: var(--color-white);
-			}
-
-			.step-card p {
-				color: #b0bec5;
-			}
-
+			/* Línea conectora de proceso (Desktop) */
 			@media (min-width: 992px) {
 				.process-grid::before {
 					content: "";
@@ -460,824 +142,35 @@
 				}
 			}
 
-			/* =========================================
-           SERVICES GRID
-           ========================================= */
-			.services-section {
-				background-color: var(--color-white);
+			/* Control de menú móvil */
+			#navLinks {
+				transition: right 0.3s ease;
 			}
-
-			.section-title {
-				text-align: center;
-				margin-bottom: 60px;
-			}
-
-			.section-title h2 {
-				font-size: 2.5rem;
-				margin-bottom: 10px;
-			}
-
-			.section-title p {
-				color: var(--color-slate);
-			}
-
-			.services-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				gap: 30px;
-			}
-
-			.service-card {
-				background: var(--color-white);
-				padding: 40px 30px;
-				border-radius: 12px;
-				box-shadow: var(--shadow-card);
-				transition: var(--transition);
-				border: 1px solid #eee;
-				position: relative;
-				overflow: hidden;
-			}
-
-			.service-card:hover {
-				transform: translateY(-10px);
-				border-color: var(--color-sky);
-			}
-
-			.service-badge {
-				position: absolute;
-				top: 0;
+			#navLinks.active {
 				right: 0;
-				background-color: var(--color-sky);
-				color: var(--color-navy);
-				font-size: 0.7rem;
-				font-weight: 700;
-				padding: 5px 15px;
-				border-bottom-left-radius: 10px;
-				text-transform: uppercase;
 			}
 
-			.service-icon {
-				width: 60px;
-				height: 60px;
-				background-color: rgba(79, 195, 247, 0.1);
-				border-radius: 12px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				margin-bottom: 25px;
-				color: var(--color-navy);
-				transition: var(--transition);
-			}
-
-			.service-card:hover .service-icon {
-				background-color: var(--color-navy);
-				color: var(--color-white);
-				transform: scale(1.1);
-			}
-
-			.service-card h3 {
-				font-size: 1.3rem;
-				margin-bottom: 15px;
-			}
-
-			.service-card p {
-				color: var(--color-slate);
-				font-size: 0.95rem;
-			}
-
-			/* =========================================
-           TESTIMONIALS SECTION (SLIDER)
-           ========================================= */
-			.testimonials-section {
-				background-color: var(--color-navy);
-				color: var(--color-white);
-				overflow: hidden;
-			}
-
-			.testimonials-section .section-title h2 {
-				color: var(--color-white);
-			}
-
-			.testimonials-section .section-title p {
-				color: #b0bec5;
-			}
-
-			.testimonial-slider-container {
-				position: relative;
-				max-width: 900px;
-				margin: 0 auto;
-				padding: 20px 0;
-			}
-
+			/* Slider track cursor */
 			.testimonial-track {
-				display: flex;
-				transition: transform 0.5s ease-in-out;
-				gap: 20px;
-				cursor: grab;
 				touch-action: pan-y;
-			}
-
-			.testimonial-track:active {
-				cursor: grabbing;
-			}
-
-			.testimonial-slide {
-				min-width: 100%;
-				background: var(--color-white);
-				color: var(--color-black);
-				padding: 40px;
-				border-radius: 15px;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				text-align: center;
-				position: relative;
 				user-select: none;
 				-webkit-user-select: none;
 			}
 
-			.testimonial-slide::before {
-				content: "“";
-				font-family: serif;
-				font-size: 6rem;
-				color: rgba(79, 195, 247, 0.2);
-				position: absolute;
-				top: 10px;
-				left: 20px;
-				line-height: 1;
+			/* Acordeón transition */
+			.accordion-content {
+				transition: max-height 0.3s ease-out;
 			}
-
-			.testimonial-text {
-				font-size: 1.1rem;
-				font-style: italic;
-				margin-bottom: 25px;
-				color: #444;
-				max-width: 90%;
-				z-index: 1;
-			}
-
-			.testimonial-author h4 {
-				color: var(--color-navy);
-				margin-bottom: 5px;
-				font-size: 1.1rem;
-			}
-
-			.testimonial-meta {
-				font-size: 0.9rem;
-				color: var(--color-slate);
-				display: flex;
-				align-items: center;
-				gap: 5px;
-				justify-content: center;
-			}
-
-			.slider-controls {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				margin-top: 30px;
-				gap: 20px;
-			}
-
-			.slider-btn {
-				background: rgba(255, 255, 255, 0.1);
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				color: var(--color-white);
-				min-width: 50px;
-				height: 50px;
-				border-radius: 50%;
-				cursor: pointer;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				transition: var(--transition);
-			}
-
-			.slider-btn:hover {
-				background: var(--color-sky);
-				color: var(--color-navy);
-				border-color: var(--color-sky);
-			}
-
-			.slider-dots {
-				display: flex;
-				gap: 8px;
-			}
-
-			.dot {
-				width: 10px;
-				height: 10px;
-				background: rgba(255, 255, 255, 0.3);
-				border-radius: 50%;
-				cursor: pointer;
-				transition: var(--transition);
-			}
-
-			.dot.active {
-				background: var(--color-sky);
-				transform: scale(1.2);
-			}
-
-			/* =========================================
-           INDUSTRIES SECTION
-           ========================================= */
-			.industries-section {
-				background-color: var(--color-offwhite);
-			}
-
-			.industries-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-				gap: 30px;
-				justify-content: center;
-			}
-
-			.industry-item {
-				background: var(--color-white);
-				padding: 40px 30px;
-				border-radius: 15px;
-				text-align: left;
-				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-				transition: var(--transition);
-				border: 1px solid transparent;
-				border-bottom: 4px solid var(--color-slate);
-				display: flex;
-				flex-direction: column;
-				align-items: flex-start;
-			}
-
-			.industry-item:hover {
-				transform: translateY(-8px);
-				border-color: var(--color-sky);
-				border-bottom-color: var(--color-sky);
-				box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-			}
-
-			.industry-icon {
-				width: 48px;
-				height: 48px;
-				color: var(--color-navy);
-				margin-bottom: 20px;
-				transition: var(--transition);
-				background-color: rgba(26, 35, 126, 0.05);
-				padding: 10px;
-				border-radius: 10px;
-			}
-
-			.industry-item:hover .industry-icon {
-				color: var(--color-white);
-				background-color: var(--color-navy);
-				transform: scale(1.1);
-			}
-
-			/* =========================================
-           PORTFOLIO SECTION
-           ========================================= */
-			.portfolio-section {
-				background-color: var(--color-navy);
-				color: var(--color-white);
-			}
-
-			.portfolio-section .section-title h2 {
-				color: var(--color-white);
-			}
-
-			.portfolio-section .section-title p {
-				color: #b0bec5;
-			}
-
-			.portfolio-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-				gap: 30px;
-			}
-
-			.project-card {
-				background: var(--color-white);
-				border-radius: 15px;
-				overflow: hidden;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-				transition: var(--transition);
-				border: none;
-				display: flex;
-				flex-direction: column;
-			}
-
-			.project-card:hover {
-				transform: translateY(-10px);
-				box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-			}
-
-			.project-image {
-				height: 220px;
-				background-color: #e0e0e0;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				position: relative;
-				overflow: hidden;
-				color: #757575;
-				font-size: 0.9rem;
-			}
-
-			.project-image::after {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
-				opacity: 0.6;
-			}
-
-			.project-image.lawyer {
-				background: linear-gradient(120deg, #2c3e50, #4ca1af);
-			}
-			.project-image.restaurant {
-				background: linear-gradient(120deg, #d35400, #e67e22);
-			}
-			.project-image.realestate {
-				background: linear-gradient(120deg, #16a085, #2ecc71);
-			}
-			.project-image.beauty {
-				background: linear-gradient(120deg, #8e44ad, #9b59b6);
-			}
-			.project-image.barber {
-				background: linear-gradient(120deg, #212121, #424242);
-			}
-			.project-image.consultant {
-				background: linear-gradient(120deg, #304ffe, #536dfe);
-			}
-
-			.project-image-text {
-				position: relative;
-				z-index: 2;
-				color: white;
-				font-weight: 600;
-				text-transform: uppercase;
-				letter-spacing: 1px;
-				background: rgba(0, 0, 0, 0.3);
-				padding: 5px 15px;
-				border-radius: 20px;
-				backdrop-filter: blur(4px);
-			}
-
-			.project-content {
-				padding: 25px;
-				flex-grow: 1;
-				display: flex;
-				flex-direction: column;
-			}
-
-			.project-content h3 {
-				font-size: 1.25rem;
-				color: var(--color-navy);
-				margin-bottom: 10px;
-			}
-
-			.project-content p {
-				color: var(--color-slate);
-				font-size: 0.95rem;
-				margin-bottom: 20px;
-				flex-grow: 1;
-			}
-
-			.project-link {
-				display: inline-flex;
-				align-items: center;
-				gap: 8px;
-				color: var(--color-sky);
-				font-weight: 600;
-				font-size: 0.95rem;
-				transition: var(--transition);
-			}
-
-			.project-link:hover {
-				color: var(--color-navy);
-				gap: 12px;
-			}
-
-			/* =========================================
-           FAQ SECTION
-           ========================================= */
-			.faq-section {
-				background-color: var(--color-white);
-			}
-
-			.faq-container {
-				max-width: 800px;
-				margin: 0 auto;
-			}
-
-			.accordion-item {
-				border-bottom: 1px solid #eee;
-				margin-bottom: 10px;
-			}
-
-			.accordion-header {
-				width: 100%;
-				padding: 20px;
-				background: none;
-				border: none;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				text-align: left;
-				font-family: var(--font-heading);
-				font-weight: 600;
-				font-size: 1.1rem;
-				color: var(--color-navy);
-				cursor: pointer;
-				transition: var(--transition);
-			}
-
-			.accordion-header:hover {
-				color: var(--color-sky);
-			}
-
 			.accordion-header i {
 				transition: transform 0.3s ease;
 			}
-
 			.accordion-header.active i {
 				transform: rotate(180deg);
 			}
-
-			.accordion-content {
-				max-height: 0;
-				overflow: hidden;
-				transition: max-height 0.3s ease-out;
-				padding: 0 20px;
-			}
-
-			.accordion-content p {
-				padding-bottom: 20px;
-				color: var(--color-slate);
-				font-size: 1rem;
-			}
-
-			/* =========================================
-           PRICING
-           ========================================= */
-			.pricing-section {
-				background-color: var(--color-navy);
-				color: var(--color-white);
-				text-align: center;
-			}
-
-			.pricing-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				gap: 30px;
-				align-items: stretch;
-			}
-
-			.pricing-card {
-				background: var(--color-white);
-				color: var(--color-black);
-				border-radius: 20px;
-				padding: 40px 30px;
-				position: relative;
-				overflow: hidden;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-				display: flex;
-				flex-direction: column;
-				border: 1px solid transparent;
-			}
-
-			.pricing-card.best-seller {
-				border: 3px solid var(--color-sky);
-				z-index: 2;
-			}
-
-			.best-seller-label {
-				position: absolute;
-				top: 0;
-				left: 50%;
-				transform: translateX(-50%);
-				background-color: var(--color-sky);
-				color: var(--color-navy);
-				padding: 5px 20px;
-				font-size: 0.8rem;
-				font-weight: 800;
-				border-bottom-left-radius: 10px;
-				border-bottom-right-radius: 10px;
-				text-transform: uppercase;
-				letter-spacing: 1px;
-				width: 100%;
-				max-width: 200px;
-			}
-
-			.pricing-header h3 {
-				color: var(--color-slate);
-				text-transform: uppercase;
-				letter-spacing: 2px;
-				font-size: 1rem;
-				margin-bottom: 10px;
-				margin-top: 10px;
-			}
-
-			.pricing-card.custom-card .pricing-header h3 {
-				color: var(--color-navy);
-			}
-
-			.price {
-				font-size: 3rem;
-				font-weight: 800;
-				color: var(--color-navy);
-				margin-bottom: 10px;
-			}
-
-			.price span {
-				font-size: 1rem;
-				color: var(--color-slate);
-				font-weight: 400;
-			}
-
-			.price.custom-price {
-				font-size: 2.2rem;
-			}
-
-			.pricing-features {
-				margin: 30px 0;
-				text-align: left;
-				flex-grow: 1;
-			}
-
-			.pricing-features ul li {
-				margin-bottom: 12px;
-				display: flex;
-				align-items: flex-start;
-				gap: 10px;
-				font-size: 0.95rem;
-				border-bottom: 1px solid #f9f9f9;
-				padding-bottom: 8px;
-			}
-
-			.pricing-features .check-icon {
-				color: var(--color-success);
-				flex-shrink: 0;
-				width: 18px;
-				height: 18px;
-				margin-top: 3px;
-			}
-
-			.bonus-badge {
-				background-color: #e3f2fd;
-				color: var(--color-navy);
-				padding: 2px 8px;
-				border-radius: 4px;
-				font-size: 0.75rem;
-				font-weight: 700;
-				margin-left: auto;
-			}
-
-			/* =========================================
-           CONTACT FORM SECTION
-           ========================================= */
-			.contact-section {
-				background-color: var(--color-offwhite);
-			}
-
-			.contact-container {
-				max-width: 700px;
-				margin: 0 auto;
-				background-color: var(--color-white);
-				padding: 40px;
-				border-radius: 20px;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-			}
-
-			.form-group {
-				margin-bottom: 20px;
-			}
-
-			.form-group label {
-				display: block;
-				margin-bottom: 8px;
-				color: var(--color-navy);
-				font-weight: 600;
-				font-size: 0.95rem;
-			}
-
-			.form-group input,
-			.form-group select,
-			.form-group textarea {
-				width: 100%;
-				padding: 12px 15px;
-				border: 1px solid #ddd;
-				border-radius: 8px;
-				font-family: var(--font-body);
-				font-size: 1rem;
-				color: #333;
-				transition: var(--transition);
-				background-color: #f9f9f9;
-			}
-
-			.form-group input:focus,
-			.form-group select:focus,
-			.form-group textarea:focus {
-				outline: none;
-				border-color: var(--color-sky);
-				background-color: var(--color-white);
-				box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.1);
-			}
-
-			.form-group textarea {
-				resize: vertical;
-				min-height: 120px;
-			}
-
-			.required-mark {
-				color: red;
-			}
-
-			/* =========================================
-           FOOTER
-           ========================================= */
-			footer {
-				background-color: #0f1430;
-				color: var(--color-white);
-				padding: 60px 0 20px;
-			}
-
-			.footer-grid {
-				display: grid;
-				grid-template-columns: 1.5fr 1fr 1fr;
-				gap: 40px;
-				margin-bottom: 40px;
-			}
-
-			.footer-logo h2 {
-				color: var(--color-white);
-				margin-bottom: 15px;
-			}
-
-			.footer-logo p {
-				color: var(--color-slate);
-				max-width: 300px;
-			}
-
-			.footer-logo img {
-				width: 180px;
-				height: auto;
-				margin-bottom: 20px;
-			}
-
-			.footer-col h4 {
-				color: var(--color-sky);
-				margin-bottom: 20px;
-				font-size: 1.1rem;
-			}
-
-			.footer-links li {
-				margin-bottom: 10px;
-			}
-
-			.footer-links a {
-				color: #d1d5db;
-				transition: var(--transition);
-			}
-
-			.footer-links a:hover {
-				color: var(--color-sky);
-				padding-left: 5px;
-			}
-
-			.contact-info li {
-				display: flex;
-				gap: 10px;
-				margin-bottom: 15px;
-				color: #d1d5db;
-			}
-
-			.copyright {
-				text-align: center;
-				padding-top: 20px;
-				border-top: 1px solid rgba(255, 255, 255, 0.1);
-				color: var(--color-slate);
-				font-size: 0.9rem;
-			}
-
-			/* =========================================
-           FLOATING WHATSAPP
-           ========================================= */
-			.whatsapp-float {
-				position: fixed;
-				bottom: 30px;
-				right: 30px;
-				width: 60px;
-				height: 60px;
-				background-color: var(--color-success);
-				border-radius: 50%;
-				box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				z-index: 1000;
-				transition: var(--transition);
-				color: white;
-			}
-
-			.whatsapp-float:hover {
-				transform: scale(1.1) rotate(10deg);
-			}
-
-			/* =========================================
-           RESPONSIVE
-           ========================================= */
-			@media (max-width: 1024px) {
-				.process-grid,
-				.pricing-grid {
-					grid-template-columns: 1fr;
-				}
-				.process-grid::before {
-					display: none;
-				}
-
-				.pricing-card {
-					max-width: 400px;
-					margin: 0 auto;
-					width: 100%;
-				}
-
-				.step-card p {
-					max-width: 500px;
-					margin-left: auto;
-					margin-right: auto;
-				}
-			}
-
-			@media (min-width: 768px) {
-				.project-card {
-					max-width: 500px;
-					margin: 0 auto;
-					width: 100%;
-				}
-			}
-
-			@media (max-width: 768px) {
-				.desktop-lang {
-					display: none;
-				}
-				.mobile-lang {
-					display: block;
-				}
-
-				.hamburger {
-					display: block;
-				}
-
-				.nav-links {
-					position: fixed;
-					top: 80px;
-					right: -100%;
-					background-color: var(--color-white);
-					height: calc(100vh - 80px);
-					width: 80%;
-					flex-direction: column;
-					align-items: center;
-					justify-content: flex-start;
-					padding-top: 50px;
-					transition: var(--transition);
-					box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-				}
-
-				.nav-links.active {
-					right: 0;
-				}
-				.nav-links a {
-					font-size: 1.2rem;
-				}
-
-				.hero h1 {
-					font-size: 2.2rem;
-				}
-
-				.intro-grid {
-					grid-template-columns: 1fr;
-				}
-
-				.footer-grid {
-					grid-template-columns: 1fr;
-					gap: 30px;
-				}
-
-				.pricing-card.best-seller {
-					transform: none;
-					margin: 20px auto;
-				}
-
-				.contact-container {
-					padding: 25px;
-					width: 95%;
-				}
-			}
 		</style>
 	</head>
-	<body>
+	<body class="bg-white text-[#121212] leading-relaxed overflow-x-hidden">
+		<!-- Google Tag Manager (noscript) -->
 		<noscript
 			><iframe
 				src="https://www.googletagmanager.com/ns.html?id=GTM-WVPLXPDW"
@@ -1286,72 +179,136 @@
 				style="display: none; visibility: hidden"
 			></iframe
 		></noscript>
-		<header>
-			<div class="container">
-				<nav>
+
+		<!-- HEADER -->
+		<header
+			id="mainHeader"
+			class="fixed w-full top-0 z-[1000] bg-white text-navy shadow-[0_2px_10px_rgba(0,0,0,0.05)] transition-shadow duration-300"
+		>
+			<!-- Contenedor unificado para alinear nav con el resto del contenido -->
+			<div class="w-[90%] max-w-[1200px] mx-auto">
+				<nav class="flex justify-between items-center h-20">
 					<div class="logo-container">
-						<a href="#" class="logo-mockup">
+						<a href="#" class="flex items-center">
 							<img
 								src="assets/logos/secondary-version.png"
 								alt="Logo Koda Studio"
+								class="h-10 block"
 							/>
 						</a>
 					</div>
 
-					<ul class="nav-links" id="navLinks">
-						<li><a href="#process" data-i18n="nav_process">Proceso</a></li>
-						<li><a href="#services" data-i18n="nav_services">Servicios</a></li>
-						<li>
-							<a href="#testimonials" data-i18n="nav_testimonials"
+					<ul
+						id="navLinks"
+						class="fixed top-20 right-[-100%] bg-white h-[calc(100vh-80px)] w-4/5 flex flex-col items-center justify-start pt-12 shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:static md:flex-row md:bg-transparent md:h-auto md:w-auto md:pt-0 md:shadow-none md:gap-5"
+					>
+						<li class="my-4 md:my-0">
+							<a
+								href="#process"
+								data-i18n="nav_process"
+								class="font-semibold text-lg md:text-[0.9rem] text-navy hover:text-sky transition-colors"
+								>Proceso</a
+							>
+						</li>
+						<li class="my-4 md:my-0">
+							<a
+								href="#services"
+								data-i18n="nav_services"
+								class="font-semibold text-lg md:text-[0.9rem] text-navy hover:text-sky transition-colors"
+								>Servicios</a
+							>
+						</li>
+						<li class="my-4 md:my-0">
+							<a
+								href="#testimonials"
+								data-i18n="nav_testimonials"
+								class="font-semibold text-lg md:text-[0.9rem] text-navy hover:text-sky transition-colors"
 								>Testimonios</a
 							>
 						</li>
-						<li><a href="#pricing" data-i18n="nav_pricing">Paquetes</a></li>
-						<li>
+						<li class="my-4 md:my-0">
+							<a
+								href="#pricing"
+								data-i18n="nav_pricing"
+								class="font-semibold text-lg md:text-[0.9rem] text-navy hover:text-sky transition-colors"
+								>Paquetes</a
+							>
+						</li>
+						<li class="my-6 md:my-0">
 							<a
 								href="#contact"
-								class="btn btn-primary"
-								style="padding: 8px 20px; color: var(--color-navy)"
 								data-i18n="nav_contact"
+								class="inline-block px-5 py-2 rounded-full font-semibold font-heading bg-sky text-navy shadow-[0_4px_15px_rgba(79,195,247,0.4)] hover:-translate-y-0.5 hover:bg-[#29b6f6] transition-all"
 								>Contacto</a
 							>
 						</li>
-						<li class="desktop-lang">
-							<button class="lang-switch lang-btn">EN</button>
+						<!-- Botón de idioma en Escritorio (dentro de la lista) -->
+						<li class="hidden md:block">
+							<button
+								class="lang-btn font-extrabold font-heading text-[0.9rem] text-navy bg-transparent border-none px-2 py-1 rounded hover:bg-navy/5 hover:text-sky transition-colors cursor-pointer"
+							>
+								EN
+							</button>
 						</li>
 					</ul>
 
-					<div style="display: flex; align-items: center; gap: 15px">
-						<div class="mobile-lang">
-							<button class="lang-switch lang-btn">EN</button>
+					<div class="flex items-center gap-4">
+						<!-- Botón de idioma en Móvil (fuera de la lista) -->
+						<div class="block md:hidden">
+							<button
+								class="lang-btn font-extrabold font-heading text-[0.9rem] text-navy bg-transparent border-none px-2 py-1 rounded hover:bg-navy/5 hover:text-sky transition-colors cursor-pointer"
+							>
+								EN
+							</button>
 						</div>
-						<div class="hamburger" id="hamburger">
-							<i data-lucide="menu" size="32"></i>
+						<div
+							id="hamburger"
+							class="block md:hidden cursor-pointer text-navy"
+						>
+							<i data-lucide="menu" class="w-8 h-8"></i>
 						</div>
 					</div>
 				</nav>
 			</div>
 		</header>
 
-		<section class="hero" id="home">
-			<div class="container">
-				<div class="hero-content">
-					<h1 class="animate-item" data-i18n="hero_title">
+		<!-- HERO -->
+		<section
+			id="home"
+			class="mt-20 bg-gradient-to-br from-navy to-[#0d1245] text-white py-24 relative overflow-hidden"
+		>
+			<!-- Círculo difuminado de fondo -->
+			<div
+				class="absolute -top-12 -right-24 w-[400px] h-[400px] bg-sky opacity-10 rounded-full blur-[80px]"
+			></div>
+
+			<div class="w-[90%] max-w-[1200px] mx-auto relative z-10">
+				<div class="max-w-[700px]">
+					<h1
+						class="animate-item font-heading font-bold text-white text-4xl md:text-5xl leading-tight mb-5"
+						data-i18n="hero_title"
+					>
 						Digitaliza tu negocio y expande tu alcance en todo el país
 					</h1>
-					<p class="animate-item" data-i18n="hero_desc">
+					<p
+						class="animate-item text-lg md:text-xl text-gray-300 mb-8"
+						data-i18n="hero_desc"
+					>
 						Diseño web profesional, infraestructura robusta y herramientas
 						automatizadas. Todo lo que necesitas para crecer en México, sin
 						complicaciones técnicas.
 					</p>
-					<div
-						class="animate-item"
-						style="display: flex; gap: 15px; flex-wrap: wrap"
-					>
-						<a href="#pricing" class="btn btn-primary" data-i18n="hero_btn1"
+					<div class="animate-item flex flex-wrap gap-4">
+						<a
+							href="#pricing"
+							class="inline-block px-8 py-3 rounded-full font-semibold font-heading text-center bg-sky text-navy shadow-[0_4px_15px_rgba(79,195,247,0.4)] hover:-translate-y-0.5 hover:bg-[#29b6f6] transition-all"
+							data-i18n="hero_btn1"
 							>Ver Paquetes</a
 						>
-						<a href="#services" class="btn btn-outline" data-i18n="hero_btn2"
+						<a
+							href="#services"
+							class="inline-block px-8 py-3 rounded-full font-semibold font-heading text-center border-2 border-sky text-sky bg-transparent hover:bg-sky hover:text-navy transition-all"
+							data-i18n="hero_btn2"
 							>Explorar Servicios</a
 						>
 					</div>
@@ -1359,20 +316,30 @@
 			</div>
 		</section>
 
-		<section class="section-padding intro-section">
-			<div class="container">
-				<div class="intro-grid">
-					<div class="intro-text">
-						<h2 class="animate-item" data-i18n="intro_title">
+		<!-- INTRO -->
+		<section class="py-20 bg-offwhite">
+			<div class="w-[90%] max-w-[1200px] mx-auto">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+					<div>
+						<h2
+							class="animate-item text-3xl md:text-4xl text-navy font-bold mb-5"
+							data-i18n="intro_title"
+						>
 							Tus clientes te están buscando ahora mismo
 						</h2>
-						<p class="animate-item" data-i18n="intro_desc">
+						<p
+							class="animate-item text-slate text-lg mb-4"
+							data-i18n="intro_desc"
+						>
 							Hoy en día, la primera impresión de cualquier negocio ocurre en
 							internet. Tus clientes potenciales buscan servicios cerca de su
 							ubicación, y si tu negocio no aparece de forma profesional, es
 							probable que no logren encontrarte.
 						</p>
-						<div class="intro-highlight animate-item" data-i18n="intro_quote">
+						<div
+							class="animate-item border-l-4 border-sky pl-5 mt-5 italic text-navy font-semibold"
+							data-i18n="intro_quote"
+						>
 							"En Koda Studio construimos tu sede digital: abierta 24/7, con
 							identidad propia y diseñada para generar confianza desde el primer
 							clic."
@@ -1382,54 +349,111 @@
 			</div>
 		</section>
 
-		<section class="section-padding process-section" id="process">
-			<div class="container">
-				<div class="section-title">
-					<h2 class="animate-item" data-i18n="process_title">
+		<!-- PROCESS -->
+		<section id="process" class="py-20 bg-navy text-white">
+			<div class="w-[90%] max-w-[1200px] mx-auto">
+				<div class="text-center mb-16">
+					<h2
+						class="animate-item text-3xl md:text-4xl text-white font-bold mb-3"
+						data-i18n="process_title"
+					>
 						Tu Nuevo Sitio en 3 Pasos
 					</h2>
-					<p class="animate-item" data-i18n="process_desc">
+					<p class="animate-item text-gray-300" data-i18n="process_desc">
 						Hemos simplificado todo para que no te preocupes por la tecnología.
 					</p>
 				</div>
 
-				<div class="process-grid">
-					<div class="step-card animate-item">
-						<div class="step-number">01</div>
-						<div class="step-content">
-							<div class="step-icon-wrapper">
-								<i data-lucide="message-square" size="32"></i>
+				<div
+					class="process-grid grid grid-cols-1 md:grid-cols-3 gap-10 relative mt-10"
+				>
+					<!-- Step 1 -->
+					<div
+						class="animate-item bg-transparent p-5 pt-16 text-center relative"
+					>
+						<div
+							class="absolute -top-16 left-1/2 -translate-x-1/2 text-8xl font-extrabold text-white/5 z-0"
+						>
+							01
+						</div>
+						<div class="relative z-10">
+							<div
+								class="w-[70px] h-[70px] bg-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg text-sky"
+							>
+								<i data-lucide="message-square" class="w-8 h-8"></i>
 							</div>
-							<h3 data-i18n="step1_title">Briefing</h3>
-							<p data-i18n="step1_desc">
+							<h3
+								class="text-white text-xl font-bold mb-4"
+								data-i18n="step1_title"
+							>
+								Briefing
+							</h3>
+							<p
+								class="text-slate-300 max-w-[500px] mx-auto"
+								data-i18n="step1_desc"
+							>
 								Nos cuentas sobre tu negocio, tus objetivos y la información
 								básica para comenzar.
 							</p>
 						</div>
 					</div>
 
-					<div class="step-card animate-item">
-						<div class="step-number">02</div>
-						<div class="step-content">
-							<div class="step-icon-wrapper">
-								<i data-lucide="code-2" size="32"></i>
+					<!-- Step 2 -->
+					<div
+						class="animate-item bg-transparent p-5 pt-16 text-center relative"
+					>
+						<div
+							class="absolute -top-16 left-1/2 -translate-x-1/2 text-8xl font-extrabold text-white/5 z-0"
+						>
+							02
+						</div>
+						<div class="relative z-10">
+							<div
+								class="w-[70px] h-[70px] bg-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg text-sky"
+							>
+								<i data-lucide="code-2" class="w-8 h-8"></i>
 							</div>
-							<h3 data-i18n="step2_title">Construcción</h3>
-							<p data-i18n="step2_desc">
+							<h3
+								class="text-white text-xl font-bold mb-4"
+								data-i18n="step2_title"
+							>
+								Construcción
+							</h3>
+							<p
+								class="text-slate-300 max-w-[500px] mx-auto"
+								data-i18n="step2_desc"
+							>
 								Diseñamos tu sitio, configuramos tus correos y montamos tu
 								sistema de citas.
 							</p>
 						</div>
 					</div>
 
-					<div class="step-card animate-item">
-						<div class="step-number">03</div>
-						<div class="step-content">
-							<div class="step-icon-wrapper">
-								<i data-lucide="rocket" size="32"></i>
+					<!-- Step 3 -->
+					<div
+						class="animate-item bg-transparent p-5 pt-16 text-center relative"
+					>
+						<div
+							class="absolute -top-16 left-1/2 -translate-x-1/2 text-8xl font-extrabold text-white/5 z-0"
+						>
+							03
+						</div>
+						<div class="relative z-10">
+							<div
+								class="w-[70px] h-[70px] bg-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg text-sky"
+							>
+								<i data-lucide="rocket" class="w-8 h-8"></i>
 							</div>
-							<h3 data-i18n="step3_title">Lanzamiento</h3>
-							<p data-i18n="step3_desc">
+							<h3
+								class="text-white text-xl font-bold mb-4"
+								data-i18n="step3_title"
+							>
+								Lanzamiento
+							</h3>
+							<p
+								class="text-slate-300 max-w-[500px] mx-auto"
+								data-i18n="step3_desc"
+							>
 								Revisamos los detalles finales y publicamos tu negocio para que
 								el mundo lo vea.
 							</p>
@@ -1439,101 +463,197 @@
 			</div>
 		</section>
 
-		<section class="section-padding services-section" id="services">
-			<div class="container">
-				<div class="section-title">
-					<h2 class="animate-item" data-i18n="services_title">
+		<!-- SERVICES -->
+		<section id="services" class="py-20 bg-white">
+			<div class="w-[90%] max-w-[1200px] mx-auto">
+				<div class="text-center mb-16">
+					<h2
+						class="animate-item text-3xl md:text-4xl text-navy font-bold mb-3"
+						data-i18n="services_title"
+					>
 						Lo que hacemos por ti
 					</h2>
-					<p class="animate-item" data-i18n="services_desc">
+					<p class="animate-item text-slate" data-i18n="services_desc">
 						Soluciones integrales para digitalizar tu empresa
 					</p>
 				</div>
 
-				<div class="services-grid">
-					<div class="service-card animate-item">
-						<div class="service-badge" data-i18n="badge_essential">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<!-- Srv 1 -->
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-card hover:-translate-y-2 hover:border-sky border border-gray-100 transition-all duration-300 relative overflow-hidden group"
+					>
+						<div
+							class="absolute top-0 right-0 bg-sky text-navy text-xs font-bold py-1.5 px-4 rounded-bl-lg uppercase"
+							data-i18n="badge_essential"
+						>
 							Esencial
 						</div>
-						<div class="service-icon"><i data-lucide="monitor"></i></div>
-						<h3 data-i18n="srv1_title">Diseño Web Responsivo</h3>
-						<p data-i18n="srv1_desc">
+						<div
+							class="w-[60px] h-[60px] bg-sky/10 rounded-xl flex items-center justify-center mb-6 text-navy group-hover:bg-navy group-hover:text-white group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="monitor" class="w-8 h-8"></i>
+						</div>
+						<h3 class="text-xl font-bold mb-4 text-navy" data-i18n="srv1_title">
+							Diseño Web Responsivo
+						</h3>
+						<p class="text-[0.95rem] text-slate" data-i18n="srv1_desc">
 							Tu sitio se verá perfecto en celulares, tablets y computadoras,
 							adaptándose a cualquier tamaño de pantalla.
 						</p>
 					</div>
 
-					<div class="service-card animate-item">
-						<div class="service-badge" data-i18n="badge_included">Incluido</div>
-						<div class="service-icon"><i data-lucide="server"></i></div>
-						<h3 data-i18n="srv2_title">Dominio & Hosting</h3>
-						<p data-i18n="srv2_desc">
+					<!-- Srv 2 -->
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-card hover:-translate-y-2 hover:border-sky border border-gray-100 transition-all duration-300 relative overflow-hidden group"
+					>
+						<div
+							class="absolute top-0 right-0 bg-sky text-navy text-xs font-bold py-1.5 px-4 rounded-bl-lg uppercase"
+							data-i18n="badge_included"
+						>
+							Incluido
+						</div>
+						<div
+							class="w-[60px] h-[60px] bg-sky/10 rounded-xl flex items-center justify-center mb-6 text-navy group-hover:bg-navy group-hover:text-white group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="server" class="w-8 h-8"></i>
+						</div>
+						<h3 class="text-xl font-bold mb-4 text-navy" data-i18n="srv2_title">
+							Dominio & Hosting
+						</h3>
+						<p class="text-[0.95rem] text-slate" data-i18n="srv2_desc">
 							Incluimos tu dominio .com y hospedaje de alta velocidad por un
 							año. Sin configuraciones complicadas.
 						</p>
 					</div>
 
-					<div class="service-card animate-item">
-						<div class="service-icon"><i data-lucide="mail"></i></div>
-						<h3 data-i18n="srv3_title">Correos Corporativos</h3>
-						<p data-i18n="srv3_desc">
+					<!-- Srv 3 -->
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-card hover:-translate-y-2 hover:border-sky border border-gray-100 transition-all duration-300 relative overflow-hidden group"
+					>
+						<div
+							class="w-[60px] h-[60px] bg-sky/10 rounded-xl flex items-center justify-center mb-6 text-navy group-hover:bg-navy group-hover:text-white group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="mail" class="w-8 h-8"></i>
+						</div>
+						<h3 class="text-xl font-bold mb-4 text-navy" data-i18n="srv3_title">
+							Correos Corporativos
+						</h3>
+						<p class="text-[0.95rem] text-slate" data-i18n="srv3_desc">
 							Crea confianza inmediata con direcciones profesionales como
 							<strong>contacto@tuempresa.com</strong>.
 						</p>
 					</div>
 
-					<div class="service-card animate-item">
-						<div class="service-badge" data-i18n="badge_featured">
+					<!-- Srv 4 -->
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-card hover:-translate-y-2 hover:border-sky border border-gray-100 transition-all duration-300 relative overflow-hidden group"
+					>
+						<div
+							class="absolute top-0 right-0 bg-sky text-navy text-xs font-bold py-1.5 px-4 rounded-bl-lg uppercase"
+							data-i18n="badge_featured"
+						>
 							Destacado
 						</div>
-						<div class="service-icon"><i data-lucide="calendar-check"></i></div>
-						<h3 data-i18n="srv4_title">Agenda Automatizada</h3>
-						<p data-i18n="srv4_desc">
+						<div
+							class="w-[60px] h-[60px] bg-sky/10 rounded-xl flex items-center justify-center mb-6 text-navy group-hover:bg-navy group-hover:text-white group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="calendar-check" class="w-8 h-8"></i>
+						</div>
+						<h3 class="text-xl font-bold mb-4 text-navy" data-i18n="srv4_title">
+							Agenda Automatizada
+						</h3>
+						<p class="text-[0.95rem] text-slate" data-i18n="srv4_desc">
 							Sistema de reservas 24/7 integrado en tu web. Tus clientes agendan
 							sin llamadas ni mensajes.
 						</p>
 					</div>
 
-					<div class="service-card animate-item">
-						<div class="service-icon"><i data-lucide="map-pin"></i></div>
-						<h3 data-i18n="srv5_title">Google Maps & SEO</h3>
-						<p data-i18n="srv5_desc">
+					<!-- Srv 5 -->
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-card hover:-translate-y-2 hover:border-sky border border-gray-100 transition-all duration-300 relative overflow-hidden group"
+					>
+						<div
+							class="w-[60px] h-[60px] bg-sky/10 rounded-xl flex items-center justify-center mb-6 text-navy group-hover:bg-navy group-hover:text-white group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="map-pin" class="w-8 h-8"></i>
+						</div>
+						<h3 class="text-xl font-bold mb-4 text-navy" data-i18n="srv5_title">
+							Google Maps & SEO
+						</h3>
+						<p class="text-[0.95rem] text-slate" data-i18n="srv5_desc">
 							Optimizamos tu ficha de negocio para que aparezcas primero en
 							búsquedas locales de tu ciudad.
 						</p>
 					</div>
 
-					<div class="service-card animate-item">
-						<div class="service-icon"><i data-lucide="qr-code"></i></div>
-						<h3 data-i18n="srv6_title">Menú o Catálogo QR</h3>
-						<p data-i18n="srv6_desc">
+					<!-- Srv 6 -->
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-card hover:-translate-y-2 hover:border-sky border border-gray-100 transition-all duration-300 relative overflow-hidden group"
+					>
+						<div
+							class="w-[60px] h-[60px] bg-sky/10 rounded-xl flex items-center justify-center mb-6 text-navy group-hover:bg-navy group-hover:text-white group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="qr-code" class="w-8 h-8"></i>
+						</div>
+						<h3 class="text-xl font-bold mb-4 text-navy" data-i18n="srv6_title">
+							Menú o Catálogo QR
+						</h3>
+						<p class="text-[0.95rem] text-slate" data-i18n="srv6_desc">
 							Digitalizamos tus productos o menú para que tus clientes accedan
 							rápido desde su celular.
 						</p>
 					</div>
 
-					<div class="service-card animate-item">
-						<div class="service-icon"><i data-lucide="contact"></i></div>
-						<h3 data-i18n="srv7_title">Tarjetas Digitales</h3>
-						<p data-i18n="srv7_desc">
+					<!-- Srv 7 -->
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-card hover:-translate-y-2 hover:border-sky border border-gray-100 transition-all duration-300 relative overflow-hidden group"
+					>
+						<div
+							class="w-[60px] h-[60px] bg-sky/10 rounded-xl flex items-center justify-center mb-6 text-navy group-hover:bg-navy group-hover:text-white group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="contact" class="w-8 h-8"></i>
+						</div>
+						<h3 class="text-xl font-bold mb-4 text-navy" data-i18n="srv7_title">
+							Tarjetas Digitales
+						</h3>
+						<p class="text-[0.95rem] text-slate" data-i18n="srv7_desc">
 							Diseñamos tu tarjeta de presentación interactiva con enlaces
 							directos a tu web y WhatsApp.
 						</p>
 					</div>
 
-					<div class="service-card animate-item">
-						<div class="service-icon"><i data-lucide="bar-chart-2"></i></div>
-						<h3 data-i18n="srv8_title">Métricas de Visitas</h3>
-						<p data-i18n="srv8_desc">
+					<!-- Srv 8 -->
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-card hover:-translate-y-2 hover:border-sky border border-gray-100 transition-all duration-300 relative overflow-hidden group"
+					>
+						<div
+							class="w-[60px] h-[60px] bg-sky/10 rounded-xl flex items-center justify-center mb-6 text-navy group-hover:bg-navy group-hover:text-white group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="bar-chart-2" class="w-8 h-8"></i>
+						</div>
+						<h3 class="text-xl font-bold mb-4 text-navy" data-i18n="srv8_title">
+							Métricas de Visitas
+						</h3>
+						<p class="text-[0.95rem] text-slate" data-i18n="srv8_desc">
 							Reportes claros con Google Analytics para saber cuánta gente entra
 							a tu sitio y desde dónde.
 						</p>
 					</div>
 
-					<div class="service-card animate-item">
-						<div class="service-icon"><i data-lucide="shield-check"></i></div>
-						<h3 data-i18n="srv9_title">Seguridad & Soporte</h3>
-						<p data-i18n="srv9_desc">
+					<!-- Srv 9 -->
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-card hover:-translate-y-2 hover:border-sky border border-gray-100 transition-all duration-300 relative overflow-hidden group"
+					>
+						<div
+							class="w-[60px] h-[60px] bg-sky/10 rounded-xl flex items-center justify-center mb-6 text-navy group-hover:bg-navy group-hover:text-white group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="shield-check" class="w-8 h-8"></i>
+						</div>
+						<h3 class="text-xl font-bold mb-4 text-navy" data-i18n="srv9_title">
+							Seguridad & Soporte
+						</h3>
+						<p class="text-[0.95rem] text-slate" data-i18n="srv9_desc">
 							Certificado SSL (candado seguro) incluido y hasta 6 meses de
 							soporte técnico gratuito para cambios.
 						</p>
@@ -1542,178 +662,292 @@
 			</div>
 		</section>
 
-		<section class="section-padding testimonials-section" id="testimonials">
-			<div class="container">
-				<div class="section-title">
-					<h2 class="animate-item" data-i18n="test_title">
+		<!-- TESTIMONIALS -->
+		<section id="testimonials" class="py-20 bg-navy text-white overflow-hidden">
+			<div class="w-[90%] max-w-[1200px] mx-auto">
+				<div class="text-center mb-16">
+					<h2
+						class="animate-item text-3xl md:text-4xl text-white font-bold mb-3"
+						data-i18n="test_title"
+					>
 						Historias de Éxito
 					</h2>
-					<p class="animate-item" data-i18n="test_desc">
+					<p class="animate-item text-[#b0bec5]" data-i18n="test_desc">
 						Empresarios de todo México & Canadá que transformaron su negocio con
 						Koda Studio.
 					</p>
 				</div>
 
-				<div class="testimonial-slider-container animate-item">
-					<div class="testimonial-track" id="testimonialTrack">
-						<div class="testimonial-slide">
-							<div class="testimonial-text" data-i18n="test1_quote">
+				<div class="animate-item relative max-w-[900px] mx-auto py-5">
+					<div
+						class="testimonial-track flex transition-transform duration-500 ease-in-out gap-5 cursor-grab active:cursor-grabbing"
+						id="testimonialTrack"
+					>
+						<!-- Slide 1 -->
+						<div
+							class="testimonial-slide min-w-full bg-white text-black p-10 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center text-center relative overflow-hidden"
+						>
+							<div
+								class="absolute top-2 left-5 font-serif text-8xl text-sky/20 leading-none"
+							>
+								“
+							</div>
+							<div
+								class="text-[1.1rem] italic mb-6 text-gray-700 max-w-[90%] z-10 relative"
+								data-i18n="test1_quote"
+							>
 								"El catálogo digital de maquinaria nos cambió la forma de
 								vender. Ahora los clientes industriales eligen el equipo y nos
 								llega la solicitud de cotización lista. El profesionalismo del
 								sitio nos ha abierto puertas con constructoras grandes."
 							</div>
-							<div class="testimonial-author">
-								<h4>Ing. Omar Leyva</h4>
-								<div class="testimonial-meta">
-									<i
-										data-lucide="zap"
-										style="width: 14px; color: var(--color-slate)"
-									></i>
+							<div>
+								<h4 class="text-navy text-[1.1rem] font-bold mb-1">
+									Ing. Omar Leyva
+								</h4>
+								<div
+									class="flex items-center justify-center gap-1.5 text-[0.9rem] text-slate"
+								>
+									<i data-lucide="zap" class="w-3.5 h-3.5"></i>
 									Baja Electric &middot; Tijuana
 								</div>
 							</div>
 						</div>
 
-						<div class="testimonial-slide">
-							<div class="testimonial-text" data-i18n="test2_quote">
+						<!-- Slide 2 -->
+						<div
+							class="testimonial-slide min-w-full bg-white text-black p-10 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center text-center relative overflow-hidden"
+						>
+							<div
+								class="absolute top-2 left-5 font-serif text-8xl text-sky/20 leading-none"
+							>
+								“
+							</div>
+							<div
+								class="text-[1.1rem] italic mb-6 text-gray-700 max-w-[90%] z-10 relative"
+								data-i18n="test2_quote"
+							>
 								"Nuestros eventos son puramente visuales y Koda Studio logró que
 								la página transmitiera esa misma emoción. La galería de
 								servicios ha sido nuestra mejor herramienta para cerrar fechas
 								con clientes que buscan algo inolvidable."
 							</div>
-							<div class="testimonial-author">
-								<h4>Daniela Voga</h4>
-								<div class="testimonial-meta">
-									<i
-										data-lucide="party-popper"
-										style="width: 14px; color: var(--color-slate)"
-									></i>
+							<div>
+								<h4 class="text-navy text-[1.1rem] font-bold mb-1">
+									Daniela Voga
+								</h4>
+								<div
+									class="flex items-center justify-center gap-1.5 text-[0.9rem] text-slate"
+								>
+									<i data-lucide="party-popper" class="w-3.5 h-3.5"></i>
 									Voga Eventos &middot; Tijuana
 								</div>
 							</div>
 						</div>
 
-						<div class="testimonial-slide">
-							<div class="testimonial-text" data-i18n="test3_quote">
+						<!-- Slide 3 -->
+						<div
+							class="testimonial-slide min-w-full bg-white text-black p-10 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center text-center relative overflow-hidden"
+						>
+							<div
+								class="absolute top-2 left-5 font-serif text-8xl text-sky/20 leading-none"
+							>
+								“
+							</div>
+							<div
+								class="text-[1.1rem] italic mb-6 text-gray-700 max-w-[90%] z-10 relative"
+								data-i18n="test3_quote"
+							>
 								"Nuestros clientes buscan relajación y esa experiencia debe
 								empezar desde el sitio web. Koda Studio logró una plataforma
 								impecable que facilita las reservas rápidas. La estética nórdica
 								del sitio conecta perfectamente con nuestro concepto."
 							</div>
-							<div class="testimonial-author">
-								<h4>Jean-Erik Tremblay</h4>
-								<div class="testimonial-meta">
-									<i
-										data-lucide="waves"
-										style="width: 14px; color: var(--color-slate)"
-									></i>
+							<div>
+								<h4 class="text-navy text-[1.1rem] font-bold mb-1">
+									Jean-Erik Tremblay
+								</h4>
+								<div
+									class="flex items-center justify-center gap-1.5 text-[0.9rem] text-slate"
+								>
+									<i data-lucide="waves" class="w-3.5 h-3.5"></i>
 									Scandinave SPA &middot; Quebec, CA
 								</div>
 							</div>
 						</div>
 
-						<div class="testimonial-slide">
-							<div class="testimonial-text" data-i18n="test4_quote">
+						<!-- Slide 4 -->
+						<div
+							class="testimonial-slide min-w-full bg-white text-black p-10 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center text-center relative overflow-hidden"
+						>
+							<div
+								class="absolute top-2 left-5 font-serif text-8xl text-sky/20 leading-none"
+							>
+								“
+							</div>
+							<div
+								class="text-[1.1rem] italic mb-6 text-gray-700 max-w-[90%] z-10 relative"
+								data-i18n="test4_quote"
+							>
 								"El mercado inmobiliario en Canadá es sumamente competitivo.
 								Gracias a la automatización de leads y el diseño minimalista de
 								Novus, hemos logrado filtrar prospectos de calidad sin perder
 								tiempo en tareas manuales. Una solución brillante."
 							</div>
-							<div class="testimonial-author">
-								<h4>Amrik Cheema</h4>
-								<div class="testimonial-meta">
-									<i
-										data-lucide="building-2"
-										style="width: 14px; color: var(--color-slate)"
-									></i>
+							<div>
+								<h4 class="text-navy text-[1.1rem] font-bold mb-1">
+									Amrik Cheema
+								</h4>
+								<div
+									class="flex items-center justify-center gap-1.5 text-[0.9rem] text-slate"
+								>
+									<i data-lucide="building-2" class="w-3.5 h-3.5"></i>
 									Real Estate &middot; Columbia, CA
 								</div>
 							</div>
 						</div>
 
-						<div class="testimonial-slide">
-							<div class="testimonial-text" data-i18n="test5_quote">
+						<!-- Slide 5 -->
+						<div
+							class="testimonial-slide min-w-full bg-white text-black p-10 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center text-center relative overflow-hidden"
+						>
+							<div
+								class="absolute top-2 left-5 font-serif text-8xl text-sky/20 leading-none"
+							>
+								“
+							</div>
+							<div
+								class="text-[1.1rem] italic mb-6 text-gray-700 max-w-[90%] z-10 relative"
+								data-i18n="test5_quote"
+							>
 								"Como estudio creativo, somos muy exigentes con la estética.
 								Koda Studio creó una interfaz que respira nuestra esencia:
 								limpia y moderna. Es la carta de presentación perfecta para
 								nuestras propuestas de branding."
 							</div>
-							<div class="testimonial-author">
-								<h4>Hector Veiga</h4>
-								<div class="testimonial-meta">
-									<i
-										data-lucide="palette"
-										style="width: 14px; color: var(--color-slate)"
-									></i>
+							<div>
+								<h4 class="text-navy text-[1.1rem] font-bold mb-1">
+									Hector Veiga
+								</h4>
+								<div
+									class="flex items-center justify-center gap-1.5 text-[0.9rem] text-slate"
+								>
+									<i data-lucide="palette" class="w-3.5 h-3.5"></i>
 									Nebulosa Studio &middot; Vancouver, CA
 								</div>
 							</div>
 						</div>
 
-						<div class="testimonial-slide">
-							<div class="testimonial-text" data-i18n="test6_quote">
+						<!-- Slide 6 -->
+						<div
+							class="testimonial-slide min-w-full bg-white text-black p-10 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center text-center relative overflow-hidden"
+						>
+							<div
+								class="absolute top-2 left-5 font-serif text-8xl text-sky/20 leading-none"
+							>
+								“
+							</div>
+							<div
+								class="text-[1.1rem] italic mb-6 text-gray-700 max-w-[90%] z-10 relative"
+								data-i18n="test6_quote"
+							>
 								"Necesitábamos dejar de ser 'un despacho más' y convertirnos en
 								una firma de autoridad. El blog y el diseño elegante han atraído
 								a clientes corporativos que antes no nos consideraban. La
 								inversión se pagó sola en el primer mes."
 							</div>
-							<div class="testimonial-author">
-								<h4>C.P. Paúl Roldan</h4>
-								<div class="testimonial-meta">
-									<i
-										data-lucide="award"
-										style="width: 14px; color: var(--color-slate)"
-									></i>
+							<div>
+								<h4 class="text-navy text-[1.1rem] font-bold mb-1">
+									C.P. Paúl Roldan
+								</h4>
+								<div
+									class="flex items-center justify-center gap-1.5 text-[0.9rem] text-slate"
+								>
+									<i data-lucide="award" class="w-3.5 h-3.5"></i>
 									Contapro MX &middot; Ciudad de México
 								</div>
 							</div>
 						</div>
 
-						<div class="testimonial-slide">
-							<div class="testimonial-text" data-i18n="test7_quote">
+						<!-- Slide 7 -->
+						<div
+							class="testimonial-slide min-w-full bg-white text-black p-10 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center text-center relative overflow-hidden"
+						>
+							<div
+								class="absolute top-2 left-5 font-serif text-8xl text-sky/20 leading-none"
+							>
+								“
+							</div>
+							<div
+								class="text-[1.1rem] italic mb-6 text-gray-700 max-w-[90%] z-10 relative"
+								data-i18n="test7_quote"
+							>
 								"Antes me pasaba el día contestando '¿tienes espacio?'. Ahora
 								mis clientas ven mi agenda real y reservan con el anticipo
 								pagado. Tengo más tiempo para trabajar."
 							</div>
-							<div class="testimonial-author">
-								<h4>Karla Estévez</h4>
-								<div class="testimonial-meta">
-									<i
-										data-lucide="sparkles"
-										style="width: 14px; color: var(--color-slate)"
-									></i>
+							<div>
+								<h4 class="text-navy text-[1.1rem] font-bold mb-1">
+									Karla Estévez
+								</h4>
+								<div
+									class="flex items-center justify-center gap-1.5 text-[0.9rem] text-slate"
+								>
+									<i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
 									Studio Lash &middot; Hidalgo
 								</div>
 							</div>
 						</div>
 
-						<div class="testimonial-slide">
-							<div class="testimonial-text" data-i18n="test8_quote">
+						<!-- Slide 8 -->
+						<div
+							class="testimonial-slide min-w-full bg-white text-black p-10 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col items-center text-center relative overflow-hidden"
+						>
+							<div
+								class="absolute top-2 left-5 font-serif text-8xl text-sky/20 leading-none"
+							>
+								“
+							</div>
+							<div
+								class="text-[1.1rem] italic mb-6 text-gray-700 max-w-[90%] z-10 relative"
+								data-i18n="test8_quote"
+							>
 								"La seriedad que proyecta mi firma ahora es incomparable. Koda
 								Studio entendió perfecto que necesitábamos sobriedad y
 								confianza. Los clientes ahora llegan mucho más filtrados y
 								decididos."
 							</div>
-							<div class="testimonial-author">
-								<h4>Lic. Roberto Méndez</h4>
-								<div class="testimonial-meta">
-									<i
-										data-lucide="scale"
-										style="width: 14px; color: var(--color-slate)"
-									></i>
+							<div>
+								<h4 class="text-navy text-[1.1rem] font-bold mb-1">
+									Lic. Roberto Méndez
+								</h4>
+								<div
+									class="flex items-center justify-center gap-1.5 text-[0.9rem] text-slate"
+								>
+									<i data-lucide="scale" class="w-3.5 h-3.5"></i>
 									Abogado &middot; Ciudad de México
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<div class="slider-controls">
-						<button class="slider-btn" id="prevBtn" aria-label="Anterior">
+					<!-- Controles de Slider -->
+					<div class="flex justify-center items-center mt-8 gap-5">
+						<button
+							class="bg-white/10 border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-sky hover:text-navy hover:border-sky transition-all cursor-pointer"
+							id="prevBtn"
+							aria-label="Anterior"
+						>
 							<i data-lucide="chevron-left"></i>
 						</button>
-						<div class="slider-dots" id="sliderDots"></div>
-						<button class="slider-btn" id="nextBtn" aria-label="Siguiente">
+						<div class="flex gap-2" id="sliderDots">
+							<!-- JS insertará los puntos aquí, clases base en JS -->
+						</div>
+						<button
+							class="bg-white/10 border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-sky hover:text-navy hover:border-sky transition-all cursor-pointer"
+							id="nextBtn"
+							aria-label="Siguiente"
+						>
 							<i data-lucide="chevron-right"></i>
 						</button>
 					</div>
@@ -1721,87 +955,192 @@
 			</div>
 		</section>
 
-		<section class="section-padding industries-section">
-			<div class="container">
-				<div class="section-title">
-					<h2 class="animate-item" data-i18n="ind_title">
+		<!-- INDUSTRIES -->
+		<section class="py-20 bg-offwhite">
+			<div class="w-[90%] max-w-[1200px] mx-auto">
+				<div class="text-center mb-16">
+					<h2
+						class="animate-item text-3xl md:text-4xl text-navy font-bold mb-3"
+						data-i18n="ind_title"
+					>
 						Impulsando el Éxito en Sectores Clave
 					</h2>
-					<p class="animate-item" data-i18n="ind_desc">
+					<p class="animate-item text-slate" data-i18n="ind_desc">
 						Nuestra tecnología está diseñada para resolver los retos específicos
 						de tu industria y aumentar tus ventas.
 					</p>
 				</div>
 
-				<div class="industries-grid">
-					<div class="industry-item animate-item">
-						<i data-lucide="scale" class="industry-icon"></i>
-						<h4 data-i18n="ind1_title">Abogados & Firmas</h4>
-						<p data-i18n="ind1_desc">
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center"
+				>
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-soft hover:-translate-y-2 hover:border-sky border border-transparent border-b-4 border-b-slate hover:border-b-sky hover:shadow-hover transition-all duration-300 flex flex-col items-start group"
+					>
+						<div
+							class="w-12 h-12 text-navy mb-5 bg-navy/5 p-2.5 rounded-xl group-hover:text-white group-hover:bg-navy group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="scale" class="w-full h-full"></i>
+						</div>
+						<h4 class="text-xl text-navy font-bold mb-3" data-i18n="ind1_title">
+							Abogados & Firmas
+						</h4>
+						<p
+							class="text-slate text-[0.95rem] leading-relaxed"
+							data-i18n="ind1_desc"
+						>
 							Digitalizamos tu reputación. Genera confianza inmediata y capta
 							clientes calificados con un sitio sobrio y profesional.
 						</p>
 					</div>
-					<div class="industry-item animate-item">
-						<i data-lucide="compass" class="industry-icon"></i>
-						<h4 data-i18n="ind2_title">Arquitectura & Diseño</h4>
-						<p data-i18n="ind2_desc">
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-soft hover:-translate-y-2 hover:border-sky border border-transparent border-b-4 border-b-slate hover:border-b-sky hover:shadow-hover transition-all duration-300 flex flex-col items-start group"
+					>
+						<div
+							class="w-12 h-12 text-navy mb-5 bg-navy/5 p-2.5 rounded-xl group-hover:text-white group-hover:bg-navy group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="compass" class="w-full h-full"></i>
+						</div>
+						<h4 class="text-xl text-navy font-bold mb-3" data-i18n="ind2_title">
+							Arquitectura & Diseño
+						</h4>
+						<p
+							class="text-slate text-[0.95rem] leading-relaxed"
+							data-i18n="ind2_desc"
+						>
 							Tu portafolio como herramienta de venta. Galerías inmersivas de
 							alta resolución que convencen a inversores y clientes.
 						</p>
 					</div>
-					<div class="industry-item animate-item">
-						<i data-lucide="utensils" class="industry-icon"></i>
-						<h4 data-i18n="ind3_title">Restaurantes & Cafés</h4>
-						<p data-i18n="ind3_desc">
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-soft hover:-translate-y-2 hover:border-sky border border-transparent border-b-4 border-b-slate hover:border-b-sky hover:shadow-hover transition-all duration-300 flex flex-col items-start group"
+					>
+						<div
+							class="w-12 h-12 text-navy mb-5 bg-navy/5 p-2.5 rounded-xl group-hover:text-white group-hover:bg-navy group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="utensils" class="w-full h-full"></i>
+						</div>
+						<h4 class="text-xl text-navy font-bold mb-3" data-i18n="ind3_title">
+							Restaurantes & Cafés
+						</h4>
+						<p
+							class="text-slate text-[0.95rem] leading-relaxed"
+							data-i18n="ind3_desc"
+						>
 							Llena más mesas. Menús digitales con QR que antojan y sistemas de
 							reserva directa sin depender de terceros.
 						</p>
 					</div>
-					<div class="industry-item animate-item">
-						<i data-lucide="bed-double" class="industry-icon"></i>
-						<h4 data-i18n="ind4_title">Hoteles & AirBnb</h4>
-						<p data-i18n="ind4_desc">
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-soft hover:-translate-y-2 hover:border-sky border border-transparent border-b-4 border-b-slate hover:border-b-sky hover:shadow-hover transition-all duration-300 flex flex-col items-start group"
+					>
+						<div
+							class="w-12 h-12 text-navy mb-5 bg-navy/5 p-2.5 rounded-xl group-hover:text-white group-hover:bg-navy group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="bed-double" class="w-full h-full"></i>
+						</div>
+						<h4 class="text-xl text-navy font-bold mb-3" data-i18n="ind4_title">
+							Hoteles & AirBnb
+						</h4>
+						<p
+							class="text-slate text-[0.95rem] leading-relaxed"
+							data-i18n="ind4_desc"
+						>
 							Aumenta tus reservas directas. Muestra la experiencia real de tu
 							hospedaje y evita las altas comisiones de agencias.
 						</p>
 					</div>
-					<div class="industry-item animate-item">
-						<i data-lucide="calculator" class="industry-icon"></i>
-						<h4 data-i18n="ind5_title">Contadores & Consultores</h4>
-						<p data-i18n="ind5_desc">
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-soft hover:-translate-y-2 hover:border-sky border border-transparent border-b-4 border-b-slate hover:border-b-sky hover:shadow-hover transition-all duration-300 flex flex-col items-start group"
+					>
+						<div
+							class="w-12 h-12 text-navy mb-5 bg-navy/5 p-2.5 rounded-xl group-hover:text-white group-hover:bg-navy group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="calculator" class="w-full h-full"></i>
+						</div>
+						<h4 class="text-xl text-navy font-bold mb-3" data-i18n="ind5_title">
+							Contadores & Consultores
+						</h4>
+						<p
+							class="text-slate text-[0.95rem] leading-relaxed"
+							data-i18n="ind5_desc"
+						>
 							Automatiza tu agenda. Permite que tus clientes reserven asesorías
 							pagadas o gratuitas sin interrumpir tu trabajo.
 						</p>
 					</div>
-					<div class="industry-item animate-item">
-						<i data-lucide="home" class="industry-icon"></i>
-						<h4 data-i18n="ind6_title">Bienes Raíces</h4>
-						<p data-i18n="ind6_desc">
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-soft hover:-translate-y-2 hover:border-sky border border-transparent border-b-4 border-b-slate hover:border-b-sky hover:shadow-hover transition-all duration-300 flex flex-col items-start group"
+					>
+						<div
+							class="w-12 h-12 text-navy mb-5 bg-navy/5 p-2.5 rounded-xl group-hover:text-white group-hover:bg-navy group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="home" class="w-full h-full"></i>
+						</div>
+						<h4 class="text-xl text-navy font-bold mb-3" data-i18n="ind6_title">
+							Bienes Raíces
+						</h4>
+						<p
+							class="text-slate text-[0.95rem] leading-relaxed"
+							data-i18n="ind6_desc"
+						>
 							Vende más rápido. Filtra interesados reales con fichas de
 							propiedades detalladas y botones directos a WhatsApp.
 						</p>
 					</div>
-					<div class="industry-item animate-item">
-						<i data-lucide="scissors" class="industry-icon"></i>
-						<h4 data-i18n="ind7_title">Barberías & Estilistas</h4>
-						<p data-i18n="ind7_desc">
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-soft hover:-translate-y-2 hover:border-sky border border-transparent border-b-4 border-b-slate hover:border-b-sky hover:shadow-hover transition-all duration-300 flex flex-col items-start group"
+					>
+						<div
+							class="w-12 h-12 text-navy mb-5 bg-navy/5 p-2.5 rounded-xl group-hover:text-white group-hover:bg-navy group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="scissors" class="w-full h-full"></i>
+						</div>
+						<h4 class="text-xl text-navy font-bold mb-3" data-i18n="ind7_title">
+							Barberías & Estilistas
+						</h4>
+						<p
+							class="text-slate text-[0.95rem] leading-relaxed"
+							data-i18n="ind7_desc"
+						>
 							Fideliza a tus clientes. Un sistema de citas rápido y visual que
 							reduce las ausencias y organiza tu día automáticamente.
 						</p>
 					</div>
-					<div class="industry-item animate-item">
-						<i data-lucide="sparkles" class="industry-icon"></i>
-						<h4 data-i18n="ind8_title">Uñas, Lashes & Spa</h4>
-						<p data-i18n="ind8_desc">
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-soft hover:-translate-y-2 hover:border-sky border border-transparent border-b-4 border-b-slate hover:border-b-sky hover:shadow-hover transition-all duration-300 flex flex-col items-start group"
+					>
+						<div
+							class="w-12 h-12 text-navy mb-5 bg-navy/5 p-2.5 rounded-xl group-hover:text-white group-hover:bg-navy group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="sparkles" class="w-full h-full"></i>
+						</div>
+						<h4 class="text-xl text-navy font-bold mb-3" data-i18n="ind8_title">
+							Uñas, Lashes & Spa
+						</h4>
+						<p
+							class="text-slate text-[0.95rem] leading-relaxed"
+							data-i18n="ind8_desc"
+						>
 							Agenda llena, cero caos. Permite que tus clientas elijan su diseño
 							y reserven su hora ideal sin mensajes interminables.
 						</p>
 					</div>
-					<div class="industry-item animate-item">
-						<i data-lucide="calendar-heart" class="industry-icon"></i>
-						<h4 data-i18n="ind9_title">Salones & Eventos</h4>
-						<p data-i18n="ind9_desc">
+					<div
+						class="animate-item bg-white p-10 rounded-xl shadow-soft hover:-translate-y-2 hover:border-sky border border-transparent border-b-4 border-b-slate hover:border-b-sky hover:shadow-hover transition-all duration-300 flex flex-col items-start group"
+					>
+						<div
+							class="w-12 h-12 text-navy mb-5 bg-navy/5 p-2.5 rounded-xl group-hover:text-white group-hover:bg-navy group-hover:scale-110 transition-all duration-300"
+						>
+							<i data-lucide="calendar-heart" class="w-full h-full"></i>
+						</div>
+						<h4 class="text-xl text-navy font-bold mb-3" data-i18n="ind9_title">
+							Salones & Eventos
+						</h4>
+						<p
+							class="text-slate text-[0.95rem] leading-relaxed"
+							data-i18n="ind9_desc"
+						>
 							Muestra tu espacio. Una galería espectacular y calendario de
 							disponibilidad para que cierres fechas de bodas y fiestas.
 						</p>
@@ -1810,26 +1149,46 @@
 			</div>
 		</section>
 
-		<section class="section-padding portfolio-section" id="projects">
-			<div class="container">
-				<div class="section-title">
-					<h2 class="animate-item" data-i18n="port_title">Casos de Éxito</h2>
-					<p class="animate-item" data-i18n="port_desc">
+		<!-- PORTFOLIO -->
+		<section id="projects" class="py-20 bg-navy text-white">
+			<div class="w-[90%] max-w-[1200px] mx-auto">
+				<div class="text-center mb-16">
+					<h2
+						class="animate-item text-3xl md:text-4xl text-white font-bold mb-3"
+						data-i18n="port_title"
+					>
+						Casos de Éxito
+					</h2>
+					<p class="animate-item text-[#b0bec5]" data-i18n="port_desc">
 						Transformamos la presencia digital de empresas líderes en activos
 						estratégicos que generan confianza y aceleran el crecimiento.
 					</p>
 				</div>
 
-				<div class="portfolio-grid">
-					<div class="project-card animate-item">
-						<div class="project-image lawyer">
-							<div class="project-image-text" data-i18n="port1_tag">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<!-- Project 1 -->
+					<div
+						class="project-card animate-item bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-2 hover:shadow-hover transition-all duration-300 flex flex-col md:max-w-[500px] mx-auto w-full group"
+					>
+						<div
+							class="h-[220px] flex items-center justify-center relative overflow-hidden bg-[linear-gradient(120deg,#2c3e50,#4ca1af)] text-sm text-[#757575]"
+						>
+							<div
+								class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"
+							></div>
+							<div
+								class="relative z-10 text-white font-semibold uppercase tracking-[1px] bg-black/30 py-1.5 px-4 rounded-full backdrop-blur-[4px]"
+								data-i18n="port1_tag"
+							>
 								Sector Corporativo
 							</div>
 						</div>
-						<div class="project-content">
-							<h3>Contapro MX</h3>
-							<p data-i18n="port1_desc">
+						<div class="p-6 flex-grow flex flex-col">
+							<h3 class="text-xl text-navy font-bold mb-2">Contapro MX</h3>
+							<p
+								class="text-slate text-[0.95rem] mb-5 flex-grow"
+								data-i18n="port1_desc"
+							>
 								Desarrollo de plataforma contable diseñada para proyectar
 								autoridad. Optimizada para la captación de clientes corporativos
 								mediante un flujo de navegación profesional.
@@ -1837,23 +1196,37 @@
 							<a
 								href="https://contapro.mx"
 								target="_blank"
-								class="project-link"
+								class="inline-flex items-center gap-2 text-sky font-semibold text-[0.95rem] hover:text-navy hover:gap-3 transition-all"
 							>
 								<span data-i18n="port_link">Ver sitio web</span>
-								<i data-lucide="external-link" style="width: 16px"></i>
+								<i data-lucide="external-link" class="w-4 h-4"></i>
 							</a>
 						</div>
 					</div>
 
-					<div class="project-card animate-item">
-						<div class="project-image realestate">
-							<div class="project-image-text" data-i18n="port2_tag">
+					<!-- Project 2 -->
+					<div
+						class="project-card animate-item bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-2 hover:shadow-hover transition-all duration-300 flex flex-col md:max-w-[500px] mx-auto w-full group"
+					>
+						<div
+							class="h-[220px] flex items-center justify-center relative overflow-hidden bg-[linear-gradient(120deg,#16a085,#2ecc71)] text-sm text-[#757575]"
+						>
+							<div
+								class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"
+							></div>
+							<div
+								class="relative z-10 text-white font-semibold uppercase tracking-[1px] bg-black/30 py-1.5 px-4 rounded-full backdrop-blur-[4px]"
+								data-i18n="port2_tag"
+							>
 								Servicios Premium
 							</div>
 						</div>
-						<div class="project-content">
-							<h3>Voga Eventos</h3>
-							<p data-i18n="port2_desc">
+						<div class="p-6 flex-grow flex flex-col">
+							<h3 class="text-xl text-navy font-bold mb-2">Voga Eventos</h3>
+							<p
+								class="text-slate text-[0.95rem] mb-5 flex-grow"
+								data-i18n="port2_desc"
+							>
 								Experiencia digital inmersiva para el sector de eventos
 								sociales. Diseñada para convertir el interés visual en
 								reservaciones, destacando la exclusividad.
@@ -1861,23 +1234,37 @@
 							<a
 								href="https://vogaeventos.com"
 								target="_blank"
-								class="project-link"
+								class="inline-flex items-center gap-2 text-sky font-semibold text-[0.95rem] hover:text-navy hover:gap-3 transition-all"
 							>
 								<span data-i18n="port_link">Ver sitio web</span>
-								<i data-lucide="external-link" style="width: 16px"></i>
+								<i data-lucide="external-link" class="w-4 h-4"></i>
 							</a>
 						</div>
 					</div>
 
-					<div class="project-card animate-item">
-						<div class="project-image restaurant">
-							<div class="project-image-text" data-i18n="port3_tag">
+					<!-- Project 3 -->
+					<div
+						class="project-card animate-item bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-2 hover:shadow-hover transition-all duration-300 flex flex-col md:max-w-[500px] mx-auto w-full group"
+					>
+						<div
+							class="h-[220px] flex items-center justify-center relative overflow-hidden bg-[linear-gradient(120deg,#d35400,#e67e22)] text-sm text-[#757575]"
+						>
+							<div
+								class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"
+							></div>
+							<div
+								class="relative z-10 text-white font-semibold uppercase tracking-[1px] bg-black/30 py-1.5 px-4 rounded-full backdrop-blur-[4px]"
+								data-i18n="port3_tag"
+							>
 								Industria & Energía
 							</div>
 						</div>
-						<div class="project-content">
-							<h3>Baja Electric</h3>
-							<p data-i18n="port3_desc">
+						<div class="p-6 flex-grow flex flex-col">
+							<h3 class="text-xl text-navy font-bold mb-2">Baja Electric</h3>
+							<p
+								class="text-slate text-[0.95rem] mb-5 flex-grow"
+								data-i18n="port3_desc"
+							>
 								Solución digital para el sector industrial. Implementamos un
 								catálogo inteligente de maquinaria y equipo eléctrico enfocado
 								en agilizar el proceso de cotización.
@@ -1885,23 +1272,37 @@
 							<a
 								href="https://bajaelectric.org"
 								target="_blank"
-								class="project-link"
+								class="inline-flex items-center gap-2 text-sky font-semibold text-[0.95rem] hover:text-navy hover:gap-3 transition-all"
 							>
 								<span data-i18n="port_link">Ver sitio web</span>
-								<i data-lucide="external-link" style="width: 16px"></i>
+								<i data-lucide="external-link" class="w-4 h-4"></i>
 							</a>
 						</div>
 					</div>
 
-					<div class="project-card animate-item">
-						<div class="project-image beauty">
-							<div class="project-image-text" data-i18n="port4_tag">
+					<!-- Project 4 -->
+					<div
+						class="project-card animate-item bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-2 hover:shadow-hover transition-all duration-300 flex flex-col md:max-w-[500px] mx-auto w-full group"
+					>
+						<div
+							class="h-[220px] flex items-center justify-center relative overflow-hidden bg-[linear-gradient(120deg,#8e44ad,#9b59b6)] text-sm text-[#757575]"
+						>
+							<div
+								class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"
+							></div>
+							<div
+								class="relative z-10 text-white font-semibold uppercase tracking-[1px] bg-black/30 py-1.5 px-4 rounded-full backdrop-blur-[4px]"
+								data-i18n="port4_tag"
+							>
 								Consultoría Creativa
 							</div>
 						</div>
-						<div class="project-content">
-							<h3>Nebulosa Studio</h3>
-							<p data-i18n="port4_desc">
+						<div class="p-6 flex-grow flex flex-col">
+							<h3 class="text-xl text-navy font-bold mb-2">Nebulosa Studio</h3>
+							<p
+								class="text-slate text-[0.95rem] mb-5 flex-grow"
+								data-i18n="port4_desc"
+							>
 								Interfaz minimalista y de alto impacto para consultoría de
 								branding. Diseñada para comunicar creatividad y orden,
 								facilitando la conexión directa con clientes.
@@ -1909,23 +1310,37 @@
 							<a
 								href="https://nebulosastudio.com"
 								target="_blank"
-								class="project-link"
+								class="inline-flex items-center gap-2 text-sky font-semibold text-[0.95rem] hover:text-navy hover:gap-3 transition-all"
 							>
 								<span data-i18n="port_link">Ver sitio web</span>
-								<i data-lucide="external-link" style="width: 16px"></i>
+								<i data-lucide="external-link" class="w-4 h-4"></i>
 							</a>
 						</div>
 					</div>
 
-					<div class="project-card animate-item">
-						<div class="project-image barber">
-							<div class="project-image-text" data-i18n="port5_tag">
+					<!-- Project 5 -->
+					<div
+						class="project-card animate-item bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-2 hover:shadow-hover transition-all duration-300 flex flex-col md:max-w-[500px] mx-auto w-full group"
+					>
+						<div
+							class="h-[220px] flex items-center justify-center relative overflow-hidden bg-[linear-gradient(120deg,#212121,#424242)] text-sm text-[#757575]"
+						>
+							<div
+								class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"
+							></div>
+							<div
+								class="relative z-10 text-white font-semibold uppercase tracking-[1px] bg-black/30 py-1.5 px-4 rounded-full backdrop-blur-[4px]"
+								data-i18n="port5_tag"
+							>
 								Hospitalidad & Bienestar
 							</div>
 						</div>
-						<div class="project-content">
-							<h3>Scandinave SPA</h3>
-							<p data-i18n="port5_desc">
+						<div class="p-6 flex-grow flex flex-col">
+							<h3 class="text-xl text-navy font-bold mb-2">Scandinave SPA</h3>
+							<p
+								class="text-slate text-[0.95rem] mb-5 flex-grow"
+								data-i18n="port5_desc"
+							>
 								Plataforma enfocada en la experiencia de usuario para el sector
 								hotelero. Priorizamos la velocidad de reservación y el impacto
 								visual para maximizar las conversiones.
@@ -1933,23 +1348,39 @@
 							<a
 								href="https://scandinave.com"
 								target="_blank"
-								class="project-link"
+								class="inline-flex items-center gap-2 text-sky font-semibold text-[0.95rem] hover:text-navy hover:gap-3 transition-all"
 							>
 								<span data-i18n="port_link">Ver sitio web</span>
-								<i data-lucide="external-link" style="width: 16px"></i>
+								<i data-lucide="external-link" class="w-4 h-4"></i>
 							</a>
 						</div>
 					</div>
 
-					<div class="project-card animate-item">
-						<div class="project-image consultant">
-							<div class="project-image-text" data-i18n="port6_tag">
+					<!-- Project 6 -->
+					<div
+						class="project-card animate-item bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:-translate-y-2 hover:shadow-hover transition-all duration-300 flex flex-col md:max-w-[500px] mx-auto w-full group"
+					>
+						<div
+							class="h-[220px] flex items-center justify-center relative overflow-hidden bg-[linear-gradient(120deg,#304ffe,#536dfe)] text-sm text-[#757575]"
+						>
+							<div
+								class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"
+							></div>
+							<div
+								class="relative z-10 text-white font-semibold uppercase tracking-[1px] bg-black/30 py-1.5 px-4 rounded-full backdrop-blur-[4px]"
+								data-i18n="port6_tag"
+							>
 								Real Estate
 							</div>
 						</div>
-						<div class="project-content">
-							<h3>Novus Realestate CA</h3>
-							<p data-i18n="port6_desc">
+						<div class="p-6 flex-grow flex flex-col">
+							<h3 class="text-xl text-navy font-bold mb-2">
+								Novus Realestate CA
+							</h3>
+							<p
+								class="text-slate text-[0.95rem] mb-5 flex-grow"
+								data-i18n="port6_desc"
+							>
 								Arquitectura digital orientada a la generación de prospectos
 								inmobiliarios. Diseñada para automatizar la captación de
 								clientes cualificados y proyectar confianza.
@@ -1957,10 +1388,10 @@
 							<a
 								href="https://novusrealestate.ca"
 								target="_blank"
-								class="project-link"
+								class="inline-flex items-center gap-2 text-sky font-semibold text-[0.95rem] hover:text-navy hover:gap-3 transition-all"
 							>
 								<span data-i18n="port_link">Ver sitio web</span>
-								<i data-lucide="external-link" style="width: 16px"></i>
+								<i data-lucide="external-link" class="w-4 h-4"></i>
 							</a>
 						</div>
 					</div>
@@ -1968,27 +1399,33 @@
 			</div>
 		</section>
 
-		<section class="section-padding faq-section" id="faq">
-			<div class="container">
-				<div class="section-title">
-					<h2 class="animate-item" data-i18n="faq_title">
+		<!-- FAQ -->
+		<section class="py-20 bg-white" id="faq">
+			<div class="w-[90%] max-w-[1200px] mx-auto">
+				<div class="text-center mb-16">
+					<h2
+						class="animate-item text-3xl md:text-4xl text-navy font-bold mb-3"
+						data-i18n="faq_title"
+					>
 						Preguntas Frecuentes
 					</h2>
-					<p class="animate-item" data-i18n="faq_desc">
+					<p class="animate-item text-slate" data-i18n="faq_desc">
 						Resolvemos tus dudas antes de comenzar tu transformación digital.
 					</p>
 				</div>
 
-				<div class="faq-container animate-item">
-					<div class="accordion-item">
-						<button class="accordion-header">
+				<div class="animate-item max-w-[800px] mx-auto">
+					<div class="border-b border-gray-100 mb-2">
+						<button
+							class="accordion-header w-full py-5 bg-transparent border-none flex justify-between items-center text-left font-heading font-semibold text-[1.1rem] text-navy cursor-pointer hover:text-sky transition-colors"
+						>
 							<span data-i18n="faq1_q"
 								>¿En cuánto tiempo queda lista mi página web?</span
 							>
 							<i data-lucide="chevron-down"></i>
 						</button>
-						<div class="accordion-content">
-							<p data-i18n="faq1_a">
+						<div class="accordion-content max-h-0 overflow-hidden px-5">
+							<p class="pb-5 text-slate text-base" data-i18n="faq1_a">
 								Tu sitio estará listo desde
 								<strong>14 días naturales</strong> en los planes start, mientras
 								que en los planes pro podriamos tomar hasta
@@ -2001,15 +1438,17 @@
 						</div>
 					</div>
 
-					<div class="accordion-item">
-						<button class="accordion-header">
+					<div class="border-b border-gray-100 mb-2">
+						<button
+							class="accordion-header w-full py-5 bg-transparent border-none flex justify-between items-center text-left font-heading font-semibold text-[1.1rem] text-navy cursor-pointer hover:text-sky transition-colors"
+						>
 							<span data-i18n="faq2_q"
 								>¿Tengo que seguir pagando algo mensualmente?</span
 							>
 							<i data-lucide="chevron-down"></i>
 						</button>
-						<div class="accordion-content">
-							<p data-i18n="faq2_a">
+						<div class="accordion-content max-h-0 overflow-hidden px-5">
+							<p class="pb-5 text-slate text-base" data-i18n="faq2_a">
 								<strong>No, no hay mensualidades.</strong> El desarrollo es un
 								pago único. Lo único que se renueva es la infraestructura
 								(Dominio y Hosting) de manera anual por solo
@@ -2019,15 +1458,17 @@
 						</div>
 					</div>
 
-					<div class="accordion-item">
-						<button class="accordion-header">
+					<div class="border-b border-gray-100 mb-2">
+						<button
+							class="accordion-header w-full py-5 bg-transparent border-none flex justify-between items-center text-left font-heading font-semibold text-[1.1rem] text-navy cursor-pointer hover:text-sky transition-colors"
+						>
 							<span data-i18n="faq3_q"
 								>¿El dominio y el hosting son de mi propiedad?</span
 							>
 							<i data-lucide="chevron-down"></i>
 						</button>
-						<div class="accordion-content">
-							<p data-i18n="faq3_a">
+						<div class="accordion-content max-h-0 overflow-hidden px-5">
+							<p class="pb-5 text-slate text-base" data-i18n="faq3_a">
 								<strong>Absolutamente.</strong> A diferencia de otras agencias,
 								aquí tú eres el dueño legal de tu dominio y hosting desde el
 								primer día. Sin plazos forzosos, sin letras chiquitas y con
@@ -2036,15 +1477,17 @@
 						</div>
 					</div>
 
-					<div class="accordion-item">
-						<button class="accordion-header">
+					<div class="border-b border-gray-100 mb-2">
+						<button
+							class="accordion-header w-full py-5 bg-transparent border-none flex justify-between items-center text-left font-heading font-semibold text-[1.1rem] text-navy cursor-pointer hover:text-sky transition-colors"
+						>
 							<span data-i18n="faq4_q"
 								>¿Qué pasa si quiero cambiar fotos o textos en el futuro?</span
 							>
 							<i data-lucide="chevron-down"></i>
 						</button>
-						<div class="accordion-content">
-							<p data-i18n="faq4_a">
+						<div class="accordion-content max-h-0 overflow-hidden px-5">
+							<p class="pb-5 text-slate text-base" data-i18n="faq4_a">
 								Tenemos un modelo flexible de
 								<strong>"Mantenimiento por Evento"</strong>. Si necesitas
 								actualizaciones puntuales, no pagas una renta mensual fija; solo
@@ -2054,15 +1497,17 @@
 						</div>
 					</div>
 
-					<div class="accordion-item">
-						<button class="accordion-header">
+					<div class="border-b border-gray-100 mb-2">
+						<button
+							class="accordion-header w-full py-5 bg-transparent border-none flex justify-between items-center text-left font-heading font-semibold text-[1.1rem] text-navy cursor-pointer hover:text-sky transition-colors"
+						>
 							<span data-i18n="faq5_q"
 								>¿Necesito tener mi logo y textos listos para empezar?</span
 							>
 							<i data-lucide="chevron-down"></i>
 						</button>
-						<div class="accordion-content">
-							<p data-i18n="faq5_a">
+						<div class="accordion-content max-h-0 overflow-hidden px-5">
+							<p class="pb-5 text-slate text-base" data-i18n="faq5_a">
 								<strong>No es obligatorio.</strong> Incluimos redacción
 								profesional (copywriting) básica en todos los paquetes. Además,
 								podemos diseñar un logotipo sencillo para ti sin costo extra. Si
@@ -2072,13 +1517,15 @@
 						</div>
 					</div>
 
-					<div class="accordion-item">
-						<button class="accordion-header">
+					<div class="border-b border-gray-100 mb-2">
+						<button
+							class="accordion-header w-full py-5 bg-transparent border-none flex justify-between items-center text-left font-heading font-semibold text-[1.1rem] text-navy cursor-pointer hover:text-sky transition-colors"
+						>
 							<span data-i18n="faq6_q">¿El sitio incluye facturación?</span>
 							<i data-lucide="chevron-down"></i>
 						</button>
-						<div class="accordion-content">
-							<p data-i18n="faq6_a">
+						<div class="accordion-content max-h-0 overflow-hidden px-5">
+							<p class="pb-5 text-slate text-base" data-i18n="faq6_a">
 								<strong>Sí, facturamos todos nuestros servicios.</strong> Los
 								precios mostrados son netos antes de impuestos, por lo que al
 								solicitar tu factura se añadirá el 16% de IVA correspondiente.
@@ -2089,204 +1536,324 @@
 			</div>
 		</section>
 
-		<section class="section-padding pricing-section" id="pricing">
-			<div class="container">
-				<div class="section-title">
+		<!-- PRICING -->
+		<section id="pricing" class="py-20 bg-navy text-white text-center">
+			<div class="w-[90%] max-w-[1200px] mx-auto">
+				<div class="text-center mb-16">
 					<h2
-						class="animate-item"
-						style="color: var(--color-white)"
+						class="animate-item text-3xl md:text-4xl text-white font-bold mb-3"
 						data-i18n="price_title"
 					>
 						Elige tu plan de crecimiento
 					</h2>
-					<p class="animate-item" style="color: #b0bec5" data-i18n="price_desc">
+					<p class="animate-item text-[#b0bec5]" data-i18n="price_desc">
 						Soluciones escalables para cada etapa de tu negocio.
 					</p>
 				</div>
 
-				<div class="pricing-grid">
-					<div class="pricing-card animate-item">
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
+				>
+					<!-- KODA START -->
+					<div
+						class="pricing-card animate-item bg-white text-black rounded-[20px] p-8 md:p-10 relative overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col border border-transparent max-w-[400px] mx-auto w-full lg:max-w-none"
+					>
 						<div class="pricing-header">
-							<h3>KODA START</h3>
+							<h3
+								class="text-slate uppercase tracking-[2px] text-base mt-2 mb-2 font-heading font-bold"
+							>
+								KODA START
+							</h3>
 							<p
-								style="font-size: 0.75rem; color: #666; margin-bottom: -16px"
+								class="text-xs text-gray-500 -mb-4 relative top-4"
 								data-i18n="price_from"
 							>
 								Desde
 							</p>
-							<div class="price">$4,999 <span>MXN</span></div>
+							<div class="text-[3rem] font-extrabold text-navy mb-2.5">
+								$4,999 <span class="text-base text-slate font-normal">MXN</span>
+							</div>
 							<p
-								style="font-size: 0.85rem; color: #666"
+								class="text-[0.85rem] text-gray-500"
 								data-i18n="price_start_sub"
 							>
 								Ideal para empezar con fuerza
 							</p>
 						</div>
-						<div class="pricing-features">
+						<div class="pricing-features my-8 text-left flex-grow">
 							<ul>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									Landing Page
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_domain"
 										>Dominio .com ó .com.mx (1 año)</span
 									>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_hosting">Hosting Rápido (1 año)</span>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_mail1">1 Correo Corporativo*</span>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_logo1">Logotipo principal</span>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_buttons">Botón WhatsApp & Maps</span>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_form">Formulario de Contacto</span>
 								</li>
-								<li>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
 									<i
 										data-lucide="gift"
-										class="check-icon"
-										style="color: var(--color-sky)"
+										class="text-sky shrink-0 w-[18px] h-[18px] mt-[3px]"
 									></i>
-									<span data-i18n="feat_support3">3 Meses Soporte</span>
-									<span class="bonus-badge" data-i18n="badge_free">GRATIS</span>
+									<span
+										><span data-i18n="feat_support3">3 Meses Soporte</span>
+										<span
+											class="bg-blue-50 text-navy px-2 py-0.5 rounded text-xs font-bold ml-auto block w-max mt-1"
+											data-i18n="badge_free"
+											>GRATIS</span
+										></span
+									>
 								</li>
 							</ul>
 						</div>
 						<a
 							href="https://wa.me/5217721698485?text=Hola,%20me%20interesa%20el%20paquete%20Koda%20Start"
 							target="_blank"
-							class="btn btn-primary"
-							style="width: 100%"
+							class="inline-block w-full px-8 py-3 rounded-full font-semibold font-heading bg-sky text-navy shadow-[0_4px_15px_rgba(79,195,247,0.4)] hover:-translate-y-0.5 hover:bg-[#29b6f6] transition-all text-center"
 							data-i18n="btn_want_it"
 							>Lo quiero</a
 						>
 					</div>
 
-					<div class="pricing-card best-seller animate-item">
-						<div class="best-seller-label" data-i18n="badge_popular">
+					<!-- KODA PRO -->
+					<div
+						class="pricing-card best-seller animate-item bg-white text-black rounded-[20px] p-8 md:p-10 relative overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col border-[3px] border-sky z-10 max-w-[400px] mx-auto w-full lg:max-w-none md:my-5 lg:my-0"
+					>
+						<div
+							class="absolute top-0 left-1/2 -translate-x-1/2 bg-sky text-navy py-1 px-5 text-xs font-extrabold rounded-b-lg uppercase tracking-[1px] w-full max-w-[200px]"
+							data-i18n="badge_popular"
+						>
 							Más Popular
 						</div>
-						<div class="pricing-header">
-							<h3>KODA PRO</h3>
+						<div class="pricing-header mt-4">
+							<h3
+								class="text-slate uppercase tracking-[2px] text-base mb-2 font-heading font-bold"
+							>
+								KODA PRO
+							</h3>
 							<p
-								style="font-size: 0.75rem; color: #666; margin-bottom: -16px"
+								class="text-xs text-gray-500 -mb-4 relative top-4"
 								data-i18n="price_from"
 							>
 								Desde
 							</p>
-							<div class="price">$7,499 <span>MXN</span></div>
-							<p
-								style="font-size: 0.85rem; color: #666"
-								data-i18n="price_pro_sub"
-							>
+							<div class="text-[3rem] font-extrabold text-navy mb-2.5">
+								$7,499 <span class="text-base text-slate font-normal">MXN</span>
+							</div>
+							<p class="text-[0.85rem] text-gray-500" data-i18n="price_pro_sub">
 								Para negocios en expansión
 							</p>
 						</div>
-						<div class="pricing-features">
+						<div class="pricing-features my-8 text-left flex-grow">
 							<ul>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<strong data-i18n="feat_all_start"
 										>Todo lo de Koda Start</strong
 									>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_multipage"
 										>Diseño Multipágina (Inicio + 2)</span
 									>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_logo_full"
 										>Logo principal, isotipo y versión horizontal</span
 									>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_booking">Sistema de Citas Básico</span>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<strong data-i18n="feat_mail3"
 										>Hasta 3 Correos Corporativos*</strong
 									>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_qr">Integración Menú QR</span>
 								</li>
-								<li>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
 									<i
 										data-lucide="gift"
-										class="check-icon"
-										style="color: var(--color-sky)"
+										class="text-sky shrink-0 w-[18px] h-[18px] mt-[3px]"
 									></i>
-									<span data-i18n="feat_support6">6 Meses Soporte</span>
-									<span class="bonus-badge" data-i18n="badge_free">GRATIS</span>
+									<span
+										><span data-i18n="feat_support6">6 Meses Soporte</span>
+										<span
+											class="bg-blue-50 text-navy px-2 py-0.5 rounded text-xs font-bold ml-auto block w-max mt-1"
+											data-i18n="badge_free"
+											>GRATIS</span
+										></span
+									>
 								</li>
 							</ul>
 						</div>
 						<a
 							href="https://wa.me/5217721698485?text=Hola,%20me%20interesa%20el%20paquete%20Koda%20Pro"
 							target="_blank"
-							class="btn btn-outline"
-							style="
-								width: 100%;
-								border-color: var(--color-sky);
-								color: var(--color-sky);
-							"
+							class="inline-block w-full px-8 py-3 rounded-full font-semibold font-heading text-center border-2 border-sky text-sky hover:bg-sky hover:text-navy transition-all bg-transparent"
 							data-i18n="btn_upgrade"
 							>Mejorar mi plan</a
 						>
 					</div>
 
-					<div class="pricing-card custom-card animate-item">
+					<!-- KODA EMPRESARIAL -->
+					<div
+						class="pricing-card custom-card animate-item bg-white text-black rounded-[20px] p-8 md:p-10 relative overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex flex-col border border-transparent max-w-[400px] mx-auto w-full lg:max-w-none"
+					>
 						<div class="pricing-header">
-							<h3>KODA EMPRESARIAL</h3>
-							<div class="price custom-price" data-i18n="price_custom">
+							<h3
+								class="text-navy uppercase tracking-[2px] text-base mt-2 mb-2 font-heading font-bold"
+							>
+								KODA EMPRESARIAL
+							</h3>
+							<div
+								class="text-[2.2rem] font-extrabold text-navy mb-2.5 mt-8"
+								data-i18n="price_custom"
+							>
 								Cotización
 							</div>
-							<p
-								style="font-size: 0.85rem; color: #666"
-								data-i18n="price_biz_sub"
-							>
+							<p class="text-[0.85rem] text-gray-500" data-i18n="price_biz_sub">
 								A tu medida
 							</p>
 						</div>
-						<div class="pricing-features">
+						<div class="pricing-features my-8 text-left flex-grow">
 							<ul>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_custom_design">Diseño a medida</span>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_custom_func"
 										>Funcionalidades a medida</span
 									>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_unlimited_mail"
 										>Cantidad ilimitada de correos</span
 									>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i>
+								<li
+									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+									></i>
 									<span data-i18n="feat_strategy"
 										>Asesoría de estrategia digital</span
 									>
@@ -2296,55 +1863,53 @@
 						<a
 							href="https://wa.me/5217721698485?text=Hola,%20necesito%20una%20cotización%20a%20medida"
 							target="_blank"
-							class="btn btn-outline"
-							style="
-								width: 100%;
-								border-color: var(--color-navy);
-								color: var(--color-navy);
-							"
+							class="inline-block w-full px-8 py-3 rounded-full font-semibold font-heading text-center border-2 border-navy text-navy hover:bg-navy hover:text-white transition-all bg-transparent"
 							data-i18n="btn_quote"
 							>Cotizar Proyecto</a
 						>
 					</div>
 				</div>
 
+				<!-- NOTA DE CORREOS -->
 				<p
-					style="
-						text-align: center;
-						margin-top: 30px;
-						font-size: 0.95rem;
-						color: #b0bec5;
-					"
-					class="animate-item"
+					class="animate-item text-center mt-8 text-[0.95rem] text-[#b0bec5]"
 					data-i18n="mail_note"
 				>
 					* Correos corporativos adicionales tienen un costo extra de
-					<strong>$299 MXN</strong> cada uno.
+					<strong class="text-white">$299 MXN</strong> cada uno.
 				</p>
 			</div>
 		</section>
 
-		<section class="section-padding contact-section" id="contact">
-			<div class="container">
-				<div class="section-title">
-					<h2 class="animate-item" data-i18n="contact_title">
+		<!-- CONTACT -->
+		<section class="py-20 bg-offwhite" id="contact">
+			<div class="w-[90%] max-w-[1200px] mx-auto">
+				<div class="text-center mb-16">
+					<h2
+						class="animate-item text-3xl md:text-4xl text-navy font-bold mb-3"
+						data-i18n="contact_title"
+					>
 						¿Listo para empezar?
 					</h2>
-					<p class="animate-item" data-i18n="contact_desc">
+					<p class="animate-item text-slate" data-i18n="contact_desc">
 						Cuéntanos un poco sobre tu proyecto y nos pondremos en contacto
 						contigo.
 					</p>
 				</div>
 
-				<div class="contact-container animate-item">
+				<div
+					class="animate-item max-w-[700px] mx-auto bg-white p-6 md:p-10 rounded-2xl shadow-soft"
+				>
 					<form
 						action="https://formsubmit.co/hendrickghxd@gmail.com"
 						method="POST"
 					>
-						<div class="form-group">
-							<label for="name"
+						<div class="mb-5">
+							<label
+								for="name"
+								class="block mb-2 text-navy font-semibold text-[0.95rem]"
 								><span data-i18n="form_name">Nombre</span>
-								<span class="required-mark">*</span></label
+								<span class="text-red-500">*</span></label
 							>
 							<input
 								type="text"
@@ -2353,11 +1918,15 @@
 								required
 								data-i18n-placeholder="form_name_ph"
 								placeholder="Tu nombre completo"
+								class="w-full px-4 py-3 border border-gray-200 rounded-lg font-body text-base text-gray-800 bg-gray-50 focus:outline-none focus:border-sky focus:bg-white focus:ring-4 focus:ring-sky/10 transition-all"
 							/>
 						</div>
 
-						<div class="form-group">
-							<label for="company" data-i18n="form_company"
+						<div class="mb-5">
+							<label
+								for="company"
+								class="block mb-2 text-navy font-semibold text-[0.95rem]"
+								data-i18n="form_company"
 								>Nombre de tu Empresa</label
 							>
 							<input
@@ -2366,13 +1935,16 @@
 								name="company"
 								data-i18n-placeholder="form_company_ph"
 								placeholder="Ej. Barbería El Rey"
+								class="w-full px-4 py-3 border border-gray-200 rounded-lg font-body text-base text-gray-800 bg-gray-50 focus:outline-none focus:border-sky focus:bg-white focus:ring-4 focus:ring-sky/10 transition-all"
 							/>
 						</div>
 
-						<div class="form-group">
-							<label for="email"
+						<div class="mb-5">
+							<label
+								for="email"
+								class="block mb-2 text-navy font-semibold text-[0.95rem]"
 								><span data-i18n="form_email">Correo Electrónico</span>
-								<span class="required-mark">*</span></label
+								<span class="text-red-500">*</span></label
 							>
 							<input
 								type="email"
@@ -2381,11 +1953,15 @@
 								required
 								data-i18n-placeholder="form_email_ph"
 								placeholder="tucorreo@ejemplo.com"
+								class="w-full px-4 py-3 border border-gray-200 rounded-lg font-body text-base text-gray-800 bg-gray-50 focus:outline-none focus:border-sky focus:bg-white focus:ring-4 focus:ring-sky/10 transition-all"
 							/>
 						</div>
 
-						<div class="form-group">
-							<label for="phone" data-i18n="form_phone"
+						<div class="mb-5">
+							<label
+								for="phone"
+								class="block mb-2 text-navy font-semibold text-[0.95rem]"
+								data-i18n="form_phone"
 								>Número de Teléfono (Opcional)</label
 							>
 							<input
@@ -2393,14 +1969,22 @@
 								id="phone"
 								name="phone"
 								placeholder="+52 55 1234 5678"
+								class="w-full px-4 py-3 border border-gray-200 rounded-lg font-body text-base text-gray-800 bg-gray-50 focus:outline-none focus:border-sky focus:bg-white focus:ring-4 focus:ring-sky/10 transition-all"
 							/>
 						</div>
 
-						<div class="form-group">
-							<label for="package" data-i18n="form_package"
+						<div class="mb-5">
+							<label
+								for="package"
+								class="block mb-2 text-navy font-semibold text-[0.95rem]"
+								data-i18n="form_package"
 								>Paquete de Interés</label
 							>
-							<select id="package" name="package">
+							<select
+								id="package"
+								name="package"
+								class="w-full px-4 py-3 border border-gray-200 rounded-lg font-body text-base text-gray-800 bg-gray-50 focus:outline-none focus:border-sky focus:bg-white focus:ring-4 focus:ring-sky/10 transition-all"
+							>
 								<option value="start">Koda Start</option>
 								<option value="pro">Koda Pro</option>
 								<option value="business" data-i18n="form_opt_biz">
@@ -2409,12 +1993,14 @@
 							</select>
 						</div>
 
-						<div class="form-group">
-							<label for="message"
+						<div class="mb-5">
+							<label
+								for="message"
+								class="block mb-2 text-navy font-semibold text-[0.95rem]"
 								><span data-i18n="form_msg"
 									>Descripción de lo que necesitas</span
 								>
-								<span class="required-mark">*</span></label
+								<span class="text-red-500">*</span></label
 							>
 							<textarea
 								id="message"
@@ -2422,14 +2008,14 @@
 								required
 								data-i18n-placeholder="form_msg_ph"
 								placeholder="Cuéntanos brevemente sobre tu negocio y qué te gustaría lograr con tu sitio web..."
+								class="w-full px-4 py-3 border border-gray-200 rounded-lg font-body text-base text-gray-800 bg-gray-50 focus:outline-none focus:border-sky focus:bg-white focus:ring-4 focus:ring-sky/10 transition-all resize-y min-h-[120px]"
 							></textarea>
 						</div>
 
-						<div style="text-align: center">
+						<div class="text-center mt-8">
 							<button
 								type="submit"
-								class="btn btn-primary"
-								style="min-width: 200px"
+								class="inline-block px-8 py-3 rounded-full font-semibold font-heading bg-sky text-navy shadow-[0_4px_15px_rgba(79,195,247,0.4)] hover:-translate-y-0.5 hover:bg-[#29b6f6] transition-all min-w-[200px]"
 								data-i18n="form_btn"
 							>
 								Enviar Solicitud
@@ -2440,61 +2026,99 @@
 			</div>
 		</section>
 
-		<footer>
-			<div class="container">
-				<div class="footer-grid">
-					<div class="footer-logo animate-item">
+		<!-- FOOTER -->
+		<footer class="bg-[#0f1430] text-white pt-16 pb-5">
+			<div class="w-[90%] max-w-[1200px] mx-auto">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+					<div class="animate-item md:col-span-1 lg:col-span-1">
 						<img
 							src="assets/logos/main-version (1).png"
 							alt="Koda Studio Logo"
+							class="w-[180px] h-auto mb-5"
 						/>
-						<p style="margin-top: 15px" data-i18n="footer_desc">
+						<p class="mt-4 text-slate max-w-[300px]" data-i18n="footer_desc">
 							Impulsando negocios mexicanos con tecnología de calidad global y
 							soporte cercano.
 						</p>
 					</div>
 
-					<div class="footer-col animate-item">
-						<h4 data-i18n="footer_links">Enlaces Rápidos</h4>
-						<ul class="footer-links">
-							<li><a href="#home" data-i18n="nav_home">Inicio</a></li>
-							<li>
-								<a href="#services" data-i18n="nav_services">Servicios</a>
+					<div class="animate-item">
+						<h4
+							class="text-sky text-[1.1rem] font-bold mb-5 font-heading"
+							data-i18n="footer_links"
+						>
+							Enlaces Rápidos
+						</h4>
+						<ul>
+							<li class="mb-2.5">
+								<a
+									href="#home"
+									class="text-gray-300 hover:text-sky hover:pl-1 transition-all"
+									data-i18n="nav_home"
+									>Inicio</a
+								>
 							</li>
-							<li><a href="#pricing" data-i18n="nav_pricing">Paquetes</a></li>
-							<li>
-								<a href="#faq" data-i18n="nav_faq">Preguntas Frecuentes</a>
+							<li class="mb-2.5">
+								<a
+									href="#services"
+									class="text-gray-300 hover:text-sky hover:pl-1 transition-all"
+									data-i18n="nav_services"
+									>Servicios</a
+								>
 							</li>
-							<li>
-								<a href="#" data-i18n="footer_privacy">Aviso de Privacidad</a>
+							<li class="mb-2.5">
+								<a
+									href="#pricing"
+									class="text-gray-300 hover:text-sky hover:pl-1 transition-all"
+									data-i18n="nav_pricing"
+									>Paquetes</a
+								>
+							</li>
+							<li class="mb-2.5">
+								<a
+									href="#faq"
+									class="text-gray-300 hover:text-sky hover:pl-1 transition-all"
+									data-i18n="nav_faq"
+									>Preguntas Frecuentes</a
+								>
+							</li>
+							<li class="mb-2.5">
+								<a
+									href="#"
+									class="text-gray-300 hover:text-sky hover:pl-1 transition-all"
+									data-i18n="footer_privacy"
+									>Aviso de Privacidad</a
+								>
 							</li>
 						</ul>
 					</div>
 
-					<div class="footer-col animate-item">
-						<h4 data-i18n="nav_contact">Contacto</h4>
-						<ul class="contact-info">
-							<li>
+					<div class="animate-item">
+						<h4
+							class="text-sky text-[1.1rem] font-bold mb-5 font-heading"
+							data-i18n="nav_contact"
+						>
+							Contacto
+						</h4>
+						<ul>
+							<li class="flex gap-2.5 mb-4 text-gray-300 items-start">
 								<i
 									data-lucide="map-pin"
-									size="20"
-									style="color: var(--color-sky)"
+									class="w-5 h-5 text-sky shrink-0 mt-0.5"
 								></i>
 								<span data-i18n="footer_country">México</span>
 							</li>
-							<li>
+							<li class="flex gap-2.5 mb-4 text-gray-300 items-start">
 								<i
 									data-lucide="mail"
-									size="20"
-									style="color: var(--color-sky)"
+									class="w-5 h-5 text-sky shrink-0 mt-0.5"
 								></i>
 								hola@kodastudio.com
 							</li>
-							<li>
+							<li class="flex gap-2.5 mb-4 text-gray-300 items-start">
 								<i
 									data-lucide="phone"
-									size="20"
-									style="color: var(--color-sky)"
+									class="w-5 h-5 text-sky shrink-0 mt-0.5"
 								></i>
 								+52 772 169 8485
 							</li>
@@ -2502,7 +2126,9 @@
 					</div>
 				</div>
 
-				<div class="copyright">
+				<div
+					class="text-center pt-5 border-t border-white/10 text-slate text-[0.9rem]"
+				>
 					<p data-i18n="footer_rights">
 						&copy; 2026 Koda Studio. Todos los derechos reservados.
 					</p>
@@ -2510,13 +2136,28 @@
 			</div>
 		</footer>
 
+		<!-- FLOATING WHATSAPP -->
 		<a
 			href="https://wa.me/5217721698485?text=Hola%20Koda%20Studio,%20quiero%20información%20de%20sus%20servicios"
-			class="whatsapp-float"
+			class="fixed bottom-8 right-8 w-14 h-14 bg-[#25D366] rounded-full shadow-[0_4px_15px_rgba(37,211,102,0.4)] flex justify-center items-center z-50 transition-transform duration-300 hover:scale-110 hover:rotate-12 group"
 			target="_blank"
 			aria-label="Chat en WhatsApp"
 		>
-			<i data-lucide="message-circle" size="32"></i>
+			<!-- Anillo animado estilo Ping para llamar la atención -->
+			<span
+				class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75 animate-ping group-hover:hidden"
+			></span>
+
+			<!-- SVG Oficial WhatsApp -->
+			<svg
+				class="w-8 h-8 text-white relative z-10"
+				fill="currentColor"
+				viewBox="0 0 24 24"
+			>
+				<path
+					d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
+				/>
+			</svg>
 		</a>
 
 		<script>
@@ -2724,7 +2365,7 @@
 					btn_upgrade: "Mejorar mi plan",
 					btn_quote: "Cotizar Proyecto",
 					mail_note:
-						"* Correos corporativos adicionales tienen un costo extra de <strong>$299 MXN</strong> cada uno.",
+						"* Correos corporativos adicionales tienen un costo extra de <strong class='text-white'>$299 MXN</strong> cada uno.",
 					// Contact
 					contact_title: "¿Listo para empezar?",
 					contact_desc:
@@ -2948,7 +2589,7 @@
 					btn_upgrade: "Upgrade my plan",
 					btn_quote: "Quote Project",
 					mail_note:
-						"* Additional corporate emails have an extra cost of <strong>$299 MXN</strong> each.",
+						"* Additional corporate emails have an extra cost of <strong class='text-white'>$299 MXN</strong> each.",
 					// Contact
 					contact_title: "Ready to get started?",
 					contact_desc:
@@ -2981,14 +2622,11 @@
 
 			langBtns.forEach(btn => {
 				btn.addEventListener("click", () => {
-					// Cambiar el estado del idioma
 					currentLang = currentLang === "es" ? "en" : "es";
 					const btnText = currentLang === "es" ? "EN" : "ES";
 
-					// Actualizar el texto en AMBOS botones (el de escritorio y el de móvil)
 					langBtns.forEach(b => (b.innerText = btnText));
 
-					// Reemplazar textos normales (innerHTML)
 					document.querySelectorAll("[data-i18n]").forEach(el => {
 						const key = el.getAttribute("data-i18n");
 						if (translations[currentLang][key]) {
@@ -2996,7 +2634,6 @@
 						}
 					});
 
-					// Reemplazar placeholders en los inputs
 					document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
 						const key = el.getAttribute("data-i18n-placeholder");
 						if (translations[currentLang][key]) {
@@ -3009,26 +2646,29 @@
 			// Menú Hamburguesa Logic
 			const hamburger = document.getElementById("hamburger");
 			const navLinks = document.getElementById("navLinks");
-			const links = document.querySelectorAll(".nav-links li a"); // Solo los <a>, no el botón de idioma
+			const links = document.querySelectorAll("#navLinks a");
 
 			hamburger.addEventListener("click", () => {
-				navLinks.classList.toggle("active");
+				navLinks.classList.toggle("right-[-100%]");
+				navLinks.classList.toggle("right-0");
 			});
 
-			// Cerrar menú al hacer click en un enlace (Móvil)
 			links.forEach(link => {
 				link.addEventListener("click", () => {
-					navLinks.classList.remove("active");
+					navLinks.classList.add("right-[-100%]");
+					navLinks.classList.remove("right-0");
 				});
 			});
 
-			// Cambio de estilo del header al hacer scroll (Sombra suave)
+			// Header Scroll Logic
 			window.addEventListener("scroll", () => {
-				const header = document.querySelector("header");
+				const header = document.getElementById("mainHeader");
 				if (window.scrollY > 50) {
-					header.style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
+					header.classList.add("shadow-[0_4px_20px_rgba(0,0,0,0.1)]");
+					header.classList.remove("shadow-[0_2px_10px_rgba(0,0,0,0.05)]");
 				} else {
-					header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
+					header.classList.add("shadow-[0_2px_10px_rgba(0,0,0,0.05)]");
+					header.classList.remove("shadow-[0_4px_20px_rgba(0,0,0,0.1)]");
 				}
 			});
 
@@ -3045,8 +2685,9 @@
 
 			slides.forEach((_, index) => {
 				const dot = document.createElement("div");
-				dot.classList.add("dot");
-				if (index === 0) dot.classList.add("active");
+				dot.className =
+					"w-2.5 h-2.5 bg-white/30 rounded-full cursor-pointer transition-all duration-300";
+				if (index === 0) dot.classList.add("bg-sky", "scale-125");
 				dot.addEventListener("click", () => {
 					goToSlide(index);
 				});
@@ -3056,8 +2697,12 @@
 			const dots = Array.from(dotsContainer.children);
 
 			function updateDots(index) {
-				dots.forEach(dot => dot.classList.remove("active"));
-				dots[index].classList.add("active");
+				dots.forEach(dot => {
+					dot.classList.remove("bg-sky", "scale-125");
+					dot.classList.add("bg-white/30");
+				});
+				dots[index].classList.remove("bg-white/30");
+				dots[index].classList.add("bg-sky", "scale-125");
 			}
 
 			function updateSlidePosition() {
@@ -3102,6 +2747,13 @@
 				header.addEventListener("click", () => {
 					header.classList.toggle("active");
 
+					const icon = header.querySelector("i");
+					if (header.classList.contains("active")) {
+						icon.style.transform = "rotate(180deg)";
+					} else {
+						icon.style.transform = "rotate(0deg)";
+					}
+
 					const content = header.nextElementSibling;
 					if (header.classList.contains("active")) {
 						content.style.maxHeight = content.scrollHeight + "px";
@@ -3115,6 +2767,7 @@
 							otherHeader.classList.contains("active")
 						) {
 							otherHeader.classList.remove("active");
+							otherHeader.querySelector("i").style.transform = "rotate(0deg)";
 							otherHeader.nextElementSibling.style.maxHeight = 0;
 						}
 					});
@@ -3137,11 +2790,9 @@
 
 			track.addEventListener("mousedown", dragStart);
 			track.addEventListener("touchstart", dragStart);
-
 			track.addEventListener("mouseup", dragEnd);
 			track.addEventListener("mouseleave", dragEnd);
 			track.addEventListener("touchend", dragEnd);
-
 			track.addEventListener("mousemove", dragMove);
 			track.addEventListener("touchmove", dragMove);
 
@@ -3175,10 +2826,9 @@
 
 				if (movedBy < -100 && currentIndex < slides.length - 1)
 					currentIndex += 1;
-
 				if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
 
-				goToSlide2(currentIndex); // Custom goToSlide for drag
+				goToSlide2(currentIndex);
 			}
 
 			function animation() {
@@ -3201,43 +2851,34 @@
 				updateDots(index);
 			}
 
-			// Override goToSlide original to keep drag variables synced
 			function goToSlide(index) {
 				goToSlide2(index);
 			}
-
 			goToSlide(0);
 
 			// ============================
-			// ANIMACIONES EN CASCADA (NUEVO)
+			// ANIMACIONES EN CASCADA
 			// ============================
-			const sections = document.querySelectorAll("section, footer");
+			const sections = document.querySelectorAll("section, footer, header");
 
 			const observer = new IntersectionObserver(
 				(entries, observer) => {
 					entries.forEach(entry => {
 						if (entry.isIntersecting) {
 							const items = entry.target.querySelectorAll(".animate-item");
-
 							items.forEach((item, index) => {
 								setTimeout(() => {
 									item.classList.add("is-visible");
 								}, index * 100);
 							});
-
 							observer.unobserve(entry.target);
 						}
 					});
 				},
-				{
-					rootMargin: "0px 0px -100px 0px",
-					threshold: 0.1,
-				},
+				{ rootMargin: "0px 0px -50px 0px", threshold: 0.1 },
 			);
 
-			sections.forEach(section => {
-				observer.observe(section);
-			});
+			sections.forEach(section => observer.observe(section));
 		</script>
 	</body>
 </html>
