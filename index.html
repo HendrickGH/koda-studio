@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="es">
 	<head>
-		<!-- Google Tag Manager -->
 		<script>
 			(function (w, d, s, l, i) {
 				w[l] = w[l] || [];
@@ -14,7 +13,6 @@
 				f.parentNode.insertBefore(j, f);
 			})(window, document, "script", "dataLayer", "GTM-WVPLXPDW");
 		</script>
-		<!-- End Google Tag Manager -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Koda Studio | Agencia de Desarrollo Web en México</title>
@@ -89,13 +87,13 @@
            VARIABLES CSS (PALETA KODA - Opción 4)
            ========================================= */
 			:root {
-				--color-navy: #1a237e; /* Color Principal */
-				--color-slate: #78909c; /* Color Secundario/Textos */
-				--color-sky: #4fc3f7; /* Acentos / Botones */
-				--color-offwhite: #f5f5f5; /* Fondos Claros */
+				--color-navy: #1a237e;
+				--color-slate: #78909c;
+				--color-sky: #4fc3f7;
+				--color-offwhite: #f5f5f5;
 				--color-white: #ffffff;
 				--color-black: #121212;
-				--color-success: #00e676; /* WhatsApp / Éxito */
+				--color-success: #00e676;
 
 				--font-heading: "Montserrat", sans-serif;
 				--font-body: "Roboto", sans-serif;
@@ -144,19 +142,17 @@
 			}
 
 			/* =========================================
-           ANIMACIONES EN CASCADA (NUEVO)
+           ANIMACIONES EN CASCADA
            ========================================= */
-			/* Clase para elementos individuales (NO secciones completas) */
 			.animate-item {
 				opacity: 0;
-				transform: translateY(30px); /* Desplazamiento inicial hacia abajo */
+				transform: translateY(30px);
 				transition:
 					opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
 					transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 				will-change: opacity, transform;
 			}
 
-			/* Estado visible activado por JS */
 			.animate-item.is-visible {
 				opacity: 1;
 				transform: translateY(0);
@@ -265,6 +261,33 @@
 				color: var(--color-sky);
 			}
 
+			/* Estilos para el botón de idioma */
+			.lang-switch {
+				font-weight: 800;
+				color: var(--color-navy);
+				cursor: pointer;
+				padding: 5px 10px;
+				border-radius: 5px;
+				transition: var(--transition);
+				border: none;
+				background: transparent;
+				font-family: var(--font-heading);
+				font-size: 0.9rem;
+			}
+
+			.lang-switch:hover {
+				background-color: rgba(26, 35, 126, 0.05);
+				color: var(--color-sky);
+			}
+
+			/* Control de visibilidad del botón de idioma */
+			.desktop-lang {
+				display: block;
+			}
+			.mobile-lang {
+				display: none;
+			}
+
 			.hamburger {
 				display: none;
 				cursor: pointer;
@@ -347,10 +370,6 @@
 				font-weight: 600;
 			}
 
-			.intro-image img {
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-			}
-
 			/* =========================================
            PROCESS SECTION
            ========================================= */
@@ -421,12 +440,11 @@
 				color: #b0bec5;
 			}
 
-			/* Linea conectora para desktop */
 			@media (min-width: 992px) {
 				.process-grid::before {
 					content: "";
 					position: absolute;
-					top: 95px; /* Ajustar segun altura icono */
+					top: 95px;
 					left: 15%;
 					right: 15%;
 					height: 2px;
@@ -498,7 +516,6 @@
 				text-transform: uppercase;
 			}
 
-			/* Efecto de relleno en icono */
 			.service-icon {
 				width: 60px;
 				height: 60px;
@@ -534,7 +551,7 @@
 			.testimonials-section {
 				background-color: var(--color-navy);
 				color: var(--color-white);
-				overflow: hidden; /* Para que el slider no rompa el layout */
+				overflow: hidden;
 			}
 
 			.testimonials-section .section-title h2 {
@@ -556,12 +573,12 @@
 				display: flex;
 				transition: transform 0.5s ease-in-out;
 				gap: 20px;
-				cursor: grab; /* Cursor de mano */
-				touch-action: pan-y; /* Permite scroll vertical pero captura horizontal */
+				cursor: grab;
+				touch-action: pan-y;
 			}
 
 			.testimonial-track:active {
-				cursor: grabbing; /* Mano cerrada al arrastrar */
+				cursor: grabbing;
 			}
 
 			.testimonial-slide {
@@ -576,12 +593,10 @@
 				align-items: center;
 				text-align: center;
 				position: relative;
-				/* Evita que se seleccione texto al arrastrar */
 				user-select: none;
 				-webkit-user-select: none;
 			}
 
-			/* Comillas decorativas */
 			.testimonial-slide::before {
 				content: "“";
 				font-family: serif;
@@ -617,12 +632,6 @@
 				justify-content: center;
 			}
 
-			.testimonial-meta i {
-				width: 14px;
-				height: 14px;
-			}
-
-			/* Controles del Slider */
 			.slider-controls {
 				display: flex;
 				justify-content: center;
@@ -722,23 +731,11 @@
 				transform: scale(1.1);
 			}
 
-			.industry-item h4 {
-				font-size: 1.3rem;
-				color: var(--color-navy);
-				margin-bottom: 10px;
-			}
-
-			.industry-item p {
-				color: var(--color-slate);
-				font-size: 0.95rem;
-				line-height: 1.5;
-			}
-
 			/* =========================================
            PORTFOLIO SECTION
            ========================================= */
 			.portfolio-section {
-				background-color: var(--color-navy); /* Fondo Azul */
+				background-color: var(--color-navy);
 				color: var(--color-white);
 			}
 
@@ -795,7 +792,6 @@
 				opacity: 0.6;
 			}
 
-			/* Placeholder styles simulation */
 			.project-image.lawyer {
 				background: linear-gradient(120deg, #2c3e50, #4ca1af);
 			}
@@ -923,7 +919,7 @@
 			}
 
 			/* =========================================
-           PRICING (3 PACKS)
+           PRICING
            ========================================= */
 			.pricing-section {
 				background-color: var(--color-navy);
@@ -935,7 +931,7 @@
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 				gap: 30px;
-				align-items: stretch; /* Para que todas tengan la misma altura */
+				align-items: stretch;
 			}
 
 			.pricing-card {
@@ -951,10 +947,8 @@
 				border: 1px solid transparent;
 			}
 
-			/* Estilos específicos para destacar el Más Popular */
 			.pricing-card.best-seller {
 				border: 3px solid var(--color-sky);
-				/* transform: scale(1.05); REMOVIDO para igualar altura */
 				z-index: 2;
 			}
 
@@ -985,7 +979,6 @@
 				margin-top: 10px;
 			}
 
-			/* Ajuste para la tarjeta custom sin precio fijo */
 			.pricing-card.custom-card .pricing-header h3 {
 				color: var(--color-navy);
 			}
@@ -1004,13 +997,13 @@
 			}
 
 			.price.custom-price {
-				font-size: 2.2rem; /* Texto "A medida" más pequeño */
+				font-size: 2.2rem;
 			}
 
 			.pricing-features {
 				margin: 30px 0;
 				text-align: left;
-				flex-grow: 1; /* Empuja el botón hacia abajo */
+				flex-grow: 1;
 			}
 
 			.pricing-features ul li {
@@ -1127,7 +1120,6 @@
 				max-width: 300px;
 			}
 
-			/* Regla específica para el logo del footer */
 			.footer-logo img {
 				width: 180px;
 				height: auto;
@@ -1201,19 +1193,16 @@
 				.pricing-grid {
 					grid-template-columns: 1fr;
 				}
-				/* Hide decorative line in process grid on smaller screens since it's stacked */
 				.process-grid::before {
 					display: none;
 				}
 
-				/* Ajuste de tarjetas de precio en móviles/tablets */
 				.pricing-card {
 					max-width: 400px;
 					margin: 0 auto;
 					width: 100%;
 				}
 
-				/* NEW: Limit process text width when in single column */
 				.step-card p {
 					max-width: 500px;
 					margin-left: auto;
@@ -1230,6 +1219,13 @@
 			}
 
 			@media (max-width: 768px) {
+				.desktop-lang {
+					display: none;
+				}
+				.mobile-lang {
+					display: block;
+				}
+
 				.hamburger {
 					display: block;
 				}
@@ -1238,7 +1234,7 @@
 					position: fixed;
 					top: 80px;
 					right: -100%;
-					background-color: var(--color-white); /* Menú móvil blanco */
+					background-color: var(--color-white);
 					height: calc(100vh - 80px);
 					width: 80%;
 					flex-direction: column;
@@ -1252,7 +1248,6 @@
 				.nav-links.active {
 					right: 0;
 				}
-				/* Ajuste de links en movil */
 				.nav-links a {
 					font-size: 1.2rem;
 				}
@@ -1270,13 +1265,11 @@
 					gap: 30px;
 				}
 
-				/* Ajuste pricing en movil: quitar escala */
 				.pricing-card.best-seller {
 					transform: none;
 					margin: 20px auto;
 				}
 
-				/* Ajuste form en movil */
 				.contact-container {
 					padding: 25px;
 					width: 95%;
@@ -1285,7 +1278,6 @@
 		</style>
 	</head>
 	<body>
-		<!-- Google Tag Manager (noscript) -->
 		<noscript
 			><iframe
 				src="https://www.googletagmanager.com/ns.html?id=GTM-WVPLXPDW"
@@ -1294,7 +1286,6 @@
 				style="display: none; visibility: hidden"
 			></iframe
 		></noscript>
-		<!-- End Google Tag Manager (noscript) -->
 		<header>
 			<div class="container">
 				<nav>
@@ -1308,35 +1299,47 @@
 					</div>
 
 					<ul class="nav-links" id="navLinks">
-						<li><a href="#proceso">Proceso</a></li>
-						<li><a href="#servicios">Servicios</a></li>
-						<!-- <li><a href="#proyectos">Portafolio</a></li> -->
-						<li><a href="#testimonios">Testimonios</a></li>
-						<li><a href="#paquetes">Paquetes</a></li>
+						<li><a href="#process" data-i18n="nav_process">Proceso</a></li>
+						<li><a href="#services" data-i18n="nav_services">Servicios</a></li>
+						<li>
+							<a href="#testimonials" data-i18n="nav_testimonials"
+								>Testimonios</a
+							>
+						</li>
+						<li><a href="#pricing" data-i18n="nav_pricing">Paquetes</a></li>
 						<li>
 							<a
-								href="#contacto"
+								href="#contact"
 								class="btn btn-primary"
 								style="padding: 8px 20px; color: var(--color-navy)"
+								data-i18n="nav_contact"
 								>Contacto</a
 							>
 						</li>
+						<li class="desktop-lang">
+							<button class="lang-switch lang-btn">EN</button>
+						</li>
 					</ul>
 
-					<div class="hamburger" id="hamburger">
-						<i data-lucide="menu" size="32"></i>
+					<div style="display: flex; align-items: center; gap: 15px">
+						<div class="mobile-lang">
+							<button class="lang-switch lang-btn">EN</button>
+						</div>
+						<div class="hamburger" id="hamburger">
+							<i data-lucide="menu" size="32"></i>
+						</div>
 					</div>
 				</nav>
 			</div>
 		</header>
 
-		<section class="hero" id="inicio">
+		<section class="hero" id="home">
 			<div class="container">
 				<div class="hero-content">
-					<h1 class="animate-item">
+					<h1 class="animate-item" data-i18n="hero_title">
 						Digitaliza tu negocio y expande tu alcance en todo el país
 					</h1>
-					<p class="animate-item">
+					<p class="animate-item" data-i18n="hero_desc">
 						Diseño web profesional, infraestructura robusta y herramientas
 						automatizadas. Todo lo que necesitas para crecer en México, sin
 						complicaciones técnicas.
@@ -1345,8 +1348,12 @@
 						class="animate-item"
 						style="display: flex; gap: 15px; flex-wrap: wrap"
 					>
-						<a href="#paquetes" class="btn btn-primary">Ver Paquetes</a>
-						<a href="#servicios" class="btn btn-outline">Explorar Servicios</a>
+						<a href="#pricing" class="btn btn-primary" data-i18n="hero_btn1"
+							>Ver Paquetes</a
+						>
+						<a href="#services" class="btn btn-outline" data-i18n="hero_btn2"
+							>Explorar Servicios</a
+						>
 					</div>
 				</div>
 			</div>
@@ -1356,16 +1363,16 @@
 			<div class="container">
 				<div class="intro-grid">
 					<div class="intro-text">
-						<h2 class="animate-item">
+						<h2 class="animate-item" data-i18n="intro_title">
 							Tus clientes te están buscando ahora mismo
 						</h2>
-						<p class="animate-item">
+						<p class="animate-item" data-i18n="intro_desc">
 							Hoy en día, la primera impresión de cualquier negocio ocurre en
 							internet. Tus clientes potenciales buscan servicios cerca de su
 							ubicación, y si tu negocio no aparece de forma profesional, es
 							probable que no logren encontrarte.
 						</p>
-						<div class="intro-highlight animate-item">
+						<div class="intro-highlight animate-item" data-i18n="intro_quote">
 							"En Koda Studio construimos tu sede digital: abierta 24/7, con
 							identidad propia y diseñada para generar confianza desde el primer
 							clic."
@@ -1375,11 +1382,13 @@
 			</div>
 		</section>
 
-		<section class="section-padding process-section" id="proceso">
+		<section class="section-padding process-section" id="process">
 			<div class="container">
 				<div class="section-title">
-					<h2 class="animate-item">Tu Nuevo Sitio en 3 Pasos</h2>
-					<p class="animate-item">
+					<h2 class="animate-item" data-i18n="process_title">
+						Tu Nuevo Sitio en 3 Pasos
+					</h2>
+					<p class="animate-item" data-i18n="process_desc">
 						Hemos simplificado todo para que no te preocupes por la tecnología.
 					</p>
 				</div>
@@ -1391,8 +1400,8 @@
 							<div class="step-icon-wrapper">
 								<i data-lucide="message-square" size="32"></i>
 							</div>
-							<h3>Briefing</h3>
-							<p>
+							<h3 data-i18n="step1_title">Briefing</h3>
+							<p data-i18n="step1_desc">
 								Nos cuentas sobre tu negocio, tus objetivos y la información
 								básica para comenzar.
 							</p>
@@ -1405,8 +1414,8 @@
 							<div class="step-icon-wrapper">
 								<i data-lucide="code-2" size="32"></i>
 							</div>
-							<h3>Construcción</h3>
-							<p>
+							<h3 data-i18n="step2_title">Construcción</h3>
+							<p data-i18n="step2_desc">
 								Diseñamos tu sitio, configuramos tus correos y montamos tu
 								sistema de citas.
 							</p>
@@ -1419,8 +1428,8 @@
 							<div class="step-icon-wrapper">
 								<i data-lucide="rocket" size="32"></i>
 							</div>
-							<h3>Lanzamiento</h3>
-							<p>
+							<h3 data-i18n="step3_title">Lanzamiento</h3>
+							<p data-i18n="step3_desc">
 								Revisamos los detalles finales y publicamos tu negocio para que
 								el mundo lo vea.
 							</p>
@@ -1430,113 +1439,101 @@
 			</div>
 		</section>
 
-		<section class="section-padding services-section" id="servicios">
+		<section class="section-padding services-section" id="services">
 			<div class="container">
 				<div class="section-title">
-					<h2 class="animate-item">Lo que hacemos por ti</h2>
-					<p class="animate-item">
+					<h2 class="animate-item" data-i18n="services_title">
+						Lo que hacemos por ti
+					</h2>
+					<p class="animate-item" data-i18n="services_desc">
 						Soluciones integrales para digitalizar tu empresa
 					</p>
 				</div>
 
 				<div class="services-grid">
 					<div class="service-card animate-item">
-						<div class="service-badge">Esencial</div>
-						<div class="service-icon">
-							<i data-lucide="monitor"></i>
+						<div class="service-badge" data-i18n="badge_essential">
+							Esencial
 						</div>
-						<h3>Diseño Web Responsivo</h3>
-						<p>
+						<div class="service-icon"><i data-lucide="monitor"></i></div>
+						<h3 data-i18n="srv1_title">Diseño Web Responsivo</h3>
+						<p data-i18n="srv1_desc">
 							Tu sitio se verá perfecto en celulares, tablets y computadoras,
 							adaptándose a cualquier tamaño de pantalla.
 						</p>
 					</div>
 
 					<div class="service-card animate-item">
-						<div class="service-badge">Incluido</div>
-						<div class="service-icon">
-							<i data-lucide="server"></i>
-						</div>
-						<h3>Dominio & Hosting</h3>
-						<p>
+						<div class="service-badge" data-i18n="badge_included">Incluido</div>
+						<div class="service-icon"><i data-lucide="server"></i></div>
+						<h3 data-i18n="srv2_title">Dominio & Hosting</h3>
+						<p data-i18n="srv2_desc">
 							Incluimos tu dominio .com y hospedaje de alta velocidad por un
 							año. Sin configuraciones complicadas.
 						</p>
 					</div>
 
 					<div class="service-card animate-item">
-						<div class="service-icon">
-							<i data-lucide="mail"></i>
-						</div>
-						<h3>Correos Corporativos</h3>
-						<p>
+						<div class="service-icon"><i data-lucide="mail"></i></div>
+						<h3 data-i18n="srv3_title">Correos Corporativos</h3>
+						<p data-i18n="srv3_desc">
 							Crea confianza inmediata con direcciones profesionales como
 							<strong>contacto@tuempresa.com</strong>.
 						</p>
 					</div>
 
 					<div class="service-card animate-item">
-						<div class="service-badge">Destacado</div>
-						<div class="service-icon">
-							<i data-lucide="calendar-check"></i>
+						<div class="service-badge" data-i18n="badge_featured">
+							Destacado
 						</div>
-						<h3>Agenda Automatizada</h3>
-						<p>
+						<div class="service-icon"><i data-lucide="calendar-check"></i></div>
+						<h3 data-i18n="srv4_title">Agenda Automatizada</h3>
+						<p data-i18n="srv4_desc">
 							Sistema de reservas 24/7 integrado en tu web. Tus clientes agendan
 							sin llamadas ni mensajes.
 						</p>
 					</div>
 
 					<div class="service-card animate-item">
-						<div class="service-icon">
-							<i data-lucide="map-pin"></i>
-						</div>
-						<h3>Google Maps & SEO</h3>
-						<p>
+						<div class="service-icon"><i data-lucide="map-pin"></i></div>
+						<h3 data-i18n="srv5_title">Google Maps & SEO</h3>
+						<p data-i18n="srv5_desc">
 							Optimizamos tu ficha de negocio para que aparezcas primero en
 							búsquedas locales de tu ciudad.
 						</p>
 					</div>
 
 					<div class="service-card animate-item">
-						<div class="service-icon">
-							<i data-lucide="qr-code"></i>
-						</div>
-						<h3>Menú o Catálogo QR</h3>
-						<p>
+						<div class="service-icon"><i data-lucide="qr-code"></i></div>
+						<h3 data-i18n="srv6_title">Menú o Catálogo QR</h3>
+						<p data-i18n="srv6_desc">
 							Digitalizamos tus productos o menú para que tus clientes accedan
 							rápido desde su celular.
 						</p>
 					</div>
 
 					<div class="service-card animate-item">
-						<div class="service-icon">
-							<i data-lucide="contact"></i>
-						</div>
-						<h3>Tarjetas Digitales</h3>
-						<p>
+						<div class="service-icon"><i data-lucide="contact"></i></div>
+						<h3 data-i18n="srv7_title">Tarjetas Digitales</h3>
+						<p data-i18n="srv7_desc">
 							Diseñamos tu tarjeta de presentación interactiva con enlaces
 							directos a tu web y WhatsApp.
 						</p>
 					</div>
 
 					<div class="service-card animate-item">
-						<div class="service-icon">
-							<i data-lucide="bar-chart-2"></i>
-						</div>
-						<h3>Métricas de Visitas</h3>
-						<p>
+						<div class="service-icon"><i data-lucide="bar-chart-2"></i></div>
+						<h3 data-i18n="srv8_title">Métricas de Visitas</h3>
+						<p data-i18n="srv8_desc">
 							Reportes claros con Google Analytics para saber cuánta gente entra
 							a tu sitio y desde dónde.
 						</p>
 					</div>
 
 					<div class="service-card animate-item">
-						<div class="service-icon">
-							<i data-lucide="shield-check"></i>
-						</div>
-						<h3>Seguridad & Soporte</h3>
-						<p>
+						<div class="service-icon"><i data-lucide="shield-check"></i></div>
+						<h3 data-i18n="srv9_title">Seguridad & Soporte</h3>
+						<p data-i18n="srv9_desc">
 							Certificado SSL (candado seguro) incluido y hasta 6 meses de
 							soporte técnico gratuito para cambios.
 						</p>
@@ -1545,11 +1542,13 @@
 			</div>
 		</section>
 
-		<section class="section-padding testimonials-section" id="testimonios">
+		<section class="section-padding testimonials-section" id="testimonials">
 			<div class="container">
 				<div class="section-title">
-					<h2 class="animate-item">Historias de Éxito</h2>
-					<p class="animate-item">
+					<h2 class="animate-item" data-i18n="test_title">
+						Historias de Éxito
+					</h2>
+					<p class="animate-item" data-i18n="test_desc">
 						Empresarios de todo México & Canadá que transformaron su negocio con
 						Koda Studio.
 					</p>
@@ -1558,14 +1557,14 @@
 				<div class="testimonial-slider-container animate-item">
 					<div class="testimonial-track" id="testimonialTrack">
 						<div class="testimonial-slide">
-							<div class="testimonial-text">
+							<div class="testimonial-text" data-i18n="test1_quote">
 								"El catálogo digital de maquinaria nos cambió la forma de
 								vender. Ahora los clientes industriales eligen el equipo y nos
 								llega la solicitud de cotización lista. El profesionalismo del
 								sitio nos ha abierto puertas con constructoras grandes."
 							</div>
 							<div class="testimonial-author">
-								<h4>Ing. Omar Arredondo</h4>
+								<h4>Ing. Omar Leyva</h4>
 								<div class="testimonial-meta">
 									<i
 										data-lucide="zap"
@@ -1577,7 +1576,7 @@
 						</div>
 
 						<div class="testimonial-slide">
-							<div class="testimonial-text">
+							<div class="testimonial-text" data-i18n="test2_quote">
 								"Nuestros eventos son puramente visuales y Koda Studio logró que
 								la página transmitiera esa misma emoción. La galería de
 								servicios ha sido nuestra mejor herramienta para cerrar fechas
@@ -1596,7 +1595,7 @@
 						</div>
 
 						<div class="testimonial-slide">
-							<div class="testimonial-text">
+							<div class="testimonial-text" data-i18n="test3_quote">
 								"Nuestros clientes buscan relajación y esa experiencia debe
 								empezar desde el sitio web. Koda Studio logró una plataforma
 								impecable que facilita las reservas rápidas. La estética nórdica
@@ -1615,7 +1614,7 @@
 						</div>
 
 						<div class="testimonial-slide">
-							<div class="testimonial-text">
+							<div class="testimonial-text" data-i18n="test4_quote">
 								"El mercado inmobiliario en Canadá es sumamente competitivo.
 								Gracias a la automatización de leads y el diseño minimalista de
 								Novus, hemos logrado filtrar prospectos de calidad sin perder
@@ -1634,7 +1633,7 @@
 						</div>
 
 						<div class="testimonial-slide">
-							<div class="testimonial-text">
+							<div class="testimonial-text" data-i18n="test5_quote">
 								"Como estudio creativo, somos muy exigentes con la estética.
 								Koda Studio creó una interfaz que respira nuestra esencia:
 								limpia y moderna. Es la carta de presentación perfecta para
@@ -1653,7 +1652,7 @@
 						</div>
 
 						<div class="testimonial-slide">
-							<div class="testimonial-text">
+							<div class="testimonial-text" data-i18n="test6_quote">
 								"Necesitábamos dejar de ser 'un despacho más' y convertirnos en
 								una firma de autoridad. El blog y el diseño elegante han atraído
 								a clientes corporativos que antes no nos consideraban. La
@@ -1672,7 +1671,7 @@
 						</div>
 
 						<div class="testimonial-slide">
-							<div class="testimonial-text">
+							<div class="testimonial-text" data-i18n="test7_quote">
 								"Antes me pasaba el día contestando '¿tienes espacio?'. Ahora
 								mis clientas ven mi agenda real y reservan con el anticipo
 								pagado. Tengo más tiempo para trabajar."
@@ -1684,13 +1683,13 @@
 										data-lucide="sparkles"
 										style="width: 14px; color: var(--color-slate)"
 									></i>
-									Studio Lash &middot; Hidalgo.
+									Studio Lash &middot; Hidalgo
 								</div>
 							</div>
 						</div>
 
 						<div class="testimonial-slide">
-							<div class="testimonial-text">
+							<div class="testimonial-text" data-i18n="test8_quote">
 								"La seriedad que proyecta mi firma ahora es incomparable. Koda
 								Studio entendió perfecto que necesitábamos sobriedad y
 								confianza. Los clientes ahora llegan mucho más filtrados y
@@ -1725,8 +1724,10 @@
 		<section class="section-padding industries-section">
 			<div class="container">
 				<div class="section-title">
-					<h2 class="animate-item">Impulsando el Éxito en Sectores Clave</h2>
-					<p class="animate-item">
+					<h2 class="animate-item" data-i18n="ind_title">
+						Impulsando el Éxito en Sectores Clave
+					</h2>
+					<p class="animate-item" data-i18n="ind_desc">
 						Nuestra tecnología está diseñada para resolver los retos específicos
 						de tu industria y aumentar tus ventas.
 					</p>
@@ -1735,72 +1736,72 @@
 				<div class="industries-grid">
 					<div class="industry-item animate-item">
 						<i data-lucide="scale" class="industry-icon"></i>
-						<h4>Abogados & Firmas</h4>
-						<p>
+						<h4 data-i18n="ind1_title">Abogados & Firmas</h4>
+						<p data-i18n="ind1_desc">
 							Digitalizamos tu reputación. Genera confianza inmediata y capta
 							clientes calificados con un sitio sobrio y profesional.
 						</p>
 					</div>
 					<div class="industry-item animate-item">
 						<i data-lucide="compass" class="industry-icon"></i>
-						<h4>Arquitectura & Diseño</h4>
-						<p>
+						<h4 data-i18n="ind2_title">Arquitectura & Diseño</h4>
+						<p data-i18n="ind2_desc">
 							Tu portafolio como herramienta de venta. Galerías inmersivas de
 							alta resolución que convencen a inversores y clientes.
 						</p>
 					</div>
 					<div class="industry-item animate-item">
 						<i data-lucide="utensils" class="industry-icon"></i>
-						<h4>Restaurantes & Cafés</h4>
-						<p>
+						<h4 data-i18n="ind3_title">Restaurantes & Cafés</h4>
+						<p data-i18n="ind3_desc">
 							Llena más mesas. Menús digitales con QR que antojan y sistemas de
 							reserva directa sin depender de terceros.
 						</p>
 					</div>
 					<div class="industry-item animate-item">
 						<i data-lucide="bed-double" class="industry-icon"></i>
-						<h4>Hoteles & AirBnb</h4>
-						<p>
+						<h4 data-i18n="ind4_title">Hoteles & AirBnb</h4>
+						<p data-i18n="ind4_desc">
 							Aumenta tus reservas directas. Muestra la experiencia real de tu
 							hospedaje y evita las altas comisiones de agencias.
 						</p>
 					</div>
 					<div class="industry-item animate-item">
 						<i data-lucide="calculator" class="industry-icon"></i>
-						<h4>Contadores & Consultores</h4>
-						<p>
+						<h4 data-i18n="ind5_title">Contadores & Consultores</h4>
+						<p data-i18n="ind5_desc">
 							Automatiza tu agenda. Permite que tus clientes reserven asesorías
 							pagadas o gratuitas sin interrumpir tu trabajo.
 						</p>
 					</div>
 					<div class="industry-item animate-item">
 						<i data-lucide="home" class="industry-icon"></i>
-						<h4>Bienes Raíces</h4>
-						<p>
+						<h4 data-i18n="ind6_title">Bienes Raíces</h4>
+						<p data-i18n="ind6_desc">
 							Vende más rápido. Filtra interesados reales con fichas de
 							propiedades detalladas y botones directos a WhatsApp.
 						</p>
 					</div>
 					<div class="industry-item animate-item">
 						<i data-lucide="scissors" class="industry-icon"></i>
-						<h4>Barberías & Estilistas</h4>
-						<p>
+						<h4 data-i18n="ind7_title">Barberías & Estilistas</h4>
+						<p data-i18n="ind7_desc">
 							Fideliza a tus clientes. Un sistema de citas rápido y visual que
 							reduce las ausencias y organiza tu día automáticamente.
 						</p>
 					</div>
 					<div class="industry-item animate-item">
 						<i data-lucide="sparkles" class="industry-icon"></i>
-						<h4>Uñas, Lashes & Spa</h4>
-						<p>
+						<h4 data-i18n="ind8_title">Uñas, Lashes & Spa</h4>
+						<p data-i18n="ind8_desc">
 							Agenda llena, cero caos. Permite que tus clientas elijan su diseño
 							y reserven su hora ideal sin mensajes interminables.
 						</p>
 					</div>
 					<div class="industry-item animate-item">
 						<i data-lucide="calendar-heart" class="industry-icon"></i>
-						<h4>Salones & Eventos</h4>
-						<p>
+						<h4 data-i18n="ind9_title">Salones & Eventos</h4>
+						<p data-i18n="ind9_desc">
 							Muestra tu espacio. Una galería espectacular y calendario de
 							disponibilidad para que cierres fechas de bodas y fiestas.
 						</p>
@@ -1809,11 +1810,11 @@
 			</div>
 		</section>
 
-		<section class="section-padding portfolio-section" id="proyectos">
+		<section class="section-padding portfolio-section" id="projects">
 			<div class="container">
 				<div class="section-title">
-					<h2 class="animate-item">Casos de Éxito</h2>
-					<p class="animate-item">
+					<h2 class="animate-item" data-i18n="port_title">Casos de Éxito</h2>
+					<p class="animate-item" data-i18n="port_desc">
 						Transformamos la presencia digital de empresas líderes en activos
 						estratégicos que generan confianza y aceleran el crecimiento.
 					</p>
@@ -1822,22 +1823,23 @@
 				<div class="portfolio-grid">
 					<div class="project-card animate-item">
 						<div class="project-image lawyer">
-							<div class="project-image-text">Sector Corporativo</div>
+							<div class="project-image-text" data-i18n="port1_tag">
+								Sector Corporativo
+							</div>
 						</div>
 						<div class="project-content">
 							<h3>Contapro MX</h3>
-							<p>
+							<p data-i18n="port1_desc">
 								Desarrollo de plataforma contable diseñada para proyectar
 								autoridad. Optimizada para la captación de clientes corporativos
-								mediante un flujo de navegación profesional y un centro de
-								noticias especializado.
+								mediante un flujo de navegación profesional.
 							</p>
 							<a
 								href="https://contapro.mx"
 								target="_blank"
 								class="project-link"
 							>
-								Ver sitio web
+								<span data-i18n="port_link">Ver sitio web</span>
 								<i data-lucide="external-link" style="width: 16px"></i>
 							</a>
 						</div>
@@ -1845,22 +1847,23 @@
 
 					<div class="project-card animate-item">
 						<div class="project-image realestate">
-							<div class="project-image-text">Servicios Premium</div>
+							<div class="project-image-text" data-i18n="port2_tag">
+								Servicios Premium
+							</div>
 						</div>
 						<div class="project-content">
 							<h3>Voga Eventos</h3>
-							<p>
+							<p data-i18n="port2_desc">
 								Experiencia digital inmersiva para el sector de eventos
 								sociales. Diseñada para convertir el interés visual en
-								reservaciones, destacando la exclusividad y los servicios
-								integrales de la marca.
+								reservaciones, destacando la exclusividad.
 							</p>
 							<a
 								href="https://vogaeventos.com"
 								target="_blank"
 								class="project-link"
 							>
-								Ver sitio web
+								<span data-i18n="port_link">Ver sitio web</span>
 								<i data-lucide="external-link" style="width: 16px"></i>
 							</a>
 						</div>
@@ -1868,22 +1871,23 @@
 
 					<div class="project-card animate-item">
 						<div class="project-image restaurant">
-							<div class="project-image-text">Industria & Energía</div>
+							<div class="project-image-text" data-i18n="port3_tag">
+								Industria & Energía
+							</div>
 						</div>
 						<div class="project-content">
 							<h3>Baja Electric</h3>
-							<p>
+							<p data-i18n="port3_desc">
 								Solución digital para el sector industrial. Implementamos un
 								catálogo inteligente de maquinaria y equipo eléctrico enfocado
-								en agilizar el proceso de cotización y reflejar la robustez
-								operativa de la empresa.
+								en agilizar el proceso de cotización.
 							</p>
 							<a
 								href="https://bajaelectric.org"
 								target="_blank"
 								class="project-link"
 							>
-								Ver sitio web
+								<span data-i18n="port_link">Ver sitio web</span>
 								<i data-lucide="external-link" style="width: 16px"></i>
 							</a>
 						</div>
@@ -1891,22 +1895,23 @@
 
 					<div class="project-card animate-item">
 						<div class="project-image beauty">
-							<div class="project-image-text">Consultoría Creativa</div>
+							<div class="project-image-text" data-i18n="port4_tag">
+								Consultoría Creativa
+							</div>
 						</div>
 						<div class="project-content">
 							<h3>Nebulosa Studio</h3>
-							<p>
+							<p data-i18n="port4_desc">
 								Interfaz minimalista y de alto impacto para consultoría de
 								branding. Diseñada para comunicar creatividad y orden,
-								facilitando la conexión directa con clientes que buscan elevar
-								su identidad de marca.
+								facilitando la conexión directa con clientes.
 							</p>
 							<a
 								href="https://nebulosastudio.com"
 								target="_blank"
 								class="project-link"
 							>
-								Ver sitio web
+								<span data-i18n="port_link">Ver sitio web</span>
 								<i data-lucide="external-link" style="width: 16px"></i>
 							</a>
 						</div>
@@ -1914,22 +1919,23 @@
 
 					<div class="project-card animate-item">
 						<div class="project-image barber">
-							<div class="project-image-text">Hospitalidad & Bienestar</div>
+							<div class="project-image-text" data-i18n="port5_tag">
+								Hospitalidad & Bienestar
+							</div>
 						</div>
 						<div class="project-content">
 							<h3>Scandinave SPA</h3>
-							<p>
+							<p data-i18n="port5_desc">
 								Plataforma enfocada en la experiencia de usuario para el sector
 								hotelero. Priorizamos la velocidad de reservación y el impacto
-								visual para maximizar las conversiones desde dispositivos
-								móviles.
+								visual para maximizar las conversiones.
 							</p>
 							<a
 								href="https://scandinave.com"
 								target="_blank"
 								class="project-link"
 							>
-								Ver sitio web
+								<span data-i18n="port_link">Ver sitio web</span>
 								<i data-lucide="external-link" style="width: 16px"></i>
 							</a>
 						</div>
@@ -1937,22 +1943,23 @@
 
 					<div class="project-card animate-item">
 						<div class="project-image consultant">
-							<div class="project-image-text">Real Estate</div>
+							<div class="project-image-text" data-i18n="port6_tag">
+								Real Estate
+							</div>
 						</div>
 						<div class="project-content">
 							<h3>Novus Realestate CA</h3>
-							<p>
+							<p data-i18n="port6_desc">
 								Arquitectura digital orientada a la generación de prospectos
 								inmobiliarios. Diseñada para automatizar la captación de
-								clientes cualificados y proyectar confianza en el mercado de
-								bienes raíces.
+								clientes cualificados y proyectar confianza.
 							</p>
 							<a
 								href="https://novusrealestate.ca"
 								target="_blank"
 								class="project-link"
 							>
-								Ver sitio web
+								<span data-i18n="port_link">Ver sitio web</span>
 								<i data-lucide="external-link" style="width: 16px"></i>
 							</a>
 						</div>
@@ -1964,8 +1971,10 @@
 		<section class="section-padding faq-section" id="faq">
 			<div class="container">
 				<div class="section-title">
-					<h2 class="animate-item">Preguntas Frecuentes</h2>
-					<p class="animate-item">
+					<h2 class="animate-item" data-i18n="faq_title">
+						Preguntas Frecuentes
+					</h2>
+					<p class="animate-item" data-i18n="faq_desc">
 						Resolvemos tus dudas antes de comenzar tu transformación digital.
 					</p>
 				</div>
@@ -1973,11 +1982,13 @@
 				<div class="faq-container animate-item">
 					<div class="accordion-item">
 						<button class="accordion-header">
-							¿En cuánto tiempo queda lista mi página web?
+							<span data-i18n="faq1_q"
+								>¿En cuánto tiempo queda lista mi página web?</span
+							>
 							<i data-lucide="chevron-down"></i>
 						</button>
 						<div class="accordion-content">
-							<p>
+							<p data-i18n="faq1_a">
 								Tu sitio estará listo desde
 								<strong>14 días naturales</strong> en los planes start, mientras
 								que en los planes pro podriamos tomar hasta
@@ -1992,11 +2003,13 @@
 
 					<div class="accordion-item">
 						<button class="accordion-header">
-							¿Tengo que seguir pagando algo mensualmente?
+							<span data-i18n="faq2_q"
+								>¿Tengo que seguir pagando algo mensualmente?</span
+							>
 							<i data-lucide="chevron-down"></i>
 						</button>
 						<div class="accordion-content">
-							<p>
+							<p data-i18n="faq2_a">
 								<strong>No, no hay mensualidades.</strong> El desarrollo es un
 								pago único. Lo único que se renueva es la infraestructura
 								(Dominio y Hosting) de manera anual por solo
@@ -2008,11 +2021,13 @@
 
 					<div class="accordion-item">
 						<button class="accordion-header">
-							¿El dominio y el hosting son de mi propiedad?
+							<span data-i18n="faq3_q"
+								>¿El dominio y el hosting son de mi propiedad?</span
+							>
 							<i data-lucide="chevron-down"></i>
 						</button>
 						<div class="accordion-content">
-							<p>
+							<p data-i18n="faq3_a">
 								<strong>Absolutamente.</strong> A diferencia de otras agencias,
 								aquí tú eres el dueño legal de tu dominio y hosting desde el
 								primer día. Sin plazos forzosos, sin letras chiquitas y con
@@ -2023,11 +2038,13 @@
 
 					<div class="accordion-item">
 						<button class="accordion-header">
-							¿Qué pasa si quiero cambiar fotos o textos en el futuro?
+							<span data-i18n="faq4_q"
+								>¿Qué pasa si quiero cambiar fotos o textos en el futuro?</span
+							>
 							<i data-lucide="chevron-down"></i>
 						</button>
 						<div class="accordion-content">
-							<p>
+							<p data-i18n="faq4_a">
 								Tenemos un modelo flexible de
 								<strong>"Mantenimiento por Evento"</strong>. Si necesitas
 								actualizaciones puntuales, no pagas una renta mensual fija; solo
@@ -2039,11 +2056,13 @@
 
 					<div class="accordion-item">
 						<button class="accordion-header">
-							¿Necesito tener mi logo y textos listos para empezar?
+							<span data-i18n="faq5_q"
+								>¿Necesito tener mi logo y textos listos para empezar?</span
+							>
 							<i data-lucide="chevron-down"></i>
 						</button>
 						<div class="accordion-content">
-							<p>
+							<p data-i18n="faq5_a">
 								<strong>No es obligatorio.</strong> Incluimos redacción
 								profesional (copywriting) básica en todos los paquetes. Además,
 								podemos diseñar un logotipo sencillo para ti sin costo extra. Si
@@ -2055,11 +2074,11 @@
 
 					<div class="accordion-item">
 						<button class="accordion-header">
-							¿El sitio incluye facturación?
+							<span data-i18n="faq6_q">¿El sitio incluye facturación?</span>
 							<i data-lucide="chevron-down"></i>
 						</button>
 						<div class="accordion-content">
-							<p>
+							<p data-i18n="faq6_a">
 								<strong>Sí, facturamos todos nuestros servicios.</strong> Los
 								precios mostrados son netos antes de impuestos, por lo que al
 								solicitar tu factura se añadirá el 16% de IVA correspondiente.
@@ -2070,27 +2089,36 @@
 			</div>
 		</section>
 
-		<section class="section-padding pricing-section" id="paquetes">
+		<section class="section-padding pricing-section" id="pricing">
 			<div class="container">
 				<div class="section-title">
-					<h2 class="animate-item" style="color: var(--color-white)">
+					<h2
+						class="animate-item"
+						style="color: var(--color-white)"
+						data-i18n="price_title"
+					>
 						Elige tu plan de crecimiento
 					</h2>
-					<p class="animate-item" style="color: #b0bec5">
+					<p class="animate-item" style="color: #b0bec5" data-i18n="price_desc">
 						Soluciones escalables para cada etapa de tu negocio.
 					</p>
 				</div>
 
 				<div class="pricing-grid">
-					<div class="pricing-card best-seller animate-item">
-						<div class="best-seller-label">Más Popular</div>
+					<div class="pricing-card animate-item">
 						<div class="pricing-header">
 							<h3>KODA START</h3>
-							<p style="font-size: 0.75rem; color: #666; margin-bottom: -16px">
+							<p
+								style="font-size: 0.75rem; color: #666; margin-bottom: -16px"
+								data-i18n="price_from"
+							>
 								Desde
 							</p>
 							<div class="price">$4,999 <span>MXN</span></div>
-							<p style="font-size: 0.85rem; color: #666">
+							<p
+								style="font-size: 0.85rem; color: #666"
+								data-i18n="price_start_sub"
+							>
 								Ideal para empezar con fuerza
 							</p>
 						</div>
@@ -2102,24 +2130,29 @@
 								</li>
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									Dominio .com ó .com.mx (1 año)
+									<span data-i18n="feat_domain"
+										>Dominio .com ó .com.mx (1 año)</span
+									>
 								</li>
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									Hosting Rápido (1 año)
+									<span data-i18n="feat_hosting">Hosting Rápido (1 año)</span>
 								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i> 1
-									Correo Corporativo
-								</li>
-
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									Logotipo principal
+									<span data-i18n="feat_mail1">1 Correo Corporativo*</span>
 								</li>
 								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i> Botón
-									WhatsApp & Maps
+									<i data-lucide="check-circle-2" class="check-icon"></i>
+									<span data-i18n="feat_logo1">Logotipo principal</span>
+								</li>
+								<li>
+									<i data-lucide="check-circle-2" class="check-icon"></i>
+									<span data-i18n="feat_buttons">Botón WhatsApp & Maps</span>
+								</li>
+								<li>
+									<i data-lucide="check-circle-2" class="check-icon"></i>
+									<span data-i18n="feat_form">Formulario de Contacto</span>
 								</li>
 								<li>
 									<i
@@ -2127,7 +2160,8 @@
 										class="check-icon"
 										style="color: var(--color-sky)"
 									></i>
-									3 Meses Soporte <span class="bonus-badge">GRATIS</span>
+									<span data-i18n="feat_support3">3 Meses Soporte</span>
+									<span class="bonus-badge" data-i18n="badge_free">GRATIS</span>
 								</li>
 							</ul>
 						</div>
@@ -2136,19 +2170,28 @@
 							target="_blank"
 							class="btn btn-primary"
 							style="width: 100%"
+							data-i18n="btn_want_it"
+							>Lo quiero</a
 						>
-							Lo quiero
-						</a>
 					</div>
 
-					<div class="pricing-card animate-item">
+					<div class="pricing-card best-seller animate-item">
+						<div class="best-seller-label" data-i18n="badge_popular">
+							Más Popular
+						</div>
 						<div class="pricing-header">
 							<h3>KODA PRO</h3>
-							<p style="font-size: 0.75rem; color: #666; margin-bottom: -16px">
+							<p
+								style="font-size: 0.75rem; color: #666; margin-bottom: -16px"
+								data-i18n="price_from"
+							>
 								Desde
 							</p>
 							<div class="price">$7,499 <span>MXN</span></div>
-							<p style="font-size: 0.85rem; color: #666">
+							<p
+								style="font-size: 0.85rem; color: #666"
+								data-i18n="price_pro_sub"
+							>
 								Para negocios en expansión
 							</p>
 						</div>
@@ -2156,31 +2199,35 @@
 							<ul>
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									<strong>Todo lo de Koda Start</strong>
-								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i> Diseño
-									Multipágina (Inicio + 2)
-								</li>
-								<li>
-									<i data-lucide="check-circle-2" class="check-icon"></i> Logo
-									principal, isotipo y versión horizontal
+									<strong data-i18n="feat_all_start"
+										>Todo lo de Koda Start</strong
+									>
 								</li>
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									Sistema de Citas Básico
+									<span data-i18n="feat_multipage"
+										>Diseño Multipágina (Inicio + 2)</span
+									>
 								</li>
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									<strong>Hasta 3 Correos Corporativos</strong>
+									<span data-i18n="feat_logo_full"
+										>Logo principal, isotipo y versión horizontal</span
+									>
 								</li>
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									Integración Menú QR
+									<span data-i18n="feat_booking">Sistema de Citas Básico</span>
 								</li>
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									Formulario de Contacto Avanzado
+									<strong data-i18n="feat_mail3"
+										>Hasta 3 Correos Corporativos*</strong
+									>
+								</li>
+								<li>
+									<i data-lucide="check-circle-2" class="check-icon"></i>
+									<span data-i18n="feat_qr">Integración Menú QR</span>
 								</li>
 								<li>
 									<i
@@ -2188,7 +2235,8 @@
 										class="check-icon"
 										style="color: var(--color-sky)"
 									></i>
-									6 Meses Soporte <span class="bonus-badge">GRATIS</span>
+									<span data-i18n="feat_support6">6 Meses Soporte</span>
+									<span class="bonus-badge" data-i18n="badge_free">GRATIS</span>
 								</li>
 							</ul>
 						</div>
@@ -2198,37 +2246,50 @@
 							class="btn btn-outline"
 							style="
 								width: 100%;
-								border-color: var(--color-navy);
-								color: var(--color-navy);
+								border-color: var(--color-sky);
+								color: var(--color-sky);
 							"
+							data-i18n="btn_upgrade"
+							>Mejorar mi plan</a
 						>
-							Mejorar mi plan
-						</a>
 					</div>
 
 					<div class="pricing-card custom-card animate-item">
 						<div class="pricing-header">
 							<h3>KODA EMPRESARIAL</h3>
-							<div class="price custom-price">Cotización</div>
-							<p style="font-size: 0.85rem; color: #666">A tu medida</p>
+							<div class="price custom-price" data-i18n="price_custom">
+								Cotización
+							</div>
+							<p
+								style="font-size: 0.85rem; color: #666"
+								data-i18n="price_biz_sub"
+							>
+								A tu medida
+							</p>
 						</div>
 						<div class="pricing-features">
 							<ul>
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									Diseño a medida
+									<span data-i18n="feat_custom_design">Diseño a medida</span>
 								</li>
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									Funcionalidades a medida
+									<span data-i18n="feat_custom_func"
+										>Funcionalidades a medida</span
+									>
 								</li>
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									Cantidad ilimitada de correos
+									<span data-i18n="feat_unlimited_mail"
+										>Cantidad ilimitada de correos</span
+									>
 								</li>
 								<li>
 									<i data-lucide="check-circle-2" class="check-icon"></i>
-									Asesoría de estrategia digital
+									<span data-i18n="feat_strategy"
+										>Asesoría de estrategia digital</span
+									>
 								</li>
 							</ul>
 						</div>
@@ -2241,19 +2302,35 @@
 								border-color: var(--color-navy);
 								color: var(--color-navy);
 							"
+							data-i18n="btn_quote"
+							>Cotizar Proyecto</a
 						>
-							Cotizar Proyecto
-						</a>
 					</div>
 				</div>
+
+				<p
+					style="
+						text-align: center;
+						margin-top: 30px;
+						font-size: 0.95rem;
+						color: #b0bec5;
+					"
+					class="animate-item"
+					data-i18n="mail_note"
+				>
+					* Correos corporativos adicionales tienen un costo extra de
+					<strong>$299 MXN</strong> cada uno.
+				</p>
 			</div>
 		</section>
 
-		<section class="section-padding contact-section" id="contacto">
+		<section class="section-padding contact-section" id="contact">
 			<div class="container">
 				<div class="section-title">
-					<h2 class="animate-item">¿Listo para empezar?</h2>
-					<p class="animate-item">
+					<h2 class="animate-item" data-i18n="contact_title">
+						¿Listo para empezar?
+					</h2>
+					<p class="animate-item" data-i18n="contact_desc">
 						Cuéntanos un poco sobre tu proyecto y nos pondremos en contacto
 						contigo.
 					</p>
@@ -2266,42 +2343,51 @@
 					>
 						<div class="form-group">
 							<label for="name"
-								>Nombre <span class="required-mark">*</span></label
+								><span data-i18n="form_name">Nombre</span>
+								<span class="required-mark">*</span></label
 							>
 							<input
 								type="text"
 								id="name"
 								name="name"
-								placeholder="Tu nombre completo"
 								required
+								data-i18n-placeholder="form_name_ph"
+								placeholder="Tu nombre completo"
 							/>
 						</div>
 
 						<div class="form-group">
-							<label for="company">Nombre de tu Empresa</label>
+							<label for="company" data-i18n="form_company"
+								>Nombre de tu Empresa</label
+							>
 							<input
 								type="text"
 								id="company"
 								name="company"
+								data-i18n-placeholder="form_company_ph"
 								placeholder="Ej. Barbería El Rey"
 							/>
 						</div>
 
 						<div class="form-group">
 							<label for="email"
-								>Correo Electrónico <span class="required-mark">*</span></label
+								><span data-i18n="form_email">Correo Electrónico</span>
+								<span class="required-mark">*</span></label
 							>
 							<input
 								type="email"
 								id="email"
 								name="email"
-								placeholder="tucorreo@ejemplo.com"
 								required
+								data-i18n-placeholder="form_email_ph"
+								placeholder="tucorreo@ejemplo.com"
 							/>
 						</div>
 
 						<div class="form-group">
-							<label for="phone">Número de Teléfono (Opcional)</label>
+							<label for="phone" data-i18n="form_phone"
+								>Número de Teléfono (Opcional)</label
+							>
 							<input
 								type="tel"
 								id="phone"
@@ -2311,24 +2397,31 @@
 						</div>
 
 						<div class="form-group">
-							<label for="package">Paquete de Interés</label>
+							<label for="package" data-i18n="form_package"
+								>Paquete de Interés</label
+							>
 							<select id="package" name="package">
 								<option value="start">Koda Start</option>
 								<option value="pro">Koda Pro</option>
-								<option value="business">Koda Empresarial (Cotización)</option>
+								<option value="business" data-i18n="form_opt_biz">
+									Koda Empresarial (Cotización)
+								</option>
 							</select>
 						</div>
 
 						<div class="form-group">
 							<label for="message"
-								>Descripción de lo que necesitas
+								><span data-i18n="form_msg"
+									>Descripción de lo que necesitas</span
+								>
 								<span class="required-mark">*</span></label
 							>
 							<textarea
 								id="message"
 								name="message"
-								placeholder="Cuéntanos brevemente sobre tu negocio y qué te gustaría lograr con tu sitio web..."
 								required
+								data-i18n-placeholder="form_msg_ph"
+								placeholder="Cuéntanos brevemente sobre tu negocio y qué te gustaría lograr con tu sitio web..."
 							></textarea>
 						</div>
 
@@ -2337,6 +2430,7 @@
 								type="submit"
 								class="btn btn-primary"
 								style="min-width: 200px"
+								data-i18n="form_btn"
 							>
 								Enviar Solicitud
 							</button>
@@ -2354,26 +2448,31 @@
 							src="assets/logos/main-version (1).png"
 							alt="Koda Studio Logo"
 						/>
-						<p style="margin-top: 15px">
+						<p style="margin-top: 15px" data-i18n="footer_desc">
 							Impulsando negocios mexicanos con tecnología de calidad global y
 							soporte cercano.
 						</p>
 					</div>
 
 					<div class="footer-col animate-item">
-						<h4>Enlaces Rápidos</h4>
+						<h4 data-i18n="footer_links">Enlaces Rápidos</h4>
 						<ul class="footer-links">
-							<li><a href="#inicio">Inicio</a></li>
-							<li><a href="#servicios">Servicios</a></li>
-							<!-- <li><a href="#proyectos">Portafolio</a></li> -->
-							<li><a href="#paquetes">Paquetes</a></li>
-							<li><a href="#faq">Preguntas Frecuentes</a></li>
-							<li><a href="#">Aviso de Privacidad</a></li>
+							<li><a href="#home" data-i18n="nav_home">Inicio</a></li>
+							<li>
+								<a href="#services" data-i18n="nav_services">Servicios</a>
+							</li>
+							<li><a href="#pricing" data-i18n="nav_pricing">Paquetes</a></li>
+							<li>
+								<a href="#faq" data-i18n="nav_faq">Preguntas Frecuentes</a>
+							</li>
+							<li>
+								<a href="#" data-i18n="footer_privacy">Aviso de Privacidad</a>
+							</li>
 						</ul>
 					</div>
 
 					<div class="footer-col animate-item">
-						<h4>Contacto</h4>
+						<h4 data-i18n="nav_contact">Contacto</h4>
 						<ul class="contact-info">
 							<li>
 								<i
@@ -2381,7 +2480,7 @@
 									size="20"
 									style="color: var(--color-sky)"
 								></i>
-								México
+								<span data-i18n="footer_country">México</span>
 							</li>
 							<li>
 								<i
@@ -2404,7 +2503,9 @@
 				</div>
 
 				<div class="copyright">
-					<p>&copy; 2026 Koda Studio. Todos los derechos reservados.</p>
+					<p data-i18n="footer_rights">
+						&copy; 2026 Koda Studio. Todos los derechos reservados.
+					</p>
 				</div>
 			</div>
 		</footer>
@@ -2422,10 +2523,493 @@
 			// Inicializar Iconos Lucide
 			lucide.createIcons();
 
+			// ============================
+			// TRADUCCIÓN (i18n) COMPLETA
+			// ============================
+			const translations = {
+				es: {
+					// Nav
+					nav_home: "Inicio",
+					nav_process: "Proceso",
+					nav_services: "Servicios",
+					nav_portfolio: "Portafolio",
+					nav_testimonials: "Testimonios",
+					nav_pricing: "Paquetes",
+					nav_contact: "Contacto",
+					nav_faq: "Preguntas Frecuentes",
+					// Hero
+					hero_title:
+						"Digitaliza tu negocio y expande tu alcance en todo el país",
+					hero_desc:
+						"Diseño web profesional, infraestructura robusta y herramientas automatizadas. Todo lo que necesitas para crecer en México, sin complicaciones técnicas.",
+					hero_btn1: "Ver Paquetes",
+					hero_btn2: "Explorar Servicios",
+					// Intro
+					intro_title: "Tus clientes te están buscando ahora mismo",
+					intro_desc:
+						"Hoy en día, la primera impresión de cualquier negocio ocurre en internet. Tus clientes potenciales buscan servicios cerca de su ubicación, y si tu negocio no aparece de forma profesional, es probable que no logren encontrarte.",
+					intro_quote:
+						'"En Koda Studio construimos tu sede digital: abierta 24/7, con identidad propia y diseñada para generar confianza desde el primer clic."',
+					// Process
+					process_title: "Tu Nuevo Sitio en 3 Pasos",
+					process_desc:
+						"Hemos simplificado todo para que no te preocupes por la tecnología.",
+					step1_title: "Briefing",
+					step1_desc:
+						"Nos cuentas sobre tu negocio, tus objetivos y la información básica para comenzar.",
+					step2_title: "Construcción",
+					step2_desc:
+						"Diseñamos tu sitio, configuramos tus correos y montamos tu sistema de citas.",
+					step3_title: "Lanzamiento",
+					step3_desc:
+						"Revisamos los detalles finales y publicamos tu negocio para que el mundo lo vea.",
+					// Services
+					services_title: "Lo que hacemos por ti",
+					services_desc: "Soluciones integrales para digitalizar tu empresa",
+					badge_essential: "Esencial",
+					badge_included: "Incluido",
+					badge_featured: "Destacado",
+					srv1_title: "Diseño Web Responsivo",
+					srv1_desc:
+						"Tu sitio se verá perfecto en celulares, tablets y computadoras, adaptándose a cualquier tamaño de pantalla.",
+					srv2_title: "Dominio & Hosting",
+					srv2_desc:
+						"Incluimos tu dominio .com y hospedaje de alta velocidad por un año. Sin configuraciones complicadas.",
+					srv3_title: "Correos Corporativos",
+					srv3_desc:
+						"Crea confianza inmediata con direcciones profesionales como <strong>contacto@tuempresa.com</strong>.",
+					srv4_title: "Agenda Automatizada",
+					srv4_desc:
+						"Sistema de reservas 24/7 integrado en tu web. Tus clientes agendan sin llamadas ni mensajes.",
+					srv5_title: "Google Maps & SEO",
+					srv5_desc:
+						"Optimizamos tu ficha de negocio para que aparezcas primero en búsquedas locales de tu ciudad.",
+					srv6_title: "Menú o Catálogo QR",
+					srv6_desc:
+						"Digitalizamos tus productos o menú para que tus clientes accedan rápido desde su celular.",
+					srv7_title: "Tarjetas Digitales",
+					srv7_desc:
+						"Diseñamos tu tarjeta de presentación interactiva con enlaces directos a tu web y WhatsApp.",
+					srv8_title: "Métricas de Visitas",
+					srv8_desc:
+						"Reportes claros con Google Analytics para saber cuánta gente entra a tu sitio y desde dónde.",
+					srv9_title: "Seguridad & Soporte",
+					srv9_desc:
+						"Certificado SSL (candado seguro) incluido y hasta 6 meses de soporte técnico gratuito para cambios.",
+					// Testimonials
+					test_title: "Historias de Éxito",
+					test_desc:
+						"Empresarios de todo México & Canadá que transformaron su negocio con Koda Studio.",
+					test1_quote:
+						'"El catálogo digital de maquinaria nos cambió la forma de vender. Ahora los clientes industriales eligen el equipo y nos llega la solicitud de cotización lista. El profesionalismo del sitio nos ha abierto puertas con constructoras grandes."',
+					test2_quote:
+						'"Nuestros eventos son puramente visuales y Koda Studio logró que la página transmitiera esa misma emoción. La galería de servicios ha sido nuestra mejor herramienta para cerrar fechas con clientes que buscan algo inolvidable."',
+					test3_quote:
+						'"Nuestros clientes buscan relajación y esa experiencia debe empezar desde el sitio web. Koda Studio logró una plataforma impecable que facilita las reservas rápidas. La estética nórdica del sitio conecta perfectamente con nuestro concepto."',
+					test4_quote:
+						'"El mercado inmobiliario en Canadá es sumamente competitivo. Gracias a la automatización de leads y el diseño minimalista de Novus, hemos logrado filtrar prospectos de calidad sin perder tiempo en tareas manuales. Una solución brillante."',
+					test5_quote:
+						'"Como estudio creativo, somos muy exigentes con la estética. Koda Studio creó una interfaz que respira nuestra esencia: limpia y moderna. Es la carta de presentación perfecta para nuestras propuestas de branding."',
+					test6_quote:
+						"\"Necesitábamos dejar de ser 'un despacho más' y convertirnos en una firma de autoridad. El blog y el diseño elegante han atraído a clientes corporativos que antes no nos consideraban. La inversión se pagó sola en el primer mes.\"",
+					test7_quote:
+						"\"Antes me pasaba el día contestando '¿tienes espacio?'. Ahora mis clientas ven mi agenda real y reservan con el anticipo pagado. Tengo más tiempo para trabajar.\"",
+					test8_quote:
+						'"La seriedad que proyecta mi firma ahora es incomparable. Koda Studio entendió perfecto que necesitábamos sobriedad y confianza. Los clientes ahora llegan mucho más filtrados y decididos."',
+					// Industries
+					ind_title: "Impulsando el Éxito en Sectores Clave",
+					ind_desc:
+						"Nuestra tecnología está diseñada para resolver los retos específicos de tu industria y aumentar tus ventas.",
+					ind1_title: "Abogados & Firmas",
+					ind1_desc:
+						"Digitalizamos tu reputación. Genera confianza inmediata y capta clientes calificados con un sitio sobrio y profesional.",
+					ind2_title: "Arquitectura & Diseño",
+					ind2_desc:
+						"Tu portafolio como herramienta de venta. Galerías inmersivas de alta resolución que convencen a inversores y clientes.",
+					ind3_title: "Restaurantes & Cafés",
+					ind3_desc:
+						"Llena más mesas. Menús digitales con QR que antojan y sistemas de reserva directa sin depender de terceros.",
+					ind4_title: "Hoteles & AirBnb",
+					ind4_desc:
+						"Aumenta tus reservas directas. Muestra la experiencia real de tu hospedaje y evita las altas comisiones de agencias.",
+					ind5_title: "Contadores & Consultores",
+					ind5_desc:
+						"Automatiza tu agenda. Permite que tus clientes reserven asesorías pagadas o gratuitas sin interrumpir tu trabajo.",
+					ind6_title: "Bienes Raíces",
+					ind6_desc:
+						"Vende más rápido. Filtra interesados reales con fichas de propiedades detalladas y botones directos a WhatsApp.",
+					ind7_title: "Barberías & Estilistas",
+					ind7_desc:
+						"Fideliza a tus clientes. Un sistema de citas rápido y visual que reduce las ausencias y organiza tu día automáticamente.",
+					ind8_title: "Uñas, Lashes & Spa",
+					ind8_desc:
+						"Agenda llena, cero caos. Permite que tus clientas elijan su diseño y reserven su hora ideal sin mensajes interminables.",
+					ind9_title: "Salones & Eventos",
+					ind9_desc:
+						"Muestra tu espacio. Una galería espectacular y calendario de disponibilidad para que cierres fechas de bodas y fiestas.",
+					// Portfolio
+					port_title: "Casos de Éxito",
+					port_desc:
+						"Transformamos la presencia digital de empresas líderes en activos estratégicos que generan confianza y aceleran el crecimiento.",
+					port1_tag: "Sector Corporativo",
+					port1_desc:
+						"Desarrollo de plataforma contable diseñada para proyectar autoridad. Optimizada para la captación de clientes corporativos mediante un flujo de navegación profesional.",
+					port2_tag: "Servicios Premium",
+					port2_desc:
+						"Experiencia digital inmersiva para el sector de eventos sociales. Diseñada para convertir el interés visual en reservaciones, destacando la exclusividad.",
+					port3_tag: "Industria & Energía",
+					port3_desc:
+						"Solución digital para el sector industrial. Implementamos un catálogo inteligente de maquinaria y equipo eléctrico enfocado en agilizar el proceso de cotización.",
+					port4_tag: "Consultoría Creativa",
+					port4_desc:
+						"Interfaz minimalista y de alto impacto para consultoría de branding. Diseñada para comunicar creatividad y orden, facilitando la conexión directa con clientes.",
+					port5_tag: "Hospitalidad & Bienestar",
+					port5_desc:
+						"Plataforma enfocada en la experiencia de usuario para el sector hotelero. Priorizamos la velocidad de reservación y el impacto visual para maximizar las conversiones.",
+					port6_tag: "Real Estate",
+					port6_desc:
+						"Arquitectura digital orientada a la generación de prospectos inmobiliarios. Diseñada para automatizar la captación de clientes cualificados y proyectar confianza.",
+					port_link: "Ver sitio web",
+					// FAQ
+					faq_title: "Preguntas Frecuentes",
+					faq_desc:
+						"Resolvemos tus dudas antes de comenzar tu transformación digital.",
+					faq1_q: "¿En cuánto tiempo queda lista mi página web?",
+					faq1_a:
+						"Tu sitio estará listo desde <strong>14 días naturales</strong> en los planes start, mientras que en los planes pro podriamos tomar hasta <strong>21 días naturales.</strong><br /> Recuerda que preferimos tomarnos el tiempo necesario para garantizar que cada detalle sea perfecto y entregarte una herramienta de calidad que realmente impulse tu negocio, en lugar de apresurarnos.",
+					faq2_q: "¿Tengo que seguir pagando algo mensualmente?",
+					faq2_a:
+						"<strong>No, no hay mensualidades.</strong> El desarrollo es un pago único. Lo único que se renueva es la infraestructura (Dominio y Hosting) de manera anual por solo <strong>$699 MXN + IVA</strong>, para mantener tu sitio en línea y tus correos funcionando.",
+					faq3_q: "¿El dominio y el hosting son de mi propiedad?",
+					faq3_a:
+						"<strong>Absolutamente.</strong> A diferencia de otras agencias, aquí tú eres el dueño legal de tu dominio y hosting desde el primer día. Sin plazos forzosos, sin letras chiquitas y con total libertad.",
+					faq4_q: "¿Qué pasa si quiero cambiar fotos o textos en el futuro?",
+					faq4_a:
+						'Tenemos un modelo flexible de <strong>"Mantenimiento por Evento"</strong>. Si necesitas actualizaciones puntuales, no pagas una renta mensual fija; solo pagas una tarifa pequeña por el cambio que necesites, comenzando desde <strong>$199 MXN + IVA</strong>.',
+					faq5_q: "¿Necesito tener mi logo y textos listos para empezar?",
+					faq5_a:
+						"<strong>No es obligatorio.</strong> Incluimos redacción profesional (copywriting) básica en todos los paquetes. Además, podemos diseñar un logotipo sencillo para ti sin costo extra. Si eliges el <strong>Plan PRO</strong>, incluimos un diseño de marca completo (Logo principal, isotipo y versión horizontal).",
+					faq6_q: "¿El sitio incluye facturación?",
+					faq6_a:
+						"<strong>Sí, facturamos todos nuestros servicios.</strong> Los precios mostrados son netos antes de impuestos, por lo que al solicitar tu factura se añadirá el 16% de IVA correspondiente.",
+					// Pricing
+					price_title: "Elige tu plan de crecimiento",
+					price_desc: "Soluciones escalables para cada etapa de tu negocio.",
+					price_from: "Desde",
+					price_start_sub: "Ideal para empezar con fuerza",
+					price_pro_sub: "Para negocios en expansión",
+					price_biz_sub: "A tu medida",
+					price_custom: "Cotización",
+					badge_free: "GRATIS",
+					badge_popular: "Más Popular",
+					feat_domain: "Dominio .com ó .com.mx (1 año)",
+					feat_hosting: "Hosting Rápido (1 año)",
+					feat_mail1: "1 Correo Corporativo*",
+					feat_logo1: "Logotipo principal",
+					feat_buttons: "Botón WhatsApp & Maps",
+					feat_form: "Formulario de Contacto",
+					feat_support3: "3 Meses Soporte",
+					feat_all_start: "Todo lo de Koda Start",
+					feat_multipage: "Diseño Multipágina (Inicio + 2)",
+					feat_logo_full: "Logo principal, isotipo y versión horizontal",
+					feat_booking: "Sistema de Citas Básico",
+					feat_mail3: "Hasta 3 Correos Corporativos*",
+					feat_qr: "Integración Menú QR",
+					feat_support6: "6 Meses Soporte",
+					feat_custom_design: "Diseño a medida",
+					feat_custom_func: "Funcionalidades a medida",
+					feat_unlimited_mail: "Cantidad ilimitada de correos",
+					feat_strategy: "Asesoría de estrategia digital",
+					btn_want_it: "Lo quiero",
+					btn_upgrade: "Mejorar mi plan",
+					btn_quote: "Cotizar Proyecto",
+					mail_note:
+						"* Correos corporativos adicionales tienen un costo extra de <strong>$299 MXN</strong> cada uno.",
+					// Contact
+					contact_title: "¿Listo para empezar?",
+					contact_desc:
+						"Cuéntanos un poco sobre tu proyecto y nos pondremos en contacto contigo.",
+					form_name: "Nombre",
+					form_company: "Nombre de tu Empresa",
+					form_email: "Correo Electrónico",
+					form_phone: "Número de Teléfono (Opcional)",
+					form_package: "Paquete de Interés",
+					form_opt_biz: "Koda Empresarial (Cotización)",
+					form_msg: "Descripción de lo que necesitas",
+					form_btn: "Enviar Solicitud",
+					form_name_ph: "Tu nombre completo",
+					form_company_ph: "Ej. Barbería El Rey",
+					form_email_ph: "tucorreo@ejemplo.com",
+					form_msg_ph:
+						"Cuéntanos brevemente sobre tu negocio y qué te gustaría lograr con tu sitio web...",
+					// Footer
+					footer_desc:
+						"Impulsando negocios mexicanos con tecnología de calidad global y soporte cercano.",
+					footer_links: "Enlaces Rápidos",
+					footer_privacy: "Aviso de Privacidad",
+					footer_country: "México",
+					footer_rights:
+						"&copy; 2026 Koda Studio. Todos los derechos reservados.",
+				},
+				en: {
+					// Nav
+					nav_home: "Home",
+					nav_process: "Process",
+					nav_services: "Services",
+					nav_portfolio: "Portfolio",
+					nav_testimonials: "Testimonials",
+					nav_pricing: "Pricing",
+					nav_contact: "Contact",
+					nav_faq: "FAQ",
+					// Hero
+					hero_title:
+						"Digitize your business and expand your reach across the country",
+					hero_desc:
+						"Professional web design, robust infrastructure, and automated tools. Everything you need to grow your business, without technical complications.",
+					hero_btn1: "View Pricing",
+					hero_btn2: "Explore Services",
+					// Intro
+					intro_title: "Your customers are looking for you right now",
+					intro_desc:
+						"Today, the first impression of any business happens online. Potential customers search for services near their location, and if your business doesn't appear professionally, they probably won't find you.",
+					intro_quote:
+						'"At Koda Studio we build your digital headquarters: open 24/7, with its own identity and designed to build trust from the first click."',
+					// Process
+					process_title: "Your New Site in 3 Steps",
+					process_desc:
+						"We've simplified everything so you don't have to worry about technology.",
+					step1_title: "Briefing",
+					step1_desc:
+						"Tell us about your business, your goals, and the basic info to get started.",
+					step2_title: "Build",
+					step2_desc:
+						"We design your site, configure your emails, and set up your booking system.",
+					step3_title: "Launch",
+					step3_desc:
+						"We review the final details and publish your business for the world to see.",
+					// Services
+					services_title: "What we do for you",
+					services_desc: "Comprehensive solutions to digitize your company",
+					badge_essential: "Essential",
+					badge_included: "Included",
+					badge_featured: "Featured",
+					srv1_title: "Responsive Web Design",
+					srv1_desc:
+						"Your site will look perfect on phones, tablets, and computers, adapting to any screen size.",
+					srv2_title: "Domain & Hosting",
+					srv2_desc:
+						"We include your .com domain and high-speed hosting for one year. No complicated setups.",
+					srv3_title: "Corporate Emails",
+					srv3_desc:
+						"Create immediate trust with professional addresses like <strong>contact@yourcompany.com</strong>.",
+					srv4_title: "Automated Booking",
+					srv4_desc:
+						"24/7 reservation system integrated into your web. Your clients book without calls or messages.",
+					srv5_title: "Google Maps & SEO",
+					srv5_desc:
+						"We optimize your business profile so you appear first in local searches in your city.",
+					srv6_title: "QR Menu or Catalog",
+					srv6_desc:
+						"We digitize your products or menu so your clients can access them quickly from their phones.",
+					srv7_title: "Digital Business Cards",
+					srv7_desc:
+						"We design your interactive business card with direct links to your web and WhatsApp.",
+					srv8_title: "Traffic Analytics",
+					srv8_desc:
+						"Clear reports with Google Analytics to know how many people visit your site and from where.",
+					srv9_title: "Security & Support",
+					srv9_desc:
+						"SSL Certificate (secure padlock) included and up to 6 months of free technical support for updates.",
+					// Testimonials
+					test_title: "Success Stories",
+					test_desc:
+						"Entrepreneurs across Mexico & Canada who transformed their business with Koda Studio.",
+					test1_quote:
+						'"The digital machinery catalog changed the way we sell. Now industrial clients choose the equipment and we receive the quote request ready. The site\'s professionalism has opened doors with large construction companies."',
+					test2_quote:
+						'"Our events are purely visual and Koda Studio managed to make the page transmit that same emotion. The services gallery has been our best tool for closing dates with clients looking for something unforgettable."',
+					test3_quote:
+						'"Our clients seek relaxation and that experience must start from the website. Koda Studio achieved an impeccable platform that facilitates quick reservations. The Nordic aesthetic of the site connects perfectly with our concept."',
+					test4_quote:
+						'"The real estate market in Canada is extremely competitive. Thanks to lead automation and Novus\'s minimalist design, we have managed to filter quality prospects without wasting time on manual tasks. A brilliant solution."',
+					test5_quote:
+						'"As a creative studio, we are very demanding with aesthetics. Koda Studio created an interface that breathes our essence: clean and modern. It\'s the perfect cover letter for our branding proposals."',
+					test6_quote:
+						"\"We needed to stop being 'just another firm' and become an authority. The blog and elegant design have attracted corporate clients who previously did not consider us. The investment paid for itself in the first month.\"",
+					test7_quote:
+						"\"I used to spend the day answering 'do you have space?'. Now my clients see my real schedule and book with the deposit paid. I have more time to work.\"",
+					test8_quote:
+						'"The seriousness that my firm projects now is incomparable. Koda Studio understood perfectly that we needed sobriety and trust. Clients now arrive much more filtered and decisive."',
+					// Industries
+					ind_title: "Driving Success in Key Sectors",
+					ind_desc:
+						"Our technology is designed to solve the specific challenges of your industry and increase your sales.",
+					ind1_title: "Lawyers & Firms",
+					ind1_desc:
+						"We digitize your reputation. Generate immediate trust and capture qualified clients with a sober and professional site.",
+					ind2_title: "Architecture & Design",
+					ind2_desc:
+						"Your portfolio as a sales tool. Immersive high-resolution galleries that convince investors and clients.",
+					ind3_title: "Restaurants & Cafes",
+					ind3_desc:
+						"Fill more tables. Digital QR menus that crave and direct reservation systems without relying on third parties.",
+					ind4_title: "Hotels & AirBnb",
+					ind4_desc:
+						"Increase your direct bookings. Show the real experience of your lodging and avoid high agency commissions.",
+					ind5_title: "Accountants & Consultants",
+					ind5_desc:
+						"Automate your agenda. Allow your clients to book paid or free consultations without interrupting your work.",
+					ind6_title: "Real Estate",
+					ind6_desc:
+						"Sell faster. Filter real interested parties with detailed property files and direct WhatsApp buttons.",
+					ind7_title: "Barbershops & Stylists",
+					ind7_desc:
+						"Build client loyalty. A fast and visual appointment system that reduces no-shows and automatically organizes your day.",
+					ind8_title: "Nails, Lashes & Spa",
+					ind8_desc:
+						"Full agenda, zero chaos. Allow your clients to choose their design and book their ideal time without endless messaging.",
+					ind9_title: "Venues & Events",
+					ind9_desc:
+						"Showcase your space. A spectacular gallery and availability calendar to close wedding and party dates.",
+					// Portfolio
+					port_title: "Success Cases",
+					port_desc:
+						"We transform the digital presence of leading companies into strategic assets that generate trust and accelerate growth.",
+					port1_tag: "Corporate Sector",
+					port1_desc:
+						"Development of an accounting platform designed to project authority. Optimized for capturing corporate clients through a professional navigation flow.",
+					port2_tag: "Premium Services",
+					port2_desc:
+						"Immersive digital experience for the social events sector. Designed to convert visual interest into reservations, highlighting exclusivity.",
+					port3_tag: "Industry & Energy",
+					port3_desc:
+						"Digital solution for the industrial sector. We implemented a smart catalog of machinery and electrical equipment focused on streamlining quoting.",
+					port4_tag: "Creative Consulting",
+					port4_desc:
+						"Minimalist and high-impact interface for branding consulting. Designed to communicate creativity and order, facilitating direct connection.",
+					port5_tag: "Hospitality & Wellness",
+					port5_desc:
+						"Platform focused on user experience for the hotel sector. We prioritize reservation speed and visual impact to maximize conversions.",
+					port6_tag: "Real Estate",
+					port6_desc:
+						"Digital architecture oriented towards real estate lead generation. Designed to automate the capture of qualified clients and project trust.",
+					port_link: "View website",
+					// FAQ
+					faq_title: "Frequently Asked Questions",
+					faq_desc:
+						"We answer your questions before starting your digital transformation.",
+					faq1_q: "How long does it take to have my website ready?",
+					faq1_a:
+						"Your site will be ready from <strong>14 calendar days</strong> on start plans, while pro plans could take up to <strong>21 calendar days.</strong><br /> Remember we prefer to take the necessary time to guarantee every detail is perfect and deliver a quality tool that truly boosts your business, rather than rushing.",
+					faq2_q: "Do I have to keep paying monthly?",
+					faq2_a:
+						"<strong>No, there are no monthly fees.</strong> The development is a one-time payment. The only thing that renews is the infrastructure (Domain and Hosting) annually for only <strong>$699 MXN + VAT</strong>, to keep your site online and your emails working.",
+					faq3_q: "Are the domain and hosting my property?",
+					faq3_a:
+						"<strong>Absolutely.</strong> Unlike other agencies, here you are the legal owner of your domain and hosting from day one. No forced terms, no fine print, and total freedom.",
+					faq4_q: "What if I want to change photos or texts in the future?",
+					faq4_a:
+						'We have a flexible <strong>"Maintenance by Event"</strong> model. If you need specific updates, you don\'t pay a fixed monthly rent; you only pay a small fee for the change you need, starting at <strong>$199 MXN + VAT</strong>.',
+					faq5_q: "Do I need to have my logo and texts ready to start?",
+					faq5_a:
+						"<strong>It is not mandatory.</strong> We include basic professional copywriting in all packages. Also, we can design a simple logo for you at no extra cost. If you choose the <strong>PRO Plan</strong>, we include a complete brand design (Main logo, isotype, and horizontal version).",
+					faq6_q: "Does the site include invoicing?",
+					faq6_a:
+						"<strong>Yes, we invoice all our services.</strong> The prices shown are net before taxes, so when requesting your invoice, the corresponding 16% VAT will be added.",
+					// Pricing
+					price_title: "Choose your growth plan",
+					price_desc: "Scalable solutions for every stage of your business.",
+					price_from: "From",
+					price_start_sub: "Ideal to start strong",
+					price_pro_sub: "For expanding businesses",
+					price_biz_sub: "Tailored to you",
+					price_custom: "Custom Quote",
+					badge_free: "FREE",
+					badge_popular: "Most Popular",
+					feat_domain: "Domain .com or .com.mx (1 year)",
+					feat_hosting: "Fast Hosting (1 year)",
+					feat_mail1: "1 Corporate Email*",
+					feat_logo1: "Main Logo",
+					feat_buttons: "WhatsApp & Maps Button",
+					feat_form: "Contact Form",
+					feat_support3: "3 Months Support",
+					feat_all_start: "Everything in Koda Start",
+					feat_multipage: "Multi-page Design (Home + 2)",
+					feat_logo_full: "Main logo, isotype & horizontal version",
+					feat_booking: "Basic Booking System",
+					feat_mail3: "Up to 3 Corporate Emails*",
+					feat_qr: "QR Menu Integration",
+					feat_support6: "6 Months Support",
+					feat_custom_design: "Custom Design",
+					feat_custom_func: "Custom Features",
+					feat_unlimited_mail: "Unlimited emails",
+					feat_strategy: "Digital strategy consulting",
+					btn_want_it: "I want it",
+					btn_upgrade: "Upgrade my plan",
+					btn_quote: "Quote Project",
+					mail_note:
+						"* Additional corporate emails have an extra cost of <strong>$299 MXN</strong> each.",
+					// Contact
+					contact_title: "Ready to get started?",
+					contact_desc:
+						"Tell us a bit about your project and we'll get in touch with you.",
+					form_name: "Name",
+					form_company: "Company Name",
+					form_email: "Email Address",
+					form_phone: "Phone Number (Optional)",
+					form_package: "Package of Interest",
+					form_opt_biz: "Koda Business (Custom Quote)",
+					form_msg: "Description of what you need",
+					form_btn: "Send Request",
+					form_name_ph: "Your full name",
+					form_company_ph: "E.g. The King Barbershop",
+					form_email_ph: "youremail@example.com",
+					form_msg_ph:
+						"Tell us briefly about your business and what you would like to achieve with your website...",
+					// Footer
+					footer_desc:
+						"Empowering businesses with global quality tech and close support.",
+					footer_links: "Quick Links",
+					footer_privacy: "Privacy Policy",
+					footer_country: "Mexico",
+					footer_rights: "&copy; 2026 Koda Studio. All rights reserved.",
+				},
+			};
+
+			let currentLang = "es";
+			const langBtns = document.querySelectorAll(".lang-btn");
+
+			langBtns.forEach(btn => {
+				btn.addEventListener("click", () => {
+					// Cambiar el estado del idioma
+					currentLang = currentLang === "es" ? "en" : "es";
+					const btnText = currentLang === "es" ? "EN" : "ES";
+
+					// Actualizar el texto en AMBOS botones (el de escritorio y el de móvil)
+					langBtns.forEach(b => (b.innerText = btnText));
+
+					// Reemplazar textos normales (innerHTML)
+					document.querySelectorAll("[data-i18n]").forEach(el => {
+						const key = el.getAttribute("data-i18n");
+						if (translations[currentLang][key]) {
+							el.innerHTML = translations[currentLang][key];
+						}
+					});
+
+					// Reemplazar placeholders en los inputs
+					document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+						const key = el.getAttribute("data-i18n-placeholder");
+						if (translations[currentLang][key]) {
+							el.placeholder = translations[currentLang][key];
+						}
+					});
+				});
+			});
+
 			// Menú Hamburguesa Logic
 			const hamburger = document.getElementById("hamburger");
 			const navLinks = document.getElementById("navLinks");
-			const links = document.querySelectorAll(".nav-links li");
+			const links = document.querySelectorAll(".nav-links li a"); // Solo los <a>, no el botón de idioma
 
 			hamburger.addEventListener("click", () => {
 				navLinks.classList.toggle("active");
@@ -2459,7 +3043,6 @@
 
 			let currentIndex = 0;
 
-			// Crear Dots
 			slides.forEach((_, index) => {
 				const dot = document.createElement("div");
 				dot.classList.add("dot");
@@ -2477,10 +3060,9 @@
 				dots[index].classList.add("active");
 			}
 
-			// Calcula la posición exacta en píxeles, sumando ancho + gap
 			function updateSlidePosition() {
 				const slideWidth = slides[0].getBoundingClientRect().width;
-				const gap = 20; // Debe coincidir con CSS .testimonial-track gap
+				const gap = 20;
 				const offset = (slideWidth + gap) * currentIndex;
 				track.style.transform = `translateX(-${offset}px)`;
 			}
@@ -2493,7 +3075,7 @@
 
 			nextBtn.addEventListener("click", () => {
 				if (currentIndex === slides.length - 1) {
-					goToSlide(0); // Loop al inicio
+					goToSlide(0);
 				} else {
 					goToSlide(currentIndex + 1);
 				}
@@ -2501,23 +3083,15 @@
 
 			prevBtn.addEventListener("click", () => {
 				if (currentIndex === 0) {
-					goToSlide(slides.length - 1); // Loop al final
+					goToSlide(slides.length - 1);
 				} else {
 					goToSlide(currentIndex - 1);
 				}
 			});
 
-			// Listener para ajustar si cambia el tamaño de la ventana
 			window.addEventListener("resize", () => {
-				// Recalculate based on current index
 				goToSlide(currentIndex);
 			});
-
-			// Auto-play opcional
-			setInterval(() => {
-				// if (currentIndex === slides.length - 1) goToSlide(0);
-				// else goToSlide(currentIndex + 1);
-			}, 5000);
 
 			// ============================
 			// FAQ ACCORDION LOGIC
@@ -2526,10 +3100,8 @@
 
 			accordionHeaders.forEach(header => {
 				header.addEventListener("click", () => {
-					// Toggle active class
 					header.classList.toggle("active");
 
-					// Toggle content max-height
 					const content = header.nextElementSibling;
 					if (header.classList.contains("active")) {
 						content.style.maxHeight = content.scrollHeight + "px";
@@ -2537,7 +3109,6 @@
 						content.style.maxHeight = 0;
 					}
 
-					// Optional: Close other items
 					accordionHeaders.forEach(otherHeader => {
 						if (
 							otherHeader !== header &&
@@ -2550,20 +3121,20 @@
 				});
 			});
 
-			// Variables para Drag/Swipe
+			// ============================
+			// SLIDER DRAG/SWIPE LOGIC
+			// ============================
 			let isDragging = false;
 			let startPos = 0;
 			let currentTranslate = 0;
 			let prevTranslate = 0;
 			let animationID;
 
-			// Prevenir drag de imágenes por defecto para que no interfiera
 			slides.forEach(slide => {
 				const img = slide.querySelector("img");
 				if (img) img.addEventListener("dragstart", e => e.preventDefault());
 			});
 
-			// Event Listeners para Mouse y Touch
 			track.addEventListener("mousedown", dragStart);
 			track.addEventListener("touchstart", dragStart);
 
@@ -2585,7 +3156,7 @@
 				startPos = getPositionX(event);
 				animationID = requestAnimationFrame(animation);
 				track.style.cursor = "grabbing";
-				track.style.transition = "none"; // Quitar transición para movimiento directo
+				track.style.transition = "none";
 			}
 
 			function dragMove(event) {
@@ -2602,13 +3173,12 @@
 
 				const movedBy = currentTranslate - prevTranslate;
 
-				// Umbral de sensibilidad (100px)
 				if (movedBy < -100 && currentIndex < slides.length - 1)
 					currentIndex += 1;
 
 				if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
 
-				goToSlide(currentIndex);
+				goToSlide2(currentIndex); // Custom goToSlide for drag
 			}
 
 			function animation() {
@@ -2616,17 +3186,14 @@
 				if (isDragging) requestAnimationFrame(animation);
 			}
 
-			// Modificar goToSlide para actualizar las variables de drag
-			// Sobreescribe la función anterior para incluir lógica de drag
-			function goToSlide(index) {
+			function goToSlide2(index) {
 				currentIndex = index;
-				track.style.transition = "transform 0.5s ease-in-out"; // Reactivar transición
+				track.style.transition = "transform 0.5s ease-in-out";
 
 				const slideWidth = slides[0].getBoundingClientRect().width;
 				const gap = 20;
 				const offset = (slideWidth + gap) * currentIndex;
 
-				// Actualizar estado del drag
 				currentTranslate = -offset;
 				prevTranslate = currentTranslate;
 
@@ -2634,7 +3201,11 @@
 				updateDots(index);
 			}
 
-			// Inicializar prevTranslate
+			// Override goToSlide original to keep drag variables synced
+			function goToSlide(index) {
+				goToSlide2(index);
+			}
+
 			goToSlide(0);
 
 			// ============================
@@ -2646,24 +3217,21 @@
 				(entries, observer) => {
 					entries.forEach(entry => {
 						if (entry.isIntersecting) {
-							// Buscar elementos animados DENTRO de la sección visible
 							const items = entry.target.querySelectorAll(".animate-item");
 
 							items.forEach((item, index) => {
-								// Retraso progresivo (100ms entre cada elemento)
 								setTimeout(() => {
 									item.classList.add("is-visible");
 								}, index * 100);
 							});
 
-							// Dejar de observar esta sección una vez animada
 							observer.unobserve(entry.target);
 						}
 					});
 				},
 				{
-					rootMargin: "0px 0px -100px 0px", // Dispara un poco antes de que entre completo
-					threshold: 0.1, // Dispara cuando el 15% de la sección es visible
+					rootMargin: "0px 0px -100px 0px",
+					threshold: 0.1,
 				},
 			);
 
