@@ -54,7 +54,7 @@
 		<meta property="og:image:height" content="630" />
 
 		<meta name="theme-color" content="#1A237E" />
-
+		<link rel="icon" type="image/svg+xml" href="assets/logos/favicon.png" />
 		<!-- Fonts & Icons -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1581,18 +1581,22 @@
 					>
 						<div class="pricing-header">
 							<h3
-								class="text-slate uppercase tracking-[2px] text-base mt-2 mb-2 font-heading font-bold"
+								class="text-slate uppercase tracking-[2px] text-base mb-0 font-heading font-bold"
 							>
 								KODA START
 							</h3>
-							<p
-								class="text-xs text-gray-500 -mb-4 relative top-4"
-								data-i18n="price_from"
-							>
+							<p class="text-xs text-gray-500 mb-0" data-i18n="price_from">
 								Desde
 							</p>
-							<div class="text-[3rem] font-extrabold text-navy mb-2.5">
-								$4,999 <span class="text-base text-slate font-normal">MXN</span>
+							<div
+								class="text-[3rem] font-extrabold text-navy leading-none mb-2"
+							>
+								<span data-i18n="price_start_val">$4,999</span>
+								<span
+									class="text-base text-slate font-normal"
+									data-i18n="currency"
+									>MXN</span
+								>
 							</div>
 							<p
 								class="text-[0.85rem] text-gray-500"
@@ -1715,20 +1719,24 @@
 						>
 							Más Popular
 						</div>
-						<div class="pricing-header mt-4">
+						<div class="pricing-header">
 							<h3
-								class="text-slate uppercase tracking-[2px] text-base mb-2 font-heading font-bold"
+								class="text-slate uppercase tracking-[2px] text-base mb-0 font-heading font-bold"
 							>
 								KODA PRO
 							</h3>
-							<p
-								class="text-xs text-gray-500 -mb-4 relative top-4"
-								data-i18n="price_from"
-							>
+							<p class="text-xs text-gray-500 mb-0" data-i18n="price_from">
 								Desde
 							</p>
-							<div class="text-[3rem] font-extrabold text-navy mb-2.5">
-								$7,499 <span class="text-base text-slate font-normal">MXN</span>
+							<div
+								class="text-[3rem] font-extrabold text-navy leading-none mb-2"
+							>
+								<span data-i18n="price_pro_val">$7,499</span>
+								<span
+									class="text-base text-slate font-normal"
+									data-i18n="currency"
+									>MXN</span
+								>
 							</div>
 							<p class="text-[0.85rem] text-gray-500" data-i18n="price_pro_sub">
 								Para negocios en expansión
@@ -1846,12 +1854,13 @@
 					>
 						<div class="pricing-header">
 							<h3
-								class="text-navy uppercase tracking-[2px] text-base mt-2 mb-2 font-heading font-bold"
+								class="text-navy uppercase tracking-[2px] text-base mb-0 font-heading font-bold"
 							>
 								KODA EMPRESARIAL
 							</h3>
+							<p class="text-xs opacity-0 pointer-events-none mb-0">Desde</p>
 							<div
-								class="text-[2.2rem] font-extrabold text-navy mb-2.5 mt-8"
+								class="text-[2.2rem] font-extrabold text-navy leading-none mb-2"
 								data-i18n="price_custom"
 							>
 								Cotización
@@ -1924,7 +1933,7 @@
 					data-i18n="mail_note"
 				>
 					* Correos corporativos adicionales tienen un costo extra de
-					<span class="text-white">$299 MXN</span> cada uno.
+					<span class="text-white">299 MXN</span> cada uno.
 				</p>
 			</div>
 		</section>
@@ -2386,6 +2395,9 @@
 					price_custom: "Cotización",
 					badge_free: "GRATIS",
 					badge_popular: "Más Popular",
+					price_start_val: "$4,999",
+					price_pro_val: "$7,499",
+					currency: "MXN",
 					feat_domain: "Dominio .com ó .com.mx (1 año)",
 					feat_hosting: "Hosting Rápido (1 año)",
 					feat_mail1: "1 Correo Corporativo*",
@@ -2409,7 +2421,7 @@
 					btn_upgrade: "Mejorar mi plan",
 					btn_quote: "Cotizar Proyecto",
 					mail_note:
-						"* Correos corporativos adicionales tienen un costo extra de <span class='text-white'>$299 MXN</span> cada uno.",
+						"* Correos corporativos adicionales tienen un costo extra de <span class='text-white'>299 MXN</span> cada uno.",
 					// Contact
 					contact_title: "¿Listo para empezar?",
 					contact_desc:
@@ -2608,9 +2620,12 @@
 					price_start_sub: "Ideal to start strong",
 					price_pro_sub: "For expanding businesses",
 					price_biz_sub: "Tailored to you",
-					price_custom: "Custom Quote",
+					price_custom: "Get a Quote",
 					badge_free: "FREE",
 					badge_popular: "Most Popular",
+					price_start_val: "$299",
+					price_pro_val: "$449",
+					currency: "USD",
 					feat_domain: "Domain .com or .com.mx (1 year)",
 					feat_hosting: "Fast Hosting (1 year)",
 					feat_mail1: "1 Corporate Email*",
@@ -2632,9 +2647,9 @@
 					feat_strategy: "Digital strategy consulting",
 					btn_want_it: "I want it",
 					btn_upgrade: "Upgrade my plan",
-					btn_quote: "Quote Project",
+					btn_quote: "Contact Sales",
 					mail_note:
-						"* Additional corporate emails have an extra cost of <span class='text-white'>$299 MXN</span> each.",
+						"* Additional corporate emails have an extra cost of <span class='text-white'>$19 USD</span> each.",
 					// Contact
 					contact_title: "Ready to get started?",
 					contact_desc:
