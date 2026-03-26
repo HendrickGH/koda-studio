@@ -161,11 +161,18 @@
 			.accordion-content {
 				transition: max-height 0.3s ease-out;
 			}
-			.accordion-header i {
+			.accordion-header svg {
 				transition: transform 0.3s ease;
 			}
-			.accordion-header.active i {
+			.accordion-header.active svg {
 				transform: rotate(180deg);
+			}
+
+			/* Custom Select Styling */
+			.custom-select-wrapper select {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
 			}
 		</style>
 	</head>
@@ -200,7 +207,7 @@
 
 					<ul
 						id="navLinks"
-						class="fixed top-20 right-[-100%] bg-white h-[calc(100vh-80px)] w-4/5 flex flex-col items-center justify-start pt-12 shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:static md:flex-row md:bg-transparent md:h-auto md:w-auto md:pt-0 md:shadow-none md:gap-5"
+						class="fixed top-20 right-[-100%] bg-white h-[calc(100vh-80px)] w-full flex flex-col items-center justify-start pt-12 shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:static md:flex-row md:bg-transparent md:h-auto md:flex-1 md:justify-end md:pt-0 md:shadow-none md:gap-5 md:pr-6"
 					>
 						<li class="my-4 md:my-0">
 							<a
@@ -244,22 +251,36 @@
 						</li>
 						<!-- Botón de idioma en Escritorio (dentro de la lista) -->
 						<li class="hidden md:block">
-							<button
-								class="lang-btn font-extrabold font-heading text-[0.9rem] text-navy bg-transparent border-none px-2 py-1 rounded hover:bg-navy/5 hover:text-sky transition-colors cursor-pointer"
-							>
-								EN
-							</button>
+							<div class="relative custom-select-wrapper">
+								<select
+									class="lang-select bg-white font-heading font-extrabold text-[0.8rem] text-navy border-2 border-gray-200 pl-3 pr-8 py-1.5 rounded-lg hover:border-sky hover:bg-gray-50 cursor-pointer outline-none focus:border-sky transition-all"
+								>
+									<option value="es">ESPAÑOL</option>
+									<option value="en">ENGLISH</option>
+								</select>
+								<i
+									data-lucide="chevron-down"
+									class="w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-navy"
+								></i>
+							</div>
 						</li>
 					</ul>
 
 					<div class="flex items-center gap-4">
 						<!-- Botón de idioma en Móvil (fuera de la lista) -->
 						<div class="block md:hidden">
-							<button
-								class="lang-btn font-extrabold font-heading text-[0.9rem] text-navy bg-transparent border-none px-2 py-1 rounded hover:bg-navy/5 hover:text-sky transition-colors cursor-pointer"
-							>
-								EN
-							</button>
+							<div class="relative custom-select-wrapper">
+								<select
+									class="lang-select bg-white font-heading font-extrabold text-[0.8rem] text-navy border-2 border-gray-200 pl-3 pr-8 py-1.5 rounded-lg hover:border-sky hover:bg-gray-50 cursor-pointer outline-none focus:border-sky transition-all"
+								>
+									<option value="es">ESPAÑOL</option>
+									<option value="en">ENGLISH</option>
+								</select>
+								<i
+									data-lucide="chevron-down"
+									class="w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-navy"
+								></i>
+							</div>
 						</div>
 						<div
 							id="hamburger"
@@ -1512,7 +1533,7 @@
 								profesional (copywriting) básica en todos los paquetes. Además,
 								podemos diseñar un logotipo sencillo para ti sin costo extra. Si
 								eliges el <strong>Plan PRO</strong>, incluimos un diseño de
-								marca completo (Logo principal, isotipo y versión horizontal).
+								marca completo (Logotipo, isotipo y horizontal).
 							</p>
 						</div>
 					</div>
@@ -1583,84 +1604,94 @@
 						<div class="pricing-features my-8 text-left flex-grow">
 							<ul>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									Landing Page
+									<span class="flex-1">Landing Page</span>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_domain"
+									<span class="flex-1" data-i18n="feat_domain"
 										>Dominio .com ó .com.mx (1 año)</span
 									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_hosting">Hosting Rápido (1 año)</span>
+									<span class="flex-1" data-i18n="feat_hosting"
+										>Hosting Rápido (1 año)</span
+									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_mail1">1 Correo Corporativo*</span>
+									<span class="flex-1" data-i18n="feat_mail1"
+										>1 Correo Corporativo*</span
+									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_logo1">Logotipo principal</span>
+									<span class="flex-1" data-i18n="feat_logo1"
+										>Logotipo principal</span
+									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_buttons">Botón WhatsApp & Maps</span>
+									<span class="flex-1" data-i18n="feat_buttons"
+										>Botón WhatsApp & Maps</span
+									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_form">Formulario de Contacto</span>
+									<span class="flex-1" data-i18n="feat_form"
+										>Formulario de Contacto</span
+									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="gift"
-										class="text-sky shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-sky shrink-0 w-[18px] h-[18px]"
 									></i>
+									<span class="flex-1" data-i18n="feat_support3"
+										>3 Meses Soporte</span
+									>
 									<span
-										><span data-i18n="feat_support3">3 Meses Soporte</span>
-										<span
-											class="bg-blue-50 text-navy px-2 py-0.5 rounded text-xs font-bold ml-auto block w-max mt-1"
-											data-i18n="badge_free"
-											>GRATIS</span
-										></span
+										class="bg-blue-50 text-navy px-2 py-0.5 rounded text-xs font-bold"
+										data-i18n="badge_free"
+										>GRATIS</span
 									>
 								</li>
 							</ul>
@@ -1706,81 +1737,96 @@
 						<div class="pricing-features my-8 text-left flex-grow">
 							<ul>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<strong data-i18n="feat_all_start"
+									<strong class="flex-1" data-i18n="feat_all_start"
 										>Todo lo de Koda Start</strong
 									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_multipage"
+									<span class="flex-1" data-i18n="feat_multipage"
 										>Diseño Multipágina (Inicio + 2)</span
 									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_logo_full"
-										>Logo principal, isotipo y versión horizontal</span
+									<span class="flex-1" data-i18n="feat_logo_full"
+										>Logotipo, isotipo y horizontal</span
 									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_booking">Sistema de Citas Básico</span>
-								</li>
-								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
-								>
-									<i
-										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
-									></i>
-									<strong data-i18n="feat_mail3"
-										>Hasta 3 Correos Corporativos*</strong
+									<span class="flex-1" data-i18n="feat_booking"
+										>Sistema de Citas Básico</span
 									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_qr">Integración Menú QR</span>
+									<span class="flex-1" data-i18n="feat_mail3"
+										>Hasta 3 Correos Corporativos*</span
+									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px]"
+									></i>
+									<span class="flex-1" data-i18n="feat_qr"
+										>Integración Menú QR</span
+									>
+								</li>
+								<li
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+								>
+									<i
+										data-lucide="check-circle-2"
+										class="text-success shrink-0 w-[18px] h-[18px]"
+									></i>
+									<span class="flex-1" data-i18n="feat_bilingual"
+										>Sitio bilingüe (Español / Inglés)</span
+									>
+								</li>
+								<li
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="gift"
-										class="text-sky shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-sky shrink-0 w-[18px] h-[18px]"
 									></i>
+									<span class="flex-1" data-i18n="feat_support6"
+										>6 Meses Soporte</span
+									>
 									<span
-										><span data-i18n="feat_support6">6 Meses Soporte</span>
-										<span
-											class="bg-blue-50 text-navy px-2 py-0.5 rounded text-xs font-bold ml-auto block w-max mt-1"
-											data-i18n="badge_free"
-											>GRATIS</span
-										></span
+										class="bg-blue-50 text-navy px-2 py-0.5 rounded text-xs font-bold"
+										data-i18n="badge_free"
+										>GRATIS</span
 									>
 								</li>
 							</ul>
@@ -1817,44 +1863,46 @@
 						<div class="pricing-features my-8 text-left flex-grow">
 							<ul>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_custom_design">Diseño a medida</span>
+									<span class="flex-1" data-i18n="feat_custom_design"
+										>Diseño a medida</span
+									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_custom_func"
+									<span class="flex-1" data-i18n="feat_custom_func"
 										>Funcionalidades a medida</span
 									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_unlimited_mail"
+									<span class="flex-1" data-i18n="feat_unlimited_mail"
 										>Cantidad ilimitada de correos</span
 									>
 								</li>
 								<li
-									class="mb-3 flex items-start gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
+									class="mb-3 flex items-center w-full gap-2.5 text-[0.95rem] border-b border-[#f9f9f9] pb-2"
 								>
 									<i
 										data-lucide="check-circle-2"
-										class="text-success shrink-0 w-[18px] h-[18px] mt-[3px]"
+										class="text-success shrink-0 w-[18px] h-[18px]"
 									></i>
-									<span data-i18n="feat_strategy"
+									<span class="flex-1" data-i18n="feat_strategy"
 										>Asesoría de estrategia digital</span
 									>
 								</li>
@@ -1876,7 +1924,7 @@
 					data-i18n="mail_note"
 				>
 					* Correos corporativos adicionales tienen un costo extra de
-					<strong class="text-white">$299 MXN</strong> cada uno.
+					<span class="text-white">$299 MXN</span> cada uno.
 				</p>
 			</div>
 		</section>
@@ -2139,18 +2187,13 @@
 		<!-- FLOATING WHATSAPP -->
 		<a
 			href="https://wa.me/5217721698485?text=Hola%20Koda%20Studio,%20quiero%20información%20de%20sus%20servicios"
-			class="fixed bottom-8 right-8 w-14 h-14 bg-[#25D366] rounded-full shadow-[0_4px_15px_rgba(37,211,102,0.4)] flex justify-center items-center z-50 transition-transform duration-300 hover:scale-110 hover:rotate-12 group"
+			class="fixed bottom-8 right-8 w-16 h-16 p-3.5 bg-[#25D366] rounded-full shadow-[0_4px_15px_rgba(37,211,102,0.4)] flex justify-center items-center z-50 transition-transform duration-300 hover:scale-110 hover:rotate-12 group"
 			target="_blank"
 			aria-label="Chat en WhatsApp"
 		>
-			<!-- Anillo animado estilo Ping para llamar la atención -->
-			<span
-				class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75 animate-ping group-hover:hidden"
-			></span>
-
 			<!-- SVG Oficial WhatsApp -->
 			<svg
-				class="w-8 h-8 text-white relative z-10"
+				class="w-full h-full text-white"
 				fill="currentColor"
 				viewBox="0 0 24 24"
 			>
@@ -2267,7 +2310,7 @@
 					ind2_title: "Arquitectura & Diseño",
 					ind2_desc:
 						"Tu portafolio como herramienta de venta. Galerías inmersivas de alta resolución que convencen a inversores y clientes.",
-					ind3_title: "Restaurantes & Cafés",
+					ind3_title: "Restaurantes & Cafes",
 					ind3_desc:
 						"Llena más mesas. Menús digitales con QR que antojan y sistemas de reserva directa sin depender de terceros.",
 					ind4_title: "Hoteles & AirBnb",
@@ -2329,7 +2372,7 @@
 						'Tenemos un modelo flexible de <strong>"Mantenimiento por Evento"</strong>. Si necesitas actualizaciones puntuales, no pagas una renta mensual fija; solo pagas una tarifa pequeña por el cambio que necesites, comenzando desde <strong>$199 MXN + IVA</strong>.',
 					faq5_q: "¿Necesito tener mi logo y textos listos para empezar?",
 					faq5_a:
-						"<strong>No es obligatorio.</strong> Incluimos redacción profesional (copywriting) básica en todos los paquetes. Además, podemos diseñar un logotipo sencillo para ti sin costo extra. Si eliges el <strong>Plan PRO</strong>, incluimos un diseño de marca completo (Logo principal, isotipo y versión horizontal).",
+						"<strong>No es obligatorio.</strong> Incluimos redacción profesional (copywriting) básica en todos los paquetes. Además, podemos diseñar un logotipo sencillo para ti sin costo extra. Si eliges el <strong>Plan PRO</strong>, incluimos un diseño de marca completo (Logotipo, isotipo y horizontal).",
 					faq6_q: "¿El sitio incluye facturación?",
 					faq6_a:
 						"<strong>Sí, facturamos todos nuestros servicios.</strong> Los precios mostrados son netos antes de impuestos, por lo que al solicitar tu factura se añadirá el 16% de IVA correspondiente.",
@@ -2352,10 +2395,11 @@
 					feat_support3: "3 Meses Soporte",
 					feat_all_start: "Todo lo de Koda Start",
 					feat_multipage: "Diseño Multipágina (Inicio + 2)",
-					feat_logo_full: "Logo principal, isotipo y versión horizontal",
+					feat_logo_full: "Logotipo, isotipo y horizontal",
 					feat_booking: "Sistema de Citas Básico",
 					feat_mail3: "Hasta 3 Correos Corporativos*",
 					feat_qr: "Integración Menú QR",
+					feat_bilingual: "Sitio bilingüe (Español / Inglés)",
 					feat_support6: "6 Meses Soporte",
 					feat_custom_design: "Diseño a medida",
 					feat_custom_func: "Funcionalidades a medida",
@@ -2365,7 +2409,7 @@
 					btn_upgrade: "Mejorar mi plan",
 					btn_quote: "Cotizar Proyecto",
 					mail_note:
-						"* Correos corporativos adicionales tienen un costo extra de <strong class='text-white'>$299 MXN</strong> cada uno.",
+						"* Correos corporativos adicionales tienen un costo extra de <span class='text-white'>$299 MXN</span> cada uno.",
 					// Contact
 					contact_title: "¿Listo para empezar?",
 					contact_desc:
@@ -2580,6 +2624,7 @@
 					feat_booking: "Basic Booking System",
 					feat_mail3: "Up to 3 Corporate Emails*",
 					feat_qr: "QR Menu Integration",
+					feat_bilingual: "Bilingual site (Spanish / English)",
 					feat_support6: "6 Months Support",
 					feat_custom_design: "Custom Design",
 					feat_custom_func: "Custom Features",
@@ -2589,7 +2634,7 @@
 					btn_upgrade: "Upgrade my plan",
 					btn_quote: "Quote Project",
 					mail_note:
-						"* Additional corporate emails have an extra cost of <strong class='text-white'>$299 MXN</strong> each.",
+						"* Additional corporate emails have an extra cost of <span class='text-white'>$299 MXN</span> each.",
 					// Contact
 					contact_title: "Ready to get started?",
 					contact_desc:
@@ -2618,15 +2663,17 @@
 			};
 
 			let currentLang = "es";
-			const langBtns = document.querySelectorAll(".lang-btn");
+			const langSelects = document.querySelectorAll(".lang-select");
 
-			langBtns.forEach(btn => {
-				btn.addEventListener("click", () => {
-					currentLang = currentLang === "es" ? "en" : "es";
-					const btnText = currentLang === "es" ? "EN" : "ES";
+			langSelects.forEach(select => {
+				select.addEventListener("change", e => {
+					const selectedLang = e.target.value;
+					currentLang = selectedLang;
 
-					langBtns.forEach(b => (b.innerText = btnText));
+					// Sincronizar todos los selects (móvil y escritorio)
+					langSelects.forEach(s => (s.value = selectedLang));
 
+					// Actualizar textos
 					document.querySelectorAll("[data-i18n]").forEach(el => {
 						const key = el.getAttribute("data-i18n");
 						if (translations[currentLang][key]) {
@@ -2634,6 +2681,7 @@
 						}
 					});
 
+					// Actualizar placeholders
 					document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
 						const key = el.getAttribute("data-i18n-placeholder");
 						if (translations[currentLang][key]) {
@@ -2747,18 +2795,11 @@
 				header.addEventListener("click", () => {
 					header.classList.toggle("active");
 
-					const icon = header.querySelector("i");
-					if (header.classList.contains("active")) {
-						icon.style.transform = "rotate(180deg)";
-					} else {
-						icon.style.transform = "rotate(0deg)";
-					}
-
 					const content = header.nextElementSibling;
 					if (header.classList.contains("active")) {
 						content.style.maxHeight = content.scrollHeight + "px";
 					} else {
-						content.style.maxHeight = 0;
+						content.style.maxHeight = "0px";
 					}
 
 					accordionHeaders.forEach(otherHeader => {
@@ -2767,8 +2808,7 @@
 							otherHeader.classList.contains("active")
 						) {
 							otherHeader.classList.remove("active");
-							otherHeader.querySelector("i").style.transform = "rotate(0deg)";
-							otherHeader.nextElementSibling.style.maxHeight = 0;
+							otherHeader.nextElementSibling.style.maxHeight = "0px";
 						}
 					});
 				});
